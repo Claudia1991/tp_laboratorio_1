@@ -4,9 +4,9 @@
 #include "utn.h"
 
 /**
- * \brief
- * \param
- * \return
+ * \brief Realiza el factorial de un numero entero.
+ * \param numero Es el numero del cual se quiere el factorial.
+ * \return Retorna el factorial
  *
  * */
 long int factorial(int numero) {
@@ -18,9 +18,9 @@ long int factorial(int numero) {
 }
 
 /**
- * \brief
- * \param
- * \return
+ * \brief Verifica si un numero es negativo o no.
+ * \param numero Es el numero a saber si es negativo o no.
+ * \return 1 si es negativo, 0 si es cero o positivo
  *
  * */
 int esNegativo(int numero) {
@@ -28,9 +28,9 @@ int esNegativo(int numero) {
 }
 
 /**
- * \brief
- * \param
- * \return
+ * \brief Verifica si un numero es cero o no.
+ * \param numero Es el numero a saber si es cero o no.
+ * \return 1 si es cero, 0 en cualquier otro caso.
  *
  * */
 int esCero(int numero) {
@@ -38,16 +38,18 @@ int esCero(int numero) {
 }
 
 /**
- * \brief
- * \param
- * \return
+ * \brief Realiza la division y guarda el resultado en un puntero.
+ * \param *pResultado Es el puntero donde se guarda el resultado de la division.
+ * \param dividendo Es el dividendo
+ * \param divisor Es el divisor.
+ * \return -1 (RESULTADO_NO_OK) si da error, 0 (RESULTADO_OK) si se realizo la division
  *
  * */
-int dividir(float *dividir, int dividendo, int divisor) {
+int dividir(float *pResultado, int dividendo, int divisor) {
 	if (esCero(divisor)) {
 		return RESULTADO_NO_OK;
 	} else {
-		*dividir = (float) dividendo / divisor;
+		*pResultado = (float) dividendo / divisor;
 		return RESULTADO_OK;
 	}
 }
@@ -66,11 +68,12 @@ void mostrarBienvenida() {
 
 /**
  * \brief Muestra en pantalla las opciones del usuario.
- * \param No recibe parametros.
+ * \param pResultadoOpcion Es el puntero que almacena si el usuario ingreso bien los datos.
+ * \param pOpcion Es el puntero donde se almacena la opcion que escogio el usuario.
  * \return No retorna nada.
  *
  * */
-void mostrarMenuOpciones(int *resultadoOpcion, int *opcion) {
+void mostrarMenuOpciones(int *pResultadoOpcion, int *pOpcion) {
 	system("CLS()");
 	printf("Opciones disponibles: \n");
 	printf("1. Ingresar el primer operando(A=x)\n");
@@ -89,14 +92,14 @@ void mostrarMenuOpciones(int *resultadoOpcion, int *opcion) {
 	printf("\t e-)El resultado de el factorial de A! y B!\n");
 	printf("5. Salir\n");
 	printf("--------------------\n");
-	*resultadoOpcion = utn_getNumero(opcion, MENSAJE_INGRESO_OPCION,
+	*pResultadoOpcion = utn_getNumero(pOpcion, MENSAJE_INGRESO_OPCION,
 	MENSAJE_ERROR_INGRESO_OPCION, INGRESAR_PRIMER_OPERANDO, SALIR,
 	REINTENTOS);
 }
 
 /**
  * \brief Muestra el mensaje de despedida y cierra la aplicacion.
- * \param
+ * \param No recibe parametros.
  * \return No retorna nada.
  *
  * */
@@ -109,8 +112,8 @@ void salir() {
 
 /**
  * \brief Valida que ambos numeros fueron ingresados por el usuario
- * \param ingresoPrimerOperando
- * \param ingresoSegundoOperando
+ * \param flagIngresoPrimerOperando Bandera si el usuario ingreso el primer numero.
+ * \param flagIngresoSegundoOperando Bandera si el usuario ingreso el segundo numero.
  * \return Retorna 1 si los dos numeros fueron ingresados, 0 en cualquier otro caso.
  *
  * */
@@ -121,14 +124,21 @@ int validarIngresoOperandos(int flagIngresoPrimerOperando,
 
 /**
  * \brief Realiza todas las operaciones con los numeros ingresados por el usuario.
- * \param
- * \return
+ * \param flagIngresoPrimerOperando Bandera si el usuario ingreso el primer numero.
+ * \param flagIngresoSegundoOperando Bandera si el usuario ingreso el segundo numero.
+ * \param numeroUno Es el primer numero ingresado por el usuario.
+ * \param numeroDos Es el segundo numero ingresado por el usuario.
+ * \param pSuma Es el puntero donde se guarda el resultado de la suma.
+ * \param pResta Es el puntero donde se guarda el resultado de la resta.
+ * \param pMultiplicacion Es el puntero donde se guarda el resultado de la multiplicacion.
+ * \param pDivision Es el puntero donde se guarda el resultado de la division.
+ * \param pFactorialPrimerOperando Es el puntero donde se guarda el resultado del factorial del primer numero.
+ * \param pFactorialSegundoOperando Es el puntero donde se guarda el resultado del factorial del segundo numero.
+ * \return RESULTADO_OK(0) si se pudo realizar todas las operaciones, RESULTADO_NO_OK(-1) si hubo algun error.
  *
  * */
-int realizarOperaciones(int flagIngresoPrimerOperando,
-		int flagIngresoSegundoOperando, int numeroUno, int numeroDos, int *suma,
-		int *resta, long int *multiplicacion, float *division,
-		long int *factorialPrimerOperando, long int *factorialSegundoOperando) {
+int realizarOperaciones(int flagIngresoPrimerOperando, int flagIngresoSegundoOperando, int numeroUno, int numeroDos,
+		int *pSuma, int *pResta, long int *pMultiplicacion, float *pDivision, long int *pFactorialPrimerOperando, long int *pFactorialSegundoOperando) {
 	int resultado = RESULTADO_NO_OK;
 	int resultadoEjecucionDivision = FALSE;
 	int resultadoEjecucionFactorialA = FALSE;
@@ -137,23 +147,23 @@ int realizarOperaciones(int flagIngresoPrimerOperando,
 	if (validarIngresoOperandos(flagIngresoPrimerOperando,
 			flagIngresoSegundoOperando)) {
 		//Suma
-		*suma = numeroUno + numeroDos;
+		*pSuma = numeroUno + numeroDos;
 		//Resta
-		*resta = numeroUno - numeroDos;
+		*pResta = numeroUno - numeroDos;
 		//Multiplicacion
-		*multiplicacion = numeroUno * numeroDos;
+		*pMultiplicacion = numeroUno * numeroDos;
 		//Division
-		if (dividir(division, numeroUno, numeroDos) == RESULTADO_OK) {
+		if (dividir(pDivision, numeroUno, numeroDos) == RESULTADO_OK) {
 			resultadoEjecucionDivision = TRUE;
 		}
 		//Factorial A
 		if (!esNegativo(numeroUno)) {
-			*factorialPrimerOperando = factorial(numeroUno);
+			*pFactorialPrimerOperando = factorial(numeroUno);
 			resultadoEjecucionFactorialA = TRUE;
 		}
 		//Factorial B
 		if (!esNegativo(numeroDos)) {
-			*factorialSegundoOperando = factorial(numeroDos);
+			*pFactorialSegundoOperando = factorial(numeroDos);
 			resultadoEjecucionFactorialA = TRUE;
 		}
 
@@ -166,13 +176,17 @@ int realizarOperaciones(int flagIngresoPrimerOperando,
 }
 
 /**
- * \brief Muestra los resultados por pantalla.
- * \param suma
- * \param resta
- * \param multiplicacion
- * \param division
- * \param factorialPrimerOperando
- * \param factorialSegundoOperando
+ * \brief Muestra los resultados por pantalla si se cargaron los dos numeros, sino muestra un mensaje de error.
+ * \param flagIngresoPrimerOperando Bandera si el usuario ingreso el primer numero.
+ * \param flagIngresoSegundoOperando Bandera si el usuario ingreso el segundo numero.
+ * \param numeroUno Es el primer numero ingresado por el usuario.
+ * \param numeroDos Es el segundo numero ingresado por el usuario.
+ * \param suma Es el resultado de la suma.
+ * \param resta Es  el resultado de la resta.
+ * \param multiplicacion Es  el resultado de la multiplicacion.
+ * \param division Es el resultado de la division.
+ * \param factorialPrimerOperando Es el resultado del factorial del primer numero.
+ * \param factorialSegundoOperando Es el resultado del factorial del segundo numero.
  * \return No retorna nada.
  *
  * */
@@ -205,6 +219,5 @@ void mostrarResultados(int flagIngresoPrimerOperando,
 	}else{
 		printf("%s", MENSAJE_ERROR_MOSTRAR_RESULTADOS);
 	}
-
 }
 
