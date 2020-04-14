@@ -55,6 +55,22 @@ int dividir(float *pResultado, int dividendo, int divisor) {
 }
 
 /**
+ * \brief Realiza el factorial y guarda el resultado en un puntero.
+ * \param *pResultado Es el puntero donde se guarda el resultado del factorial.
+ * \param numero Es el numero a cualcular el factorial.
+ * \return -1 (RESULTADO_NO_OK) si da error, 0 (RESULTADO_OK) si se realizo el factorial.
+ *
+ * */
+int realizarFactorial(long int *pResultado, int numero) {
+	if (esNegativo(numero)) {
+		return RESULTADO_NO_OK;
+	} else {
+		*pResultado = factorial(numero);
+		return RESULTADO_OK;
+	}
+}
+
+/**
  * \brief Muestra la bienvenida al usuario.
  * \param No recibe parametros.
  * \return No retorna nada.
@@ -157,14 +173,12 @@ int realizarOperaciones(int flagIngresoPrimerOperando, int flagIngresoSegundoOpe
 			resultadoEjecucionDivision = TRUE;
 		}
 		//Factorial A
-		if (!esNegativo(numeroUno)) {
-			*pFactorialPrimerOperando = factorial(numeroUno);
+		if (realizarFactorial(pFactorialPrimerOperando, numeroUno) == RESULTADO_OK ) {
 			resultadoEjecucionFactorialA = TRUE;
 		}
 		//Factorial B
-		if (!esNegativo(numeroDos)) {
-			*pFactorialSegundoOperando = factorial(numeroDos);
-			resultadoEjecucionFactorialA = TRUE;
+		if (realizarFactorial(pFactorialPrimerOperando, numeroUno) == RESULTADO_OK) {
+			resultadoEjecucionFactorialB = TRUE;
 		}
 
 		if (resultadoEjecucionDivision && resultadoEjecucionFactorialA

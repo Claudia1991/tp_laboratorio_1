@@ -10,6 +10,7 @@
 #define MENSAJE_INGRESO_OPCION "Ingrese una opcion: \n"
 #define MENSAJE_INGRESO_NUMERO "Ingrese un numero: \n"
 #define MENSAJE_ERROR_INGRESO_OPCION "Ingreso incorrectamente la opcion. Ingrese nuevamente!(Del 1 al 5) \n"
+#define MENSAJE_ERROR_INGRESO_SIN_REINTENTOS "Consumio todos los reintentos posibles para el ingreso de datos, se termina el programa!!\n"
 #define MENSAJE_ERROR_INGRESO_NUMERO "Ingreso incorrectamente el numero. Ingrese nuevamente! \n"
 #define MENSAJE_ERROR_REALIZAR_OPERACIONES "No se puede realizar las operaciones, falta el ingreso de un operando.! \n"
 #define MENSAJE_ERROR_MOSTRAR_RESULTADOS "No se puede mostrar resultados, falta el ingreso de un operando.! \n"

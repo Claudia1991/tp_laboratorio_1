@@ -16,6 +16,7 @@ void mostrarResultados(int flagIngresoPrimerOperando, int flagIngresoSegundoOper
 
 //Funciones Matematicas
 int dividir(float *pResultado, int dividendo, int divisor);
+int realizarFactorial(long int *pResultado, int numero);
 long int factorial(int numero);
 int esNegativo(int numero);
 int esCero(int numero);

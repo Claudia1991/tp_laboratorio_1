@@ -50,5 +50,6 @@ int main() {
 					break;
 				}
 		}
+		printf("%s", MENSAJE_ERROR_INGRESO_SIN_REINTENTOS);
 	return 0;
 }
