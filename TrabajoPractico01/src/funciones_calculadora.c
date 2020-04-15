@@ -153,8 +153,10 @@ int validarIngresoOperandos(int flagIngresoPrimerOperando,
  * \return RESULTADO_OK(0) si se pudo realizar todas las operaciones, RESULTADO_NO_OK(-1) si hubo algun error.
  *
  * */
-int realizarOperaciones(int flagIngresoPrimerOperando, int flagIngresoSegundoOperando, int numeroUno, int numeroDos,
-		int *pSuma, int *pResta, long int *pMultiplicacion, float *pDivision, long int *pFactorialPrimerOperando, long int *pFactorialSegundoOperando) {
+int realizarOperaciones(int flagIngresoPrimerOperando,
+		int flagIngresoSegundoOperando, int numeroUno, int numeroDos,
+		int *pSuma, int *pResta, long int *pMultiplicacion, float *pDivision,
+		long int *pFactorialPrimerOperando, long int *pFactorialSegundoOperando) {
 	int resultado = RESULTADO_NO_OK;
 	int resultadoEjecucionDivision = FALSE;
 	int resultadoEjecucionFactorialA = FALSE;
@@ -173,11 +175,13 @@ int realizarOperaciones(int flagIngresoPrimerOperando, int flagIngresoSegundoOpe
 			resultadoEjecucionDivision = TRUE;
 		}
 		//Factorial A
-		if (realizarFactorial(pFactorialPrimerOperando, numeroUno) == RESULTADO_OK ) {
+		if (realizarFactorial(pFactorialPrimerOperando,
+				numeroUno) == RESULTADO_OK) {
 			resultadoEjecucionFactorialA = TRUE;
 		}
 		//Factorial B
-		if (realizarFactorial(pFactorialPrimerOperando, numeroUno) == RESULTADO_OK) {
+		if (realizarFactorial(pFactorialPrimerOperando,
+				numeroUno) == RESULTADO_OK) {
 			resultadoEjecucionFactorialB = TRUE;
 		}
 
@@ -210,6 +214,8 @@ void mostrarResultados(int flagIngresoPrimerOperando,
 		long int factorialPrimerOperando, long int factorialSegundoOperando) {
 	if (validarIngresoOperandos(flagIngresoPrimerOperando,
 			flagIngresoSegundoOperando)) {
+		printf("%s %d \n", MENSAJE_PRIMER_NUMERO_INGRESADO, numeroUno);
+		printf("%s %d \n", MENSAJE_SEGUNDO_NUMERO_INGRESADO, numeroDos);
 		printf("%s %d \n", MENSAJE_RESULTADO_SUMA, suma);
 		printf("%s %d \n", MENSAJE_RESULTADO_RESTA, resta);
 		printf("%s %ld \n", MENSAJE_RESULTADO_MULTIPLICACION, multiplicacion);
@@ -230,7 +236,7 @@ void mostrarResultados(int flagIngresoPrimerOperando,
 			printf("%s %ld \n", MENSAJE_RESULTADO_FACTORIAL_B,
 					factorialSegundoOperando);
 		}
-	}else{
+	} else {
 		printf("%s", MENSAJE_ERROR_MOSTRAR_RESULTADOS);
 	}
 }

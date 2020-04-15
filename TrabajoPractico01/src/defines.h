@@ -1,6 +1,8 @@
 #ifndef DEFINES_H_
 #define DEFINES_H_
 
+#define MENSAJE_PRIMER_NUMERO_INGRESADO "El primer numero ingresado es: \n"
+#define MENSAJE_SEGUNDO_NUMERO_INGRESADO "El segundo numero ingresado es: \n"
 #define MENSAJE_RESULTADO_SUMA "El resultado de la suma A+B: \n"
 #define MENSAJE_RESULTADO_RESTA "El resultado de la resta A-B: \n"
 #define MENSAJE_RESULTADO_DIVISION "El resultado de la division A/B: \n"
