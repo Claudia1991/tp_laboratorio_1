@@ -2,13 +2,14 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include "defines.h"
 //Las funcines estaticas, las declaro con el prototipo aca, para que sean visibles solo en este archivo.
 //• esNumerica: Recibe una cadena de caracteres y devuelve 1 en el caso de que el texto
 //este compuesto solo por números.
-static int esNumerica(char *cadena);
+static int IsNumeric(char *string);
 //getInt: Pide un texto al usuario, lo almacena como cadena, valida y convierte el texto
 //a numero y lo devuelve como int.
-static int getInt(int *pResultado);
+static int GetInt(int *pResult);
 
 /**
  * \brief Verifica si el valor recibido es numurico
@@ -16,40 +17,23 @@ static int getInt(int *pResultado);
  * \return 1 si es numerico y 0 si no lo es
  *
  * */
-static int esNumerica(char *cadena) {
+static int IsNumeric(char *string) {
 	int ret = -1;
 	int i = 0;
-	if (cadena != NULL) {
-		while (cadena[i] != '\0') {
-			if (cadena[i] < '0' || cadena[i] > '9')
+	if (string != NULL) {
+		while (string[i] != '\0') {
+			printf("%c",string[i]);
+			if (string[i] < '0' || string[i] > '9'){
+				printf("%c",string[i]);
 				break;
+			}
 			i++;
 		}
-		if (cadena[i] == '\0')
+		if (string[i] == '\0'){
 			ret = 1;
+		}
 	}
 	return ret;
-
-	/*
-	 * int esNumero(char* cadena)
-{
-	int retorno = 1;
-	int i;
-	for(i=0;cadena[i]!='\0';i++)
-	{
-		if(i==0 && cadena[i] == '-')
-		{
-			continue;
-		}
-		if(cadena[i]>'9' || cadena[i]<'0')
-		{
-			retorno = 0;
-			break;
-		}
-	}
-	return retorno;
-}
-	 * */
 }
 
 /**
@@ -58,84 +42,84 @@ static int esNumerica(char *cadena) {
  * \return 1 si OK sino -1
  *
  * */
-static int getInt(int *pResultado) {
+static int GetInt(int *pResult) {
 	int ret = -1;
-	char buffer[8];
+	char buffer[TAM_CHAR_ARRAY];
 	fflush(stdin);
 	fgets(buffer, sizeof(buffer), stdin);
 	buffer[strlen(buffer) - 1] = '\0';
-	if (esNumerica(buffer)) {
-		*pResultado = atoi(buffer);
+	if (IsNumeric(buffer)) {
+		*pResult = atoi(buffer);
 		ret = 1;
 	}
 	return ret;
 }
 
 
-int utn_getNumero(int *pResultado, char *mensaje, char *mensajeError,
-		int minimo, int maximo, int reintentos) {
+int GetNumber(int *pResult, char *message, char *errorMessage, int minimun, int maximun, int retries) {
 	int ret;
 	int num;
-	while (reintentos > 0) {
-		printf(mensaje);
-		if (getInt(&num) == 1) {
-			if (num <= maximo && num >= minimo)
+	while (retries > 0) {
+		printf(message);
+		if (GetInt(&num) == 1) {
+			if (num <= maximun && num >= minimun){
 				break;
+			}
 		}
-		reintentos--;
-		printf(mensajeError);
+		retries--;
+		printf(errorMessage);
 	}
-	if (reintentos == 0) {
+	if (retries == 0) {
 		ret = -1;
 	} else {
 		ret = 0;
-		*pResultado = num;
+		*pResult = num;
 	}
 	return ret;
 }
 
 
-int utn_getNumeroSinMinMax(int *pResultado, char *mensaje, char *mensajeError,int reintentos) {
+int GetNumberNoMinMax(int *pResult, char *message, char *errorMessage, int retries) {
 	int ret;
 	int num;
-	while (reintentos > 0) {
-		printf(mensaje);
-		if (getInt(&num) == 1) {
+	while (retries > 0) {
+		printf(message);
+		if (GetInt(&num) == 1) {
 			break;
 		}
-		reintentos--;
-		printf(mensajeError);
+		retries--;
+		printf(errorMessage);
 	}
-	if (reintentos == 0) {
+	if (retries == 0) {
 		ret = -1;
 	} else {
 		ret = 0;
-		*pResultado = num;
+		*pResult = num;
 	}
 	return ret;
 }
 
 
-int utn_getCaracter(char* pResultado, char* mensaje,char* mensajeError, char minimo,char maximo,int reintentos)
+int GetCaracter(char* pResult, char* message,char* errorMessage, char minimun,char maximun,int retries)
 {
 	int retorno = -1;
 	char buffer;
-	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo <= maximo && reintentos >= 0)
+	if(pResult != NULL && message != NULL && errorMessage != NULL && minimun <= maximun && retries >= 0)
 	{
 		do
 		{
-			printf("%s",mensaje);
+			printf("%s",message);
 			fflush(stdin);
 			scanf("%c",&buffer);
-			if(buffer >= minimo && buffer <= maximo)
+			if(buffer >= minimun && buffer <= maximun)
 			{
-				*pResultado = buffer;
+				*pResult = buffer;
 				retorno = 0;
 				break;
 			}
-			printf("%s",mensajeError);
-			reintentos--;
-		}while(reintentos>=0);
+			printf("%s",errorMessage);
+			retries--;
+		}while(retries>=0);
 
 	}
 	return retorno;
@@ -143,22 +127,22 @@ int utn_getCaracter(char* pResultado, char* mensaje,char* mensajeError, char min
 
 
 
-int ordenarArrayInt(int* pArray, int limite)
+int SortArrayInt(int* pArray, int size)
 {
 	int flagSwap;
 	int i;
-	int contador=0;
+	int counter=0;
 	int retorno = -1;
 	int buffer;
 
-	if(pArray != NULL && limite >= 0)
+	if(pArray != NULL && size >= 0)
 	{
 		do
 		{
 			flagSwap=0;
-			for( i=0 ; i<limite - 1 ; i++)
+			for( i=0 ; i<size - 1 ; i++)
 			{
-				contador++;
+				counter++;
 				if(pArray[i] < pArray[i+1])
 				{
 					flagSwap = 1;
@@ -167,42 +151,45 @@ int ordenarArrayInt(int* pArray, int limite)
 					pArray[i+1] = buffer;
 				}
 			}
-			limite--;
+			size--;
 		}while(flagSwap);
-		retorno = contador;
+		retorno = counter;
 	}
 	return retorno;
 }
 
 
-char getNumeroAleatorio(int desde , int hasta, int iniciar)
+char GetRandomNumber(int from , int to, int init)
 {
-    if(iniciar)
+    if(init){
         srand (time(NULL));
-    return desde + (rand() % (hasta + 1 - desde)) ;
+    }
+    return from + (rand() % (to + 1 - from)) ;
 }
 
 
-int esSoloLetras(char str[])
+int IsOnlyLetters(char string[])
 {
    int i=0;
-   while(str[i] != '\0')
+   while(string[i] != '\0')
    {
-       if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+       if((string[i] != ' ') && (string[i] < 'a' || string[i] > 'z') && (string[i] < 'A' || string[i] > 'Z')){
            return 0;
+       }
        i++;
    }
    return 1;
 }
 
 
-int esAlfaNumerico(char str[])
+int IsAlphanumeric(char string[])
 {
    int i=0;
-   while(str[i] != '\0')
+   while(string[i] != '\0')
    {
-       if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
+       if((string[i] != ' ') && (string[i] < 'a' || string[i] > 'z') && (string[i] < 'A' || string[i] > 'Z') && (string[i] < '0' || string[i] > '9')){
            return 0;
+       }
        i++;
    }
    return 1;
@@ -210,20 +197,22 @@ int esAlfaNumerico(char str[])
 
 
 
-int esTelefono(char str[])
+int IsPhoneNumber(char string[])
 {
    int i=0;
    int contadorGuiones=0;
-   while(str[i] != '\0')
+   while(string[i] != '\0')
    {
-       if((str[i] != ' ') && (str[i] != '-') && (str[i] < '0' || str[i] > '9'))
+       if((string[i] != ' ') && (string[i] != '-') && (string[i] < '0' || string[i] > '9')){
            return 0;
-       if(str[i] == '-')
+       }
+       if(string[i] == '-'){
             contadorGuiones++;
+       }
        i++;
    }
-   if(contadorGuiones==1) // debe tener un guion
+   if(contadorGuiones==1){ // debe tener un guion
         return 1;
-
+   }
     return 0;
 }

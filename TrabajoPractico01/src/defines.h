@@ -1,40 +1,37 @@
 #ifndef DEFINES_H_
 #define DEFINES_H_
 
-#define MENSAJE_PRIMER_NUMERO_INGRESADO "El primer numero ingresado es: \n"
-#define MENSAJE_SEGUNDO_NUMERO_INGRESADO "El segundo numero ingresado es: \n"
-#define MENSAJE_RESULTADO_SUMA "El resultado de la suma A+B: \n"
-#define MENSAJE_RESULTADO_RESTA "El resultado de la resta A-B: \n"
-#define MENSAJE_RESULTADO_DIVISION "El resultado de la division A/B: \n"
-#define MENSAJE_RESULTADO_MULTIPLICACION "El resultado de la multiplicacion A*B: \n"
-#define MENSAJE_RESULTADO_FACTORIAL_A "El resultado de el factorial de A!: \n"
-#define MENSAJE_RESULTADO_FACTORIAL_B "El resultado de el factorial de B!: \n"
-#define MENSAJE_INGRESO_OPCION "Ingrese una opcion: \n"
-#define MENSAJE_INGRESO_NUMERO "Ingrese un numero: \n"
-#define MENSAJE_ERROR_INGRESO_OPCION "Ingreso incorrectamente la opcion. Ingrese nuevamente!(Del 1 al 5) \n"
-#define MENSAJE_ERROR_INGRESO_SIN_REINTENTOS "Consumio todos los reintentos posibles para el ingreso de datos, se termina el programa!!\n"
-#define MENSAJE_ERROR_INGRESO_NUMERO "Ingreso incorrectamente el numero. Ingrese nuevamente! \n"
-#define MENSAJE_ERROR_REALIZAR_OPERACIONES "No se puede realizar las operaciones, falta el ingreso de un operando.! \n"
-#define MENSAJE_ERROR_MOSTRAR_RESULTADOS "No se puede mostrar resultados, falta el ingreso de un operando.! \n"
-#define MENSAJE_ERROR_DIVISION "No se puede calcular la division, el divisor es cero. \n"
-#define MENSAJE_ERROR_FACTORIAL "No se puede calcular el factorial de un numero negativo \n"
-#define MENSAJE_EJECUCION_OPERACIONES "Se realizaron todas las operaciones exitosamente.!! \n"
-#define MENSAJE_ERROR_EJECUCION_OPERACIONES "Ocurrio un error al realizar todas las operaciones.! \n"
+#define MESSAGE_INSERT_FIRST_NUMBER "El primer numero ingresado es: \n"
+#define MESSAGE_INSERT_SECOND_NUMBER "El segundo numero ingresado es: \n"
+#define MESSAGE_RESULT_SUM "El resultado de la suma A+B: \n"
+#define MESSAGE_RESULT_SUBTRACTION "El resultado de la resta A-B: \n"
+#define MESSAGE_RESULT_DIVISION "El resultado de la division A/B: \n"
+#define MESSAGE_RESULT_MULTIPLICATION "El resultado de la multiplicacion A*B: \n"
+#define MESSAGE_RESULT_FACTORIAL_A "El resultado de el factorial de A!: \n"
+#define MESSAGE_RESULT_FACTORIAL_B "El resultado de el factorial de B!: \n"
+#define MESSAGE_INSERT_OPTION "Ingrese una opcion: \n"
+#define MESSAGE_INSERT_NUMBER "Ingrese un numero: \n"
+#define MESSAGE_ERROR_INSERT_OPTION "Ingreso incorrectamente la opcion. Ingrese nuevamente!(Del 1 al 5) \n"
+#define MESSAGE_ERROR_INSERT_NO_RETIES "Consumio todos los reintentos posibles para el ingreso de datos, se termina el programa!!\n"
+#define MESSAGE_ERROR_INSERT_NUMBER "Ingreso incorrectamente el numero. Ingrese nuevamente! \n"
+#define MESSAGE_ERROR_DO_OPERATIONS "No se puede realizar las operaciones, falta el ingreso de un operando.! \n"
+#define MESSAGE_ERROR_SHOW_RESULTS "No se puede mostrar resultados, falta el ingreso de un operando.! \n"
+#define MESSAGE_ERROR_DIVISION "No se puede calcular la division, el divisor es cero. \n"
+#define MESSAGE_ERROR_FACTORIAL "No se puede calcular el factorial de un numero negativo \n"
+#define MESSAGE_DO_OPERATIONS "Se realizaron todas las operaciones exitosamente.!! \n"
+#define MESSAGE_ERROR_DO_OPERATIONS_STATUS "Ocurrio un error al realizar todas las operaciones.! \n"
 
-#define TRUE 1
-#define FALSE 0
+#define RESULT_OK 0
+#define RESULT_NO_OK -1
 
-#define RESULTADO_OK 0
-#define RESULTADO_NO_OK -1
+#define INSERT_FIRST_NUMBER 1
+#define INSERT_SECOND_NUMBER 2
+#define DO_OPERATIONS 3
+#define SHOW_RESULTS 4
+#define EXIT 5
 
-#define INGRESAR_PRIMER_OPERANDO 1
-#define INGRESAR_SEGUNDO_OPERANDO 2
-#define REALIZAR_OPERACIONES 3
-#define MOSTRAR_RESULTADOS 4
-#define SALIR 5
+#define RETRIES 5
 
-#define REINTENTOS 5
-
-#define TAM_CHAR_ARRAY 100
+#define TAM_CHAR_ARRAY 5
 
 #endif /* DEFINES_H_ */

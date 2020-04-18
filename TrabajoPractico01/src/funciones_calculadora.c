@@ -3,50 +3,50 @@
 #include "defines.h"
 #include "utn.h"
 
-long int factorial(int numero) {
-	if (numero == 0) {
+long int Factorial(int number) {
+	if (number == 0) {
 		return 1;
 	} else {
-		return (numero * factorial(numero - 1));
+		return (number * Factorial(number - 1));
 	}
 }
 
-int esNegativo(int numero) {
-	return numero < 0;
+int IsNegative(int number) {
+	return number < 0;
 }
 
-int esCero(int numero) {
-	return numero == 0;
+int IsZero(int number) {
+	return number == 0;
 }
 
-int dividir(float *pResultado, int dividendo, int divisor) {
-	if (esCero(divisor)) {
-		return RESULTADO_NO_OK;
+int DoDivide(float *pResult, int dividend, int divider) {
+	if (IsZero(divider)) {
+		return RESULT_NO_OK;
 	} else {
-		*pResultado = (float) dividendo / divisor;
-		return RESULTADO_OK;
+		*pResult = (float) dividend / divider;
+		return RESULT_OK;
 	}
 }
 
-int realizarFactorial(long int *pResultado, int numero) {
-	if (esNegativo(numero)) {
-		return RESULTADO_NO_OK;
+int DoFactorial(long int *pResult, int number) {
+	if (IsNegative(number)) {
+		return RESULT_NO_OK;
 	} else {
-		*pResultado = factorial(numero);
-		return RESULTADO_OK;
+		*pResult = Factorial(number);
+		return RESULT_OK;
 	}
 }
 
 
-void mostrarBienvenida() {
+void ShowWelcome(){
 	printf("--------------------\n");
 	printf("BIENVENIDO A LA SUPER CALCULADORA\n");
 	printf("--------------------\n");
 }
 
 
-void mostrarMenuOpciones(int *pResultadoOpcion, int *pOpcion) {
-	system("CLS()");
+void ShowOptionMenu(int *pResultOption, int *pOption) {
+	system("CLS");
 	printf("Opciones disponibles: \n");
 	printf("1. Ingresar el primer operando(A=x)\n");
 	printf("2. Ingresar el segundo operando(B=y)\n");
@@ -64,13 +64,13 @@ void mostrarMenuOpciones(int *pResultadoOpcion, int *pOpcion) {
 	printf("\t e-)El resultado de el factorial de A! y B!\n");
 	printf("5. Salir\n");
 	printf("--------------------\n");
-	*pResultadoOpcion = utn_getNumero(pOpcion, MENSAJE_INGRESO_OPCION,
-	MENSAJE_ERROR_INGRESO_OPCION, INGRESAR_PRIMER_OPERANDO, SALIR,
-	REINTENTOS);
+	*pResultOption = GetNumber(pOption, MESSAGE_INSERT_OPTION,
+			MESSAGE_ERROR_INSERT_OPTION, INSERT_FIRST_NUMBER, EXIT,
+	RETRIES);
 }
 
 
-void salir() {
+void Exit() {
 	printf("--------------------\n");
 	printf("GRACIAS POR USAR A LA SUPER CALCULADORA\n");
 	printf("--------------------\n");
@@ -78,83 +78,80 @@ void salir() {
 }
 
 
-int validarIngresoOperandos(int flagIngresoPrimerOperando,
-		int flagIngresoSegundoOperando) {
-	return flagIngresoPrimerOperando && flagIngresoSegundoOperando;
+int  ValidateInsertNumbers(int flagInsertFirstNumber, int flagInsertSecondNumber) {
+	return flagInsertFirstNumber && flagInsertSecondNumber;
 }
 
 
-int realizarOperaciones(int flagIngresoPrimerOperando,
-		int flagIngresoSegundoOperando, int numeroUno, int numeroDos,
-		int *pSuma, int *pResta, long int *pMultiplicacion, float *pDivision,
-		long int *pFactorialPrimerOperando, long int *pFactorialSegundoOperando) {
-	int resultado = RESULTADO_NO_OK;
-	int resultadoEjecucionDivision = FALSE;
-	int resultadoEjecucionFactorialA = FALSE;
-	int resultadoEjecucionFactorialB = FALSE;
+int DoOperations(int flagInsertFirstNumber, int flagInsertSecondNumber, int numberOne, int numberTwo,
+		int *pSum, int *pSubtraction, long int *pMultiplication, float *pDivision, long int *pFactorialFirstNumber, long int *pFactorialSecondNumber) {
+	int resultado = RESULT_NO_OK;
+	int resultadoEjecucionDivision = 0;
+	int resultadoEjecucionFactorialA = 0;
+	int resultadoEjecucionFactorialB = 0;
 
-	if (validarIngresoOperandos(flagIngresoPrimerOperando,
-			flagIngresoSegundoOperando)) {
+	if (ValidateInsertNumbers(flagInsertFirstNumber,flagInsertSecondNumber)) {
 		//Suma
-		*pSuma = numeroUno + numeroDos;
+		*pSum = numberOne + numberTwo;
 		//Resta
-		*pResta = numeroUno - numeroDos;
+		*pSubtraction = numberOne - numberTwo;
 		//Multiplicacion
-		*pMultiplicacion = numeroUno * numeroDos;
+		*pMultiplication = numberOne * numberTwo;
 		//Division
-		if (dividir(pDivision, numeroUno, numeroDos) == RESULTADO_OK) {
-			resultadoEjecucionDivision = TRUE;
+		if (DoDivide(pDivision, numberOne, numberTwo) == RESULT_OK) {
+			resultadoEjecucionDivision = 1;
 		}
 		//Factorial A
-		if (realizarFactorial(pFactorialPrimerOperando,
-				numeroUno) == RESULTADO_OK) {
-			resultadoEjecucionFactorialA = TRUE;
+		if (DoFactorial(pFactorialFirstNumber,numberOne) == RESULT_OK) {
+			resultadoEjecucionFactorialA = 1;
 		}
 		//Factorial B
-		if (realizarFactorial(pFactorialPrimerOperando,
-				numeroUno) == RESULTADO_OK) {
-			resultadoEjecucionFactorialB = TRUE;
+		if (DoFactorial(pFactorialSecondNumber,numberOne) == RESULT_OK) {
+			resultadoEjecucionFactorialB = 1;
 		}
 
 		if (resultadoEjecucionDivision && resultadoEjecucionFactorialA
 				&& resultadoEjecucionFactorialB) {
-			resultado = RESULTADO_OK;
+			resultado = RESULT_OK;
 		}
 	}
 	return resultado;
 }
 
 
-void mostrarResultados(int flagIngresoPrimerOperando,
-		int flagIngresoSegundoOperando, int numeroUno, int numeroDos, int suma,
-		int resta, long int multiplicacion, float division,
-		long int factorialPrimerOperando, long int factorialSegundoOperando) {
-	if (validarIngresoOperandos(flagIngresoPrimerOperando,
-			flagIngresoSegundoOperando)) {
-		printf("%s %d \n", MENSAJE_PRIMER_NUMERO_INGRESADO, numeroUno);
-		printf("%s %d \n", MENSAJE_SEGUNDO_NUMERO_INGRESADO, numeroDos);
-		printf("%s %d \n", MENSAJE_RESULTADO_SUMA, suma);
-		printf("%s %d \n", MENSAJE_RESULTADO_RESTA, resta);
-		printf("%s %ld \n", MENSAJE_RESULTADO_MULTIPLICACION, multiplicacion);
-		if (esCero(numeroDos)) {
-			printf("%s \n", MENSAJE_ERROR_DIVISION);
+void ShowResults(int statusDoOperationes, int flagInsertFirstNumber, int flagInsertSecondNumber,int numberOne, int numberTwo, int sum, int subtraction, long int multiplication, float division,
+		long int factorialFirstNumber, long int factorialSecondNumber) {
+	if (ValidateInsertNumbers(flagInsertFirstNumber,flagInsertSecondNumber) && statusDoOperationes == RESULT_OK) {
+		printf("%s %d \n", MESSAGE_INSERT_FIRST_NUMBER, numberOne);
+		printf("%s %d \n", MESSAGE_INSERT_SECOND_NUMBER, numberTwo);
+		printf("%s %d \n", MESSAGE_RESULT_SUM, sum);
+		printf("%s %d \n", MESSAGE_RESULT_SUBTRACTION, subtraction);
+		printf("%s %ld \n", MESSAGE_RESULT_MULTIPLICATION, multiplication);
+		if (IsZero(numberTwo)) {
+			printf("%s \n", MESSAGE_ERROR_DIVISION);
 		} else {
-			printf("%s %f \n", MENSAJE_RESULTADO_DIVISION, division);
+			printf("%s %f \n", MESSAGE_RESULT_DIVISION, division);
 		}
-		if (esNegativo(numeroUno)) {
-			printf("%s \n", MENSAJE_ERROR_FACTORIAL);
+		if (IsNegative(numberOne)) {
+			printf("%s \n", MESSAGE_ERROR_FACTORIAL);
 		} else {
-			printf("%s %ld \n", MENSAJE_RESULTADO_FACTORIAL_A,
-					factorialPrimerOperando);
+			printf("%s %ld \n", MESSAGE_RESULT_FACTORIAL_A,factorialFirstNumber);
 		}
-		if (esNegativo(numeroDos)) {
-			printf("%s \n", MENSAJE_ERROR_FACTORIAL);
+		if (IsNegative(numberTwo)) {
+			printf("%s \n", MESSAGE_ERROR_FACTORIAL);
 		} else {
-			printf("%s %ld \n", MENSAJE_RESULTADO_FACTORIAL_B,
-					factorialSegundoOperando);
+			printf("%s %ld \n", MESSAGE_RESULT_FACTORIAL_B,factorialSecondNumber);
 		}
 	} else {
-		printf("%s", MENSAJE_ERROR_MOSTRAR_RESULTADOS);
+		printf("%s", MESSAGE_ERROR_SHOW_RESULTS);
+	}
+}
+
+void ShowStatusOperations(int statusOperations){
+	if(statusOperations == RESULT_OK){
+		printf("%s", MESSAGE_DO_OPERATIONS);
+	}else{
+		printf("%s", MESSAGE_ERROR_DO_OPERATIONS_STATUS);
 	}
 }
 

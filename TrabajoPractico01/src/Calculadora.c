@@ -5,51 +5,47 @@
 #include "utn.h"
 int main() {
 	setbuf(stdout, NULL);
-	int opcionUsuario;
-	int codigoEstado;
-	int primerOperando;
-	int segundoOperando;
-	int flagIngresoPrimerOperando = FALSE;
-	int flagIngresoSegundoOperando = FALSE;
-	int resultadoEjecucionOperaciones;
-	int suma;
-	int resta;
-	long int multiplicacion;
+	int optionUser;
+	int codeState;
+	int numberOne;
+	int numberTwo;
+	int flagInsertFirstNumber = 0;
+	int flagInsertSecondNumber = 0;
+	int resultDoOperations = -1;
+	int sum;
+	int subtraction;
+	long int multiplication;
 	float division;
-	long int factorialPrimerOperando;
-	long int factorialSegundoOperando;
-	mostrarBienvenida();
-	mostrarMenuOpciones(&codigoEstado, &opcionUsuario);
-		while(codigoEstado == RESULTADO_OK){
-			switch (opcionUsuario) {
-				case INGRESAR_PRIMER_OPERANDO:
-					codigoEstado = utn_getNumeroSinMinMax(&primerOperando, MENSAJE_INGRESO_NUMERO,MENSAJE_ERROR_INGRESO_NUMERO, REINTENTOS);
-					flagIngresoPrimerOperando = 1;
-					mostrarMenuOpciones(&codigoEstado, &opcionUsuario);
+	long int factorialFirstNumber;
+	long int factorialSecondNumber;
+	ShowWelcome();
+	ShowOptionMenu(&codeState, &optionUser);
+		while(codeState == RESULT_OK){
+			switch (optionUser) {
+				case INSERT_FIRST_NUMBER:
+					codeState = GetNumberNoMinMax(&numberOne, MESSAGE_INSERT_NUMBER,MESSAGE_ERROR_INSERT_NUMBER, RETRIES);
+					flagInsertFirstNumber = 1;
+					ShowOptionMenu(&codeState, &optionUser);
 					break;
-				case INGRESAR_SEGUNDO_OPERANDO:
-					codigoEstado = utn_getNumeroSinMinMax(&segundoOperando, MENSAJE_INGRESO_NUMERO,MENSAJE_ERROR_INGRESO_NUMERO, REINTENTOS);
-					flagIngresoSegundoOperando = 1;
-					mostrarMenuOpciones(&codigoEstado, &opcionUsuario);
+				case INSERT_SECOND_NUMBER:
+					codeState = GetNumberNoMinMax(&numberTwo, MESSAGE_INSERT_NUMBER,MESSAGE_ERROR_INSERT_NUMBER, RETRIES);
+					flagInsertSecondNumber = 1;
+					ShowOptionMenu(&codeState, &optionUser);
 					break;
-				case REALIZAR_OPERACIONES:
-					resultadoEjecucionOperaciones = realizarOperaciones(flagIngresoPrimerOperando,flagIngresoSegundoOperando,primerOperando,segundoOperando,&suma, &resta,&multiplicacion, &division, &factorialPrimerOperando, &factorialSegundoOperando);
-					if(resultadoEjecucionOperaciones == RESULTADO_OK){
-						printf("%s", MENSAJE_EJECUCION_OPERACIONES);
-					}else{
-						printf("%s", MENSAJE_ERROR_EJECUCION_OPERACIONES);
-					}
-					mostrarMenuOpciones(&codigoEstado, &opcionUsuario);
+				case DO_OPERATIONS:
+					resultDoOperations = DoOperations(flagInsertFirstNumber,flagInsertFirstNumber,numberOne,numberTwo,&sum, &subtraction,&multiplication, &division, &factorialFirstNumber, &factorialSecondNumber);
+					ShowStatusOperations(resultDoOperations);
+					ShowOptionMenu(&codeState, &optionUser);
 					break;
-				case MOSTRAR_RESULTADOS:
-					mostrarResultados(flagIngresoPrimerOperando,flagIngresoSegundoOperando,primerOperando, segundoOperando,suma, resta,multiplicacion, division, factorialPrimerOperando,factorialSegundoOperando);
-					mostrarMenuOpciones(&codigoEstado, &opcionUsuario);
+				case SHOW_RESULTS:
+					ShowResults(resultDoOperations,flagInsertFirstNumber, flagInsertSecondNumber,numberOne,numberTwo, sum,subtraction,multiplication,division,factorialFirstNumber, factorialSecondNumber);
+					ShowOptionMenu(&codeState, &optionUser);
 					break;
-				case SALIR:
-					salir();
+				case EXIT:
+					Exit();
 					break;
 				}
 		}
-		printf("%s", MENSAJE_ERROR_INGRESO_SIN_REINTENTOS);
+		printf("%s", MESSAGE_ERROR_INSERT_NO_RETIES);
 	return 0;
 }

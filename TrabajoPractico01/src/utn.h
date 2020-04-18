@@ -3,40 +3,40 @@
 
 /**
  * \brief Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos.
- * \param pResultado Es el puntero donde se guardar el numero ingresado.
- * \param mensaje Es el mensaje que se muestra al usuario pidiendole que ingrese un dato.
- * \param mensajeError Es el mensaje que se muestra en caso de un error.
- * \param minimo Es el minimo valor aceptado.
- * \param maximo Es el maximo valor aceptado.
- * \param reintentos Es la cantidad de veces que el usuario se puede equivocar.
+ * \param pResult Es el puntero donde se guardar el numero ingresado.
+ * \param message Es el mensaje que se muestra al usuario pidiendole que ingrese un dato.
+ * \param errorMessage Es el mensaje que se muestra en caso de un error.
+ * \param minimun Es el minimo valor aceptado.
+ * \param maximun Es el maximo valor aceptado.
+ * \param retries Es la cantidad de veces que el usuario se puede equivocar.
  * \return 0 si Ok o -1 para indicar un error
  *
  * */
-int utn_getNumero(int *pResultado, char *mensaje, char *mensajeError, int minimo, int maximo, int reintentos);
+int GetNumber(int *pResult, char *message, char *errorMessage, int minimun, int maximun, int retries);
 
 /**
  * \brief Pide al usuario un caracter, con un minimo y maximo segun la cantidad de reintentos.
- * \param pResultado Es el puntero donde se guardar el caracter ingresado.
- * \param mensaje Es el mensaje que se muestra al usuario pidiendole que ingrese un dato.
- * \param mensajeError Es el mensaje que se muestra en caso de un error.
- * \param minimo Es el minimo valor aceptado.
- * \param maximo Es el maximo valor aceptado.
- * \param reintentos Es la cantidad de veces que el usuario se puede equivocar.
+ * \param pResult Es el puntero donde se guardar el caracter ingresado.
+ * \param message Es el mensaje que se muestra al usuario pidiendole que ingrese un dato.
+ * \param errorMessage Es el mensaje que se muestra en caso de un error.
+ * \param minimun Es el minimo valor aceptado.
+ * \param maximun Es el maximo valor aceptado.
+ * \param retries Es la cantidad de veces que el usuario se puede equivocar.
  * \return 0 si Ok o -1 para indicar un error
  *
  * */
-int utn_getCaracter(char* pResultado, char* mensaje,char* mensajeError, char minimo,char maximo,int reintentos);
+int GetCaracter(char* pResult, char* message,char* errorMessage, char minimun,char maximun,int retries);
 
 /**
  * \brief Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos.
- * \param pResultado Es el puntero donde se guardar el numero ingresado.
- * \param mensaje Es el mensaje que se muestra al usuario pidiendole que ingrese un dato.
- * \param mensajeError Es el mensaje que se muestra en caso de un error.
- * \param reintentos Es la cantidad de veces que el usuario se puede equivocar.
+ * \param pResult Es el puntero donde se guardar el numero ingresado.
+ * \param message Es el mensaje que se muestra al usuario pidiendole que ingrese un dato.
+ * \param errorMessage Es el mensaje que se muestra en caso de un error.
+ * \param retries Es la cantidad de veces que el usuario se puede equivocar.
  * \return 0 si Ok o -1 para indicar un error
  *
  * */
-int utn_getNumeroSinMinMax(int *pResultado, char *mensaje, char *mensajeError, int reintentos);
+int GetNumberNoMinMax(int *pResult, char *message, char *errorMessage, int retries);
 
 /**
  * \brief Ordena un array de enteros DESC
@@ -45,40 +45,40 @@ int utn_getNumeroSinMinMax(int *pResultado, char *mensaje, char *mensajeError, i
  * \return Cantidad de iteraciones necesarias para ordenar si Ok o -1 para indicar un error
  *
  */
-int ordenarArrayInt(int* pArray, int limite);
+int SortArrayInt(int* pArray, int size);
 
 /**
  * \brief Genera un numero aleatorio
- * \param desde Numero aleatorio munimo
- * \param hasta Numero aleatorio muximo
- * \param iniciar Indica si se trata del primer numero solicitado 1 indica que si
+ * \param from Numero aleatorio munimo
+ * \param to Numero aleatorio muximo
+ * \param init Indica si se trata del primer numero solicitado 1 indica que si
  * \return retorna el numero aleatorio generado
  *
  */
-char getNumeroAleatorio(int desde , int hasta, int iniciar);
+char GetRandomNumber(int from , int to, int init);
 
 /**
  * \brief Verifica si el valor recibido contiene solo letras
- * \param str Array con la cadena a ser analizada
+ * \param string Array con la cadena a ser analizada
  * \return 1 si contiene solo ' ' y letras y 0 si no lo es
  *
  */
-int esSoloLetras(char str[]);
+int IsOnlyLetters(char string[]);
 
 /**
  * \brief Verifica si el valor recibido contiene solo letras y numeros
- * \param str Array con la cadena a ser analizada
+ * \param string Array con la cadena a ser analizada
  * \return 1 si contiene solo espacio o letras y numeros, y 0 si no lo es
  *
  */
-int esAlfaNumerico(char str[]);
+int IsAlphanumeric(char string[]);
 
 /**
  * \brief Verifica si el valor recibido contiene solo numeros, + y -
- * \param str Array con la cadena a ser analizada
+ * \param string Array con la cadena a ser analizada
  * \return 1 si contiene solo numeros, espacios y un guion.
  *
  */
-int esTelefono(char str[]);
+int IsPhoneNumber(char string[]);
 
 #endif /* UTN_H_ */
