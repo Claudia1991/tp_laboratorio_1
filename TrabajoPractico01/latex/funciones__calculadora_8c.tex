@@ -1,0 +1,334 @@
+\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/\+Trabajo\+Practico01/src/funciones\+\_\+calculadora.c File Reference}
+\label{funciones__calculadora_8c}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/TrabajoPractico01/src/funciones\_calculadora.c@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/TrabajoPractico01/src/funciones\_calculadora.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utn.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long int \textbf{ Factorial} (int number)
+\begin{DoxyCompactList}\small\item\em Realiza el factorial de un numero entero. \end{DoxyCompactList}\item 
+int \textbf{ Is\+Negative} (int number)
+\begin{DoxyCompactList}\small\item\em Verifica si un numero es negativo o no. \end{DoxyCompactList}\item 
+int \textbf{ Is\+Zero} (int number)
+\begin{DoxyCompactList}\small\item\em Verifica si un numero es cero o no. \end{DoxyCompactList}\item 
+int \textbf{ Do\+Divide} (float $\ast$p\+Result, int dividend, int divider)
+\begin{DoxyCompactList}\small\item\em Realiza la division y guarda el resultado en un puntero. \end{DoxyCompactList}\item 
+int \textbf{ Do\+Factorial} (long int $\ast$p\+Result, int number)
+\begin{DoxyCompactList}\small\item\em Realiza el factorial y guarda el resultado en un puntero. \end{DoxyCompactList}\item 
+void \textbf{ Show\+Welcome} ()
+\begin{DoxyCompactList}\small\item\em Muestra la bienvenida al usuario. \end{DoxyCompactList}\item 
+void \textbf{ Show\+Option\+Menu} (int $\ast$p\+Result\+Option, int $\ast$p\+Option)
+\begin{DoxyCompactList}\small\item\em Muestra en pantalla las opciones del usuario. \end{DoxyCompactList}\item 
+void \textbf{ Exit} ()
+\begin{DoxyCompactList}\small\item\em Muestra el mensaje de despedida y cierra la aplicacion. \end{DoxyCompactList}\item 
+int \textbf{ Validate\+Insert\+Numbers} (int flag\+Insert\+First\+Number, int flag\+Insert\+Second\+Number)
+\begin{DoxyCompactList}\small\item\em Valida que ambos numeros fueron ingresados por el usuario. \end{DoxyCompactList}\item 
+int \textbf{ Do\+Operations} (int flag\+Insert\+First\+Number, int flag\+Insert\+Second\+Number, int number\+One, int number\+Two, int $\ast$p\+Sum, int $\ast$p\+Subtraction, long int $\ast$p\+Multiplication, float $\ast$p\+Division, long int $\ast$p\+Factorial\+First\+Number, long int $\ast$p\+Factorial\+Second\+Number)
+\begin{DoxyCompactList}\small\item\em Realiza todas las operaciones con los numeros ingresados por el usuario. \end{DoxyCompactList}\item 
+void \textbf{ Show\+Results} (int status\+Do\+Operationes, int flag\+Insert\+First\+Number, int flag\+Insert\+Second\+Number, int number\+One, int number\+Two, int sum, int subtraction, long int multiplication, float division, long int factorial\+First\+Number, long int factorial\+Second\+Number)
+\begin{DoxyCompactList}\small\item\em Muestra los resultados por pantalla si se cargaron los dos numeros, sino muestra un mensaje de error. \end{DoxyCompactList}\item 
+void \textbf{ Show\+Status\+Operations} (int status\+Operations)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{funciones__calculadora_8c_a77925344ad146b20007fe83e8875dbd8}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!DoDivide@{DoDivide}}
+\index{DoDivide@{DoDivide}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{DoDivide()}
+{\footnotesize\ttfamily int Do\+Divide (\begin{DoxyParamCaption}\item[{float $\ast$}]{p\+Result,  }\item[{int}]{dividend,  }\item[{int}]{divider }\end{DoxyParamCaption})}
+
+
+
+Realiza la division y guarda el resultado en un puntero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$p\+Result} & Es el puntero donde se guarda el resultado de la division. \\
+\hline
+{\em dividend} & Es el dividendo \\
+\hline
+{\em divider} & Es el divisor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 (R\+E\+S\+U\+L\+T\+A\+D\+O\+\_\+\+N\+O\+\_\+\+OK) si da error, 0 (R\+E\+S\+U\+L\+T\+A\+D\+O\+\_\+\+OK) si se realizo la division 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_ac074a2ffe77fe5bef792c5d4ebb87ae1}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!DoFactorial@{DoFactorial}}
+\index{DoFactorial@{DoFactorial}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{DoFactorial()}
+{\footnotesize\ttfamily int Do\+Factorial (\begin{DoxyParamCaption}\item[{long int $\ast$}]{p\+Result,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Realiza el factorial y guarda el resultado en un puntero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$p\+Result} & Es el puntero donde se guarda el resultado del factorial. \\
+\hline
+{\em number} & Es el numero a cualcular el factorial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 (R\+E\+S\+U\+L\+T\+A\+D\+O\+\_\+\+N\+O\+\_\+\+OK) si da error, 0 (R\+E\+S\+U\+L\+T\+A\+D\+O\+\_\+\+OK) si se realizo el factorial. 
+\end{DoxyReturn}
+
+
+Definition at line 31 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_a0a158e1d06777845a1e174d992dcf1a8}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!DoOperations@{DoOperations}}
+\index{DoOperations@{DoOperations}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{DoOperations()}
+{\footnotesize\ttfamily int Do\+Operations (\begin{DoxyParamCaption}\item[{int}]{flag\+Insert\+First\+Number,  }\item[{int}]{flag\+Insert\+Second\+Number,  }\item[{int}]{number\+One,  }\item[{int}]{number\+Two,  }\item[{int $\ast$}]{p\+Sum,  }\item[{int $\ast$}]{p\+Subtraction,  }\item[{long int $\ast$}]{p\+Multiplication,  }\item[{float $\ast$}]{p\+Division,  }\item[{long int $\ast$}]{p\+Factorial\+First\+Number,  }\item[{long int $\ast$}]{p\+Factorial\+Second\+Number }\end{DoxyParamCaption})}
+
+
+
+Realiza todas las operaciones con los numeros ingresados por el usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag\+Ingreso\+Primer\+Operando} & Bandera si el usuario ingreso el primer numero. \\
+\hline
+{\em flag\+Ingreso\+Segundo\+Operando} & Bandera si el usuario ingreso el segundo numero. \\
+\hline
+{\em numero\+Uno} & Es el primer numero ingresado por el usuario. \\
+\hline
+{\em numero\+Dos} & Es el segundo numero ingresado por el usuario. \\
+\hline
+{\em p\+Suma} & Es el puntero donde se guarda el resultado de la suma. \\
+\hline
+{\em p\+Resta} & Es el puntero donde se guarda el resultado de la resta. \\
+\hline
+{\em p\+Multiplicacion} & Es el puntero donde se guarda el resultado de la multiplicacion. \\
+\hline
+{\em p\+Division} & Es el puntero donde se guarda el resultado de la division. \\
+\hline
+{\em p\+Factorial\+Primer\+Operando} & Es el puntero donde se guarda el resultado del factorial del primer numero. \\
+\hline
+{\em p\+Factorial\+Segundo\+Operando} & Es el puntero donde se guarda el resultado del factorial del segundo numero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+E\+S\+U\+L\+T\+A\+D\+O\+\_\+\+O\+K(0) si se pudo realizar todas las operaciones, R\+E\+S\+U\+L\+T\+A\+D\+O\+\_\+\+N\+O\+\_\+\+OK(-\/1) si hubo algun error. 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_a1a6a7739e9cc01ba888b57d1f9457f4c}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!Exit@{Exit}}
+\index{Exit@{Exit}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{Exit()}
+{\footnotesize\ttfamily void Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra el mensaje de despedida y cierra la aplicacion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em No} & recibe parametros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No retorna nada. 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_a1aeb371160ecf0f50f19c2cd10490fc8}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!Factorial@{Factorial}}
+\index{Factorial@{Factorial}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{Factorial()}
+{\footnotesize\ttfamily long int Factorial (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Realiza el factorial de un numero entero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Es el numero del cual se quiere el factorial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna el factorial 
+\end{DoxyReturn}
+
+
+Definition at line 6 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_a44b7969908629fb7e2551982c1e772f6}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!IsNegative@{IsNegative}}
+\index{IsNegative@{IsNegative}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{IsNegative()}
+{\footnotesize\ttfamily int Is\+Negative (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Verifica si un numero es negativo o no. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Es el numero a saber si es negativo o no. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si es negativo, 0 si es cero o positivo 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_a5dc332b468193693f7a3c8b012e75ea2}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!IsZero@{IsZero}}
+\index{IsZero@{IsZero}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{IsZero()}
+{\footnotesize\ttfamily int Is\+Zero (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Verifica si un numero es cero o no. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Es el numero a saber si es cero o no. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si es cero, 0 en cualquier otro caso. 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_adc2909e63e128aed277f8a9ed2d13c47}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!ShowOptionMenu@{ShowOptionMenu}}
+\index{ShowOptionMenu@{ShowOptionMenu}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{ShowOptionMenu()}
+{\footnotesize\ttfamily void Show\+Option\+Menu (\begin{DoxyParamCaption}\item[{int $\ast$}]{p\+Result\+Option,  }\item[{int $\ast$}]{p\+Option }\end{DoxyParamCaption})}
+
+
+
+Muestra en pantalla las opciones del usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result\+Option} & Es el puntero que almacena si el usuario ingreso bien los datos. \\
+\hline
+{\em p\+Option} & Es el puntero donde se almacena la opcion que escogio el usuario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No retorna nada. 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_a493d95bec863915e5c01f7071680d178}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!ShowResults@{ShowResults}}
+\index{ShowResults@{ShowResults}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{ShowResults()}
+{\footnotesize\ttfamily void Show\+Results (\begin{DoxyParamCaption}\item[{int}]{status\+Do\+Operationes,  }\item[{int}]{flag\+Insert\+First\+Number,  }\item[{int}]{flag\+Insert\+Second\+Number,  }\item[{int}]{number\+One,  }\item[{int}]{number\+Two,  }\item[{int}]{sum,  }\item[{int}]{subtraction,  }\item[{long int}]{multiplication,  }\item[{float}]{division,  }\item[{long int}]{factorial\+First\+Number,  }\item[{long int}]{factorial\+Second\+Number }\end{DoxyParamCaption})}
+
+
+
+Muestra los resultados por pantalla si se cargaron los dos numeros, sino muestra un mensaje de error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag\+Insert\+First\+Number} & Bandera si el usuario ingreso el primer numero. \\
+\hline
+{\em flag\+Insert\+Second\+Number} & Bandera si el usuario ingreso el segundo numero. \\
+\hline
+{\em number\+One} & Es el primer numero ingresado por el usuario. \\
+\hline
+{\em number\+Two} & Es el segundo numero ingresado por el usuario. \\
+\hline
+{\em sum} & Es el resultado de la suma. \\
+\hline
+{\em number\+Two} & Es el resultado de la resta. \\
+\hline
+{\em multiplication} & Es el resultado de la multiplicacion. \\
+\hline
+{\em division} & Es el resultado de la division. \\
+\hline
+{\em factorial\+First\+Number} & Es el resultado del factorial del primer numero. \\
+\hline
+{\em factorial\+Second\+Number} & Es el resultado del factorial del segundo numero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No retorna nada. 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_a196758bc9353bc3644284b80588d969f}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!ShowStatusOperations@{ShowStatusOperations}}
+\index{ShowStatusOperations@{ShowStatusOperations}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{ShowStatusOperations()}
+{\footnotesize\ttfamily void Show\+Status\+Operations (\begin{DoxyParamCaption}\item[{int}]{status\+Operations }\end{DoxyParamCaption})}
+
+
+
+Definition at line 150 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_af88bc3946ce89945ea2cda8152088b40}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!ShowWelcome@{ShowWelcome}}
+\index{ShowWelcome@{ShowWelcome}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{ShowWelcome()}
+{\footnotesize\ttfamily void Show\+Welcome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Muestra la bienvenida al usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em No} & recibe parametros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No retorna nada. 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file funciones\+\_\+calculadora.\+c.
+
+\mbox{\label{funciones__calculadora_8c_a6b7a6f56a2110f9701bb20b13f4fe9c1}} 
+\index{funciones\_calculadora.c@{funciones\_calculadora.c}!ValidateInsertNumbers@{ValidateInsertNumbers}}
+\index{ValidateInsertNumbers@{ValidateInsertNumbers}!funciones\_calculadora.c@{funciones\_calculadora.c}}
+\doxysubsubsection{ValidateInsertNumbers()}
+{\footnotesize\ttfamily int Validate\+Insert\+Numbers (\begin{DoxyParamCaption}\item[{int}]{flag\+Insert\+First\+Number,  }\item[{int}]{flag\+Insert\+Second\+Number }\end{DoxyParamCaption})}
+
+
+
+Valida que ambos numeros fueron ingresados por el usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag\+Insert\+First\+Number} & Bandera si el usuario ingreso el primer numero. \\
+\hline
+{\em flag\+Insert\+Second\+Number} & Bandera si el usuario ingreso el segundo numero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna 1 si los dos numeros fueron ingresados, 0 en cualquier otro caso. 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file funciones\+\_\+calculadora.\+c.
+

@@ -1,0 +1,232 @@
+\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/\+Trabajo\+Practico01/src/utn.h File Reference}
+\label{utn_8h}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/TrabajoPractico01/src/utn.h@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/TrabajoPractico01/src/utn.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ Get\+Number} (int $\ast$p\+Result, char $\ast$message, char $\ast$error\+Message, int minimun, int maximun, int retries)
+\begin{DoxyCompactList}\small\item\em Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. \end{DoxyCompactList}\item 
+int \textbf{ Get\+Caracter} (char $\ast$p\+Result, char $\ast$message, char $\ast$error\+Message, char minimun, char maximun, int retries)
+\begin{DoxyCompactList}\small\item\em Pide al usuario un caracter, con un minimo y maximo segun la cantidad de reintentos. \end{DoxyCompactList}\item 
+int \textbf{ Get\+Number\+No\+Min\+Max} (int $\ast$p\+Result, char $\ast$message, char $\ast$error\+Message, int retries)
+\begin{DoxyCompactList}\small\item\em Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. \end{DoxyCompactList}\item 
+int \textbf{ Sort\+Array\+Int} (int $\ast$p\+Array, int size)
+\begin{DoxyCompactList}\small\item\em Ordena un array de enteros D\+E\+SC. \end{DoxyCompactList}\item 
+char \textbf{ Get\+Random\+Number} (int from, int to, int init)
+\begin{DoxyCompactList}\small\item\em Genera un numero aleatorio. \end{DoxyCompactList}\item 
+int \textbf{ Is\+Only\+Letters} (char string[$\,$])
+\begin{DoxyCompactList}\small\item\em Verifica si el valor recibido contiene solo letras. \end{DoxyCompactList}\item 
+int \textbf{ Is\+Alphanumeric} (char string[$\,$])
+\begin{DoxyCompactList}\small\item\em Verifica si el valor recibido contiene solo letras y numeros. \end{DoxyCompactList}\item 
+int \textbf{ Is\+Phone\+Number} (char string[$\,$])
+\begin{DoxyCompactList}\small\item\em Verifica si el valor recibido contiene solo numeros, + y -\/. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{utn_8h_a7d768fefcee12fa329939ab3e6d3a15d}} 
+\index{utn.h@{utn.h}!GetCaracter@{GetCaracter}}
+\index{GetCaracter@{GetCaracter}!utn.h@{utn.h}}
+\doxysubsubsection{GetCaracter()}
+{\footnotesize\ttfamily int Get\+Caracter (\begin{DoxyParamCaption}\item[{char $\ast$}]{p\+Result,  }\item[{char $\ast$}]{message,  }\item[{char $\ast$}]{error\+Message,  }\item[{char}]{minimun,  }\item[{char}]{maximun,  }\item[{int}]{retries }\end{DoxyParamCaption})}
+
+
+
+Pide al usuario un caracter, con un minimo y maximo segun la cantidad de reintentos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Es el puntero donde se guardar el caracter ingresado. \\
+\hline
+{\em message} & Es el mensaje que se muestra al usuario pidiendole que ingrese un dato. \\
+\hline
+{\em error\+Message} & Es el mensaje que se muestra en caso de un error. \\
+\hline
+{\em minimun} & Es el minimo valor aceptado. \\
+\hline
+{\em maximun} & Es el maximo valor aceptado. \\
+\hline
+{\em retries} & Es la cantidad de veces que el usuario se puede equivocar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si Ok o -\/1 para indicar un error 
+\end{DoxyReturn}
+
+
+Definition at line 103 of file utn.\+c.
+
+\mbox{\label{utn_8h_a4b4570631ccfc749c37bf55e00a093a6}} 
+\index{utn.h@{utn.h}!GetNumber@{GetNumber}}
+\index{GetNumber@{GetNumber}!utn.h@{utn.h}}
+\doxysubsubsection{GetNumber()}
+{\footnotesize\ttfamily int Get\+Number (\begin{DoxyParamCaption}\item[{int $\ast$}]{p\+Result,  }\item[{char $\ast$}]{message,  }\item[{char $\ast$}]{error\+Message,  }\item[{int}]{minimun,  }\item[{int}]{maximun,  }\item[{int}]{retries }\end{DoxyParamCaption})}
+
+
+
+Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Es el puntero donde se guardar el numero ingresado. \\
+\hline
+{\em message} & Es el mensaje que se muestra al usuario pidiendole que ingrese un dato. \\
+\hline
+{\em error\+Message} & Es el mensaje que se muestra en caso de un error. \\
+\hline
+{\em minimun} & Es el minimo valor aceptado. \\
+\hline
+{\em maximun} & Es el maximo valor aceptado. \\
+\hline
+{\em retries} & Es la cantidad de veces que el usuario se puede equivocar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si Ok o -\/1 para indicar un error 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file utn.\+c.
+
+\mbox{\label{utn_8h_a799a6efa4a45002908a9ca2afd6dc123}} 
+\index{utn.h@{utn.h}!GetNumberNoMinMax@{GetNumberNoMinMax}}
+\index{GetNumberNoMinMax@{GetNumberNoMinMax}!utn.h@{utn.h}}
+\doxysubsubsection{GetNumberNoMinMax()}
+{\footnotesize\ttfamily int Get\+Number\+No\+Min\+Max (\begin{DoxyParamCaption}\item[{int $\ast$}]{p\+Result,  }\item[{char $\ast$}]{message,  }\item[{char $\ast$}]{error\+Message,  }\item[{int}]{retries }\end{DoxyParamCaption})}
+
+
+
+Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Es el puntero donde se guardar el numero ingresado. \\
+\hline
+{\em message} & Es el mensaje que se muestra al usuario pidiendole que ingrese un dato. \\
+\hline
+{\em error\+Message} & Es el mensaje que se muestra en caso de un error. \\
+\hline
+{\em retries} & Es la cantidad de veces que el usuario se puede equivocar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si Ok o -\/1 para indicar un error 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file utn.\+c.
+
+\mbox{\label{utn_8h_a6afbecc0fc2bfe8294fedd2f5e70335a}} 
+\index{utn.h@{utn.h}!GetRandomNumber@{GetRandomNumber}}
+\index{GetRandomNumber@{GetRandomNumber}!utn.h@{utn.h}}
+\doxysubsubsection{GetRandomNumber()}
+{\footnotesize\ttfamily char Get\+Random\+Number (\begin{DoxyParamCaption}\item[{int}]{from,  }\item[{int}]{to,  }\item[{int}]{init }\end{DoxyParamCaption})}
+
+
+
+Genera un numero aleatorio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Numero aleatorio munimo \\
+\hline
+{\em to} & Numero aleatorio muximo \\
+\hline
+{\em init} & Indica si se trata del primer numero solicitado 1 indica que si \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna el numero aleatorio generado 
+\end{DoxyReturn}
+
+
+Definition at line 162 of file utn.\+c.
+
+\mbox{\label{utn_8h_a3fe8a89e181af5dab8aa6844991c9ebc}} 
+\index{utn.h@{utn.h}!IsAlphanumeric@{IsAlphanumeric}}
+\index{IsAlphanumeric@{IsAlphanumeric}!utn.h@{utn.h}}
+\doxysubsubsection{IsAlphanumeric()}
+{\footnotesize\ttfamily int Is\+Alphanumeric (\begin{DoxyParamCaption}\item[{char}]{string[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Verifica si el valor recibido contiene solo letras y numeros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Array con la cadena a ser analizada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si contiene solo espacio o letras y numeros, y 0 si no lo es 
+\end{DoxyReturn}
+
+
+Definition at line 185 of file utn.\+c.
+
+\mbox{\label{utn_8h_a7f2ba24cfd7f18ca28f9f30be689cdfc}} 
+\index{utn.h@{utn.h}!IsOnlyLetters@{IsOnlyLetters}}
+\index{IsOnlyLetters@{IsOnlyLetters}!utn.h@{utn.h}}
+\doxysubsubsection{IsOnlyLetters()}
+{\footnotesize\ttfamily int Is\+Only\+Letters (\begin{DoxyParamCaption}\item[{char}]{string[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Verifica si el valor recibido contiene solo letras. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Array con la cadena a ser analizada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si contiene solo \textquotesingle{} \textquotesingle{} y letras y 0 si no lo es 
+\end{DoxyReturn}
+
+
+Definition at line 171 of file utn.\+c.
+
+\mbox{\label{utn_8h_ab18a4f667a46263533dca43a00cab4ce}} 
+\index{utn.h@{utn.h}!IsPhoneNumber@{IsPhoneNumber}}
+\index{IsPhoneNumber@{IsPhoneNumber}!utn.h@{utn.h}}
+\doxysubsubsection{IsPhoneNumber()}
+{\footnotesize\ttfamily int Is\+Phone\+Number (\begin{DoxyParamCaption}\item[{char}]{string[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Verifica si el valor recibido contiene solo numeros, + y -\/. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Array con la cadena a ser analizada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si contiene solo numeros, espacios y un guion. 
+\end{DoxyReturn}
+
+
+Definition at line 200 of file utn.\+c.
+
+\mbox{\label{utn_8h_a6b0bc7631d49ef858f12ac5b170132bf}} 
+\index{utn.h@{utn.h}!SortArrayInt@{SortArrayInt}}
+\index{SortArrayInt@{SortArrayInt}!utn.h@{utn.h}}
+\doxysubsubsection{SortArrayInt()}
+{\footnotesize\ttfamily int Sort\+Array\+Int (\begin{DoxyParamCaption}\item[{int $\ast$}]{p\+Array,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Ordena un array de enteros D\+E\+SC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Array} & Es el puntero al array a ser ordenado \\
+\hline
+{\em size} & Es la longitud del array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cantidad de iteraciones necesarias para ordenar si Ok o -\/1 para indicar un error 
+\end{DoxyReturn}
+
+
+Definition at line 130 of file utn.\+c.
+
