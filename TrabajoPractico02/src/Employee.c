@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <string.h>
 
-
 int InitEmployees(eEmployee listEmployee[], int size){
 	int status = -1;
 	if(listEmployee != NULL && size >0){
@@ -30,6 +29,8 @@ int AddEmployees(eEmployee listEmployee[], int size,int id,char name[],char last
 			employeeToAdd = NewEmployee(id, name, lastName, salary, sector);
 			//le hago alto insert
 			listEmployee[freeIndex] = employeeToAdd;
+			//esa posicion la tengo como no free
+			listEmployee[freeIndex].isEmpty = 0;
 			status = 0;
 		}
 	}
@@ -104,8 +105,10 @@ int PrintEmployees(eEmployee listEmployee[], int size){
 	int status = -1;
 	if(listEmployee != NULL && size >0){
 		for(int i = 0; i< size; i++){
-			PrintEmployee(listEmployee[i]);
-			status = 0;
+			if(!listEmployee[i].isEmpty){
+				PrintEmployee(listEmployee[i]);
+				status = 0;
+			}
 		}
 	}
 	return status;
@@ -119,21 +122,24 @@ void PrintEmployee(eEmployee employee){
 
 int ShowMenu(){
 	int option;
+	printf("********** MENU PRINCIPAL **********\n");
 	printf("1- Altas de nuevos empleados\n");
 	printf("2- Modificar empleados\n");
 	printf("3- Eliminar empleados\n");
 	printf("4- Informes\n");
-	GetIntNumber(&option, "Ingrese una opcion:\n", "ERROR: ingrese una opcion correcta:\n", ADD, SHOW, RETRIES);
+	printf("5- Salir\n");
+	GetIntNumber(&option, "Ingrese una opcion(del 1 al 5): ", "ERROR: ingrese una opcion correcta(del 1 al 5):", ADD, EXIT, RETRIES);
 	return option;
 }
 
 int ShowModifyMenu(){
 	int option;
+	printf("********** MENU MODIFICAR **********\n");
 	printf("1- Modificar Nombre\n");
 	printf("2- Modificar Apellido\n");
 	printf("3- Modificar Sueldo\n");
 	printf("4- Modificar Sector\n");
-	GetIntNumber(&option, "Ingrese una opcion(del 1 al 4):", "ERROR: ingrese una opcion correcta(del 1 al 4):", MODIFY_NAME, MODIFY_SECTOR, RETRIES);
+	GetIntNumber(&option, "Ingrese una opcion(del 1 al 4): ", "ERROR: ingrese una opcion correcta(del 1 al 4): ", MODIFY_NAME, MODIFY_SECTOR, RETRIES);
 	return option;
 }
 
@@ -184,6 +190,7 @@ int IsEmptyList(eEmployee listEmployee[], int size){
 
 void Add(eEmployee listEmployee[], int size, int *id){
 	//Primero Verifico que haya espacio para agregar uno nuevo
+	printf("********** SECCION AGREGAR EMPLEADOS **********\n");
 	if(GetFreeIndex(listEmployee, size) != ERROR){
 		//PIDO LOS DATOS DE NUEVO EMPLOYEE
 		char name[SIZE_NAME];
@@ -198,17 +205,18 @@ void Add(eEmployee listEmployee[], int size, int *id){
 			*id = currentId;
 			//Informo que todo salio ok
 			printf("Se ingreso el usuario con exito!!\n");
-			system("PAUSE");
 		}
 	}else{
 		printf("No hay espacio para agregar nuevos empleados.\n");
 		printf("Pruebe de borrar o modificar los existentes.\n");
-		system("PAUSE");
 	}
-
+	printf("********** FIN SECCION AGREGAR EMPLEADOS **********\n");
 }
 
 void Modify(eEmployee listEmployee[], int size){
+	printf("********** SECCION MODIFICAR EMPLEADOS **********\n");
+	printf("********** EMPLEADOS ACTUALES **********\n");
+	PrintEmployees(listEmployee,size);
 	//Verifico que la lista no este vacia
 	if(!IsEmptyList(listEmployee,size)){
 		//SE PIDE EL ID DEL EMPLEADO A MODIFICAR
@@ -225,37 +233,38 @@ void Modify(eEmployee listEmployee[], int size){
 			if(index != ERROR){
 				//Existe un empleado con ese id
 				//obtengo el empleado
-				eEmployee employeeToModify = GetEmployeeById(listEmployee,size,idToModify);
 				//muestro el empleado
 				printf("Los datos actuales del empleado son:\n");
-				PrintEmployee(employeeToModify);
+				PrintEmployee(listEmployee[index]);
 				//Muestro las opciones de lo que se puede modificar de los empleados
 				do{
 					switch (ShowModifyMenu()){
 					case MODIFY_NAME:
 						printf("** Modificar nombre **\n");
 						GetString(name,"Ingrese el nuevo nombre: ", "ERROR: ingrese solo letras mijo: ", RETRIES);
-						strcpy(employeeToModify.name, name);
-						GetCaracter(&userResponse, "Quiere modificar algo mas? Ingrese s o n: ", "ERROR: ingrese s o n: ", 'n', 's', RETRIES);
+						strcpy(listEmployee[index].name, name);
+						printf("** Nombre Modificado **\n");
 						break;
 					case MODIFY_LAST_NAME:
 						printf("** Modificar apellido **\n");
 						GetString(lastName,"Ingrese el nuevo apellido: ", "ERROR: ingrese solo letras mijo: ", RETRIES);
-						strcpy(employeeToModify.lastName, lastName);
-						GetCaracter(&userResponse, "Quiere modificar algo mas? Ingrese s o n: ", "ERROR: ingrese s o n: ", 'n', 's', RETRIES);
+						strcpy(listEmployee[index].lastName, lastName);
+						printf("** Apellido Modificado **\n");
 						break;
 					case MODIFY_SALARY:
 						printf("** Modificar salario **\n");
 						GetFloatNumberNoMinMax(&salary, "Ingrese el nuevo salario: ", "ERROR: ingrese solo numeros", RETRIES);
-						employeeToModify.salary = salary;
-						GetCaracter(&userResponse, "Quiere modificar algo mas? Ingrese s o n: ", "ERROR: ingrese s o n: ", 'n', 's', RETRIES);
+						listEmployee[index].salary = salary;
+						printf("** Salario Modificado **\n");
 						break;
 					case MODIFY_SECTOR:
 						printf("** Modificar sector **\n");
 						GetIntNumberNoMinMax(&sector, "Ingrese el nuevo sector: ", "ERROR: ingrese solo numeros", RETRIES);
-						GetCaracter(&userResponse, "Quiere modificar algo mas? Ingrese s o n: ", "ERROR: ingrese s o n: ", 'n', 's', RETRIES);
+						listEmployee[index].sector = sector;
+						printf("** Sector Modificado **\n");
 						break;
 					}
+					GetCaracter(&userResponse, "Quiere modificar algo mas? Ingrese s o n: ", "ERROR: ingrese s o n: ", 'n', 's', RETRIES);
 				}while(userResponse == 's');
 				GetCaracter(&userResponse, "Quiere modificar otro empleado? Ingrese s o n: ", "ERROR: ingrese s o n: ", 'n', 's', RETRIES);
 			}else{
@@ -266,12 +275,15 @@ void Modify(eEmployee listEmployee[], int size){
 	}else{
 		printf("La lista de empleados esta vacia.\n");
 		printf("No se puede modificar elementos.\n");
-		system("PAUSE");
 	}
+	printf("********** FIN SECCION MODIFICAR EMPLEADOS **********\n");
 }
 
 
 void Delete(eEmployee listEmployee[], int size){
+	printf("********** SECCION ELIMINAR EMPLEADOS **********\n");
+	printf("********** EMPLEADOS ACTUALES **********\n");
+	PrintEmployees(listEmployee,size);
 	//Verifico que la lista no este vacia
 	if(!IsEmptyList(listEmployee,size)){
 		//pido el id a eliminar
@@ -279,7 +291,7 @@ void Delete(eEmployee listEmployee[], int size){
 		int index;
 		char userResponse = 's';
 		do{
-			GetIntNumberNoMinMax(&idToDelete, "Ingrese el id del empleado a modificar: ", "ERROR: ingrese solo numeros: ", RETRIES);
+			GetIntNumberNoMinMax(&idToDelete, "Ingrese el id del empleado a eliminar: ", "ERROR: ingrese solo numeros: ", RETRIES);
 			index = FindEmployeeById(listEmployee,size,idToDelete);
 			if(index != ERROR){
 				//Existe un empleado con ese id
@@ -296,7 +308,7 @@ void Delete(eEmployee listEmployee[], int size){
 					printf("***Operacion realizada con exito...!***");
 					GetCaracter(&userResponse, "Quiere seguir eliminando? Ingrese s o n: ", "ERROR: ingrese s o n: ", 'n', 's', RETRIES);
 				}else{
-					printf("***Cancelando operacion***");
+					printf("***Cancelando operacion***\n");
 					GetCaracter(&userResponse, "Quiere seguir intentando con otro id? Ingrese s o n: ", "ERROR: ingrese s o n: ", 'n', 's', RETRIES);
 				}
 			}else{
@@ -307,15 +319,17 @@ void Delete(eEmployee listEmployee[], int size){
 	}else{
 		printf("La lista de empleados esta vacia.\n");
 		printf("No se puede eliminar elementos.\n");
-		system("PAUSE");
 	}
+	printf("********** FIN SECCION ELIMINAR EMPLEADOS **********\n");
 }
 
 void GetNewEmployeeData(char name[],char lastName[],float *salary,int *sector){
-	GetString(name, "Ingrese el nombre del nuevo empleado:\n", "ERROR:Ingrese el nombre del nuevo empleado:\n", RETRIES);
-	GetString(lastName, "Ingrese el apellido del nuevo empleado:\n", "ERROR:Ingrese el apellido del nuevo empleado:\n", RETRIES);
-	GetFloatNumberNoMinMax(salary, "Ingrese el salario del nuevo empleado:\n", "ERROR: ingrese solo numeros", RETRIES);
-	GetIntNumberNoMinMax(sector, "Ingrese el sector del nuevo empleado:\n", "ERROR: ingrese solo numeros", RETRIES);
+	printf("********** CARGAR DATOS PARA NUEVO EMPLEADO **********\n");
+	GetString(name, "Ingrese el nombre del nuevo empleado:", "ERROR:Ingrese el nombre del nuevo empleado:", RETRIES);
+	GetString(lastName, "Ingrese el apellido del nuevo empleado:", "ERROR:Ingrese el apellido del nuevo empleado:", RETRIES);
+	GetFloatNumberNoMinMax(salary, "Ingrese el salario del nuevo empleado:", "ERROR: ingrese solo numeros", RETRIES);
+	GetIntNumberNoMinMax(sector, "Ingrese el sector del nuevo empleado:", "ERROR: ingrese solo numeros", RETRIES);
+	printf("********** FIN CARGAR DATOS PARA NUEVO EMPLEADO **********\n");
 }
 
 
@@ -346,7 +360,7 @@ float GetEmployeeAboveAverageSalary(eEmployee listEmployee[], int size, float av
 	if(!IsEmptyList(listEmployee,size)){
 			//contamos
 			for(int i = 0; i<size; i++){
-				if(listEmployee[i].salary > averageSalary){
+				if(listEmployee[i].salary > averageSalary && listEmployee[i].isEmpty == 0){
 					employees++;
 				}
 			}

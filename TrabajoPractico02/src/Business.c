@@ -8,6 +8,7 @@ int main(){
 	int id = 1;
 	eEmployee listEmployees[QTY_EMPLOYEES];
 	InitEmployees(listEmployees, QTY_EMPLOYEES);
+	printf("************ INICIO EMPRESA ************\n");
 	do{
 		switch (ShowMenu()){
 		case ADD:
@@ -23,6 +24,7 @@ int main(){
 			ShowReports( listEmployees,QTY_EMPLOYEES);
 			break;
 		case EXIT:
+			printf("************ FIN EMPRESA ************\n");
 			exit(0);
 			break;
 		}

@@ -33,6 +33,7 @@ void ShowAverageSalary(eEmployee listEmployees[], int size){
 
 int ShowReportMenu(){
 	int option;
+	printf("********** MENU REPORTES **********\n");
 	printf("1- Listado de los empleados ordenados alfabeticamente por Apellido y Sector.\n");
 	printf("2- Total y promedio de los salarios y cuantos empleados superan el salario promedio.\n");
 	GetIntNumber(&option, "Ingrese una opcion:\n", "ERROR: ingrese una opcion correcta:\n", SHOW_ORDERED, SHOW_AVERAGE, RETRIES);
@@ -40,28 +41,27 @@ int ShowReportMenu(){
 }
 
 void ShowReports(eEmployee listEmployee[], int size){
+	printf("********** SECCION INFORMES **********\n");
 	//Verifico que la lista no este vacia
 	if(!IsEmptyList(listEmployee,size)){
 		char userResponse = 's';
 		//pregunto que clase de reporte quiere
-		printf("********** SECCION INFORMES **********\n");
 		do{
 			switch(ShowReportMenu()){
 			case SHOW_ORDERED:
 				ShowEmployeesOrderByLastNameAndSector(listEmployee, size);
-				GetCaracter(&userResponse, "Quiere seguir con otro informe? Ingrese s o n", "ERROR: ingrese s o n", 'n', 's', RETRIES);
 				break;
 			case SHOW_AVERAGE:
 				ShowAverageSalary(listEmployee, size );
-				GetCaracter(&userResponse, "Quiere seguir con otro informe? Ingrese s o n", "ERROR: ingrese s o n", 'n', 's', RETRIES);
 				break;
 			}
+			GetCaracter(&userResponse, "Quiere seguir con otro informe? Ingrese s o n: ", "ERROR: ingrese s o n: ", 'n', 's', RETRIES);
 		}while(userResponse == 's');
 	}else{
 		printf("La lista de empleados esta vacia.\n");
 		printf("No se puede mostrar elementos.\n");
-		system("PAUSE");
 	}
+	printf("********** FIN SECCION INFORMES **********\n");
 }
 
 
