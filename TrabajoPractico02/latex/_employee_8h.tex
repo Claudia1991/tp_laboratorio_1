@@ -1,0 +1,182 @@
+\hypertarget{_employee_8h}{}\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/\+Trabajo\+Practico02/src/\+Employee.h File Reference}
+\label{_employee_8h}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/TrabajoPractico02/src/Employee.h@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/TrabajoPractico02/src/Employee.h}}
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structe_employee}{e\+Employee}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_employee_8h_a56bc8de9d8687b40d552f1235bcbd851}{Init\+Employees}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size)
+\item 
+int \mbox{\hyperlink{_employee_8h_a965b6aa560043a8a57f94c0d89498f3e}{Add\+Employees}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size, int id, char name\mbox{[}$\,$\mbox{]}, char last\+Name\mbox{[}$\,$\mbox{]}, float salary, int sector)
+\item 
+int \mbox{\hyperlink{_employee_8h_a07d547b247dd87ad67b956b6c94c9368}{Find\+Employee\+By\+Id}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size, int id)
+\item 
+int \mbox{\hyperlink{_employee_8h_afb71ecfaa0e5390158d4848cd6cfe7a7}{Remove\+Employee}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size, int id)
+\item 
+int \mbox{\hyperlink{_employee_8h_a777888b49814df4325b3d63301f0542d}{Sort\+Employee}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size, int order)
+\item 
+int \mbox{\hyperlink{_employee_8h_a93dbb6b3e90eb4869c5556bff256cc34}{Print\+Employees}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size)
+\item 
+void \mbox{\hyperlink{_employee_8h_a489496534b12c94745c47ec3e2ec6fd5}{Print\+Employee}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} employee)
+\item 
+int \mbox{\hyperlink{_employee_8h_a19ef9bf26be137167e1ac058e4405f79}{Show\+Menu}} ()
+\item 
+int \mbox{\hyperlink{_employee_8h_aa2a2aa1b28385e91fd024a7e0d2e0314}{Show\+Modify\+Menu}} ()
+\item 
+int \mbox{\hyperlink{_employee_8h_ac0eb4976ebb603826511827347b68331}{Get\+Free\+Index}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size)
+\item 
+\mbox{\hyperlink{structe_employee}{e\+Employee}} \mbox{\hyperlink{_employee_8h_a0d3e527cf4ae2510e2e5dbea760dfe6f}{New\+Employee}} (int id, char name\mbox{[}$\,$\mbox{]}, char last\+Name\mbox{[}$\,$\mbox{]}, float salary, int sector)
+\item 
+\mbox{\hyperlink{structe_employee}{e\+Employee}} \mbox{\hyperlink{_employee_8h_a5f9214f64773dc667c714494d960921a}{Get\+Employee\+By\+Id}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size, int id)
+\item 
+int \mbox{\hyperlink{_employee_8h_a1aaad0dabc54ab30a0e7c117fd8c729d}{Is\+Empty\+List}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size)
+\item 
+void \mbox{\hyperlink{_employee_8h_ad8e46c73b2c1e1450db3b1fcb29363f5}{Add}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size, int $\ast$id)
+\item 
+void \mbox{\hyperlink{_employee_8h_a3c9047975606832d1c3f830c2fa02829}{Modify}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size)
+\item 
+void \mbox{\hyperlink{_employee_8h_a99923fbe923e550712fda842200fae9f}{Delete}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size)
+\item 
+void \mbox{\hyperlink{_employee_8h_a05ba397a6d18acd307e33129a01cc649}{Get\+New\+Employee\+Data}} (char name\mbox{[}$\,$\mbox{]}, char last\+Name\mbox{[}$\,$\mbox{]}, float $\ast$salary, int $\ast$sector)
+\item 
+float \mbox{\hyperlink{_employee_8h_a7876605858b6768f1391ff91edc8e619}{Get\+Total\+Salary}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size)
+\item 
+float \mbox{\hyperlink{_employee_8h_a62e1c314ed4f8cebf27191dcd454533e}{Get\+Average\+Salary}} (int count\+Employees, float total\+Salary)
+\item 
+float \mbox{\hyperlink{_employee_8h_ac8c74a77304c61c6049f53f8aed659d3}{Get\+Employee\+Above\+Average\+Salary}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size, float average\+Salary)
+\item 
+int \mbox{\hyperlink{_employee_8h_ad5327ccffbb5f5577b75737f632e2a9a}{Get\+Count\+Employee}} (\mbox{\hyperlink{structe_employee}{e\+Employee}} list\+Employee\mbox{[}$\,$\mbox{]}, int size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_employee_8h_ad8e46c73b2c1e1450db3b1fcb29363f5}\label{_employee_8h_ad8e46c73b2c1e1450db3b1fcb29363f5}} 
+\index{Employee.h@{Employee.h}!Add@{Add}}
+\index{Add@{Add}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size,  }\item[{int $\ast$}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a965b6aa560043a8a57f94c0d89498f3e}\label{_employee_8h_a965b6aa560043a8a57f94c0d89498f3e}} 
+\index{Employee.h@{Employee.h}!AddEmployees@{AddEmployees}}
+\index{AddEmployees@{AddEmployees}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{AddEmployees()}{AddEmployees()}}
+{\footnotesize\ttfamily int Add\+Employees (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size,  }\item[{int}]{id,  }\item[{char}]{name\mbox{[}$\,$\mbox{]},  }\item[{char}]{last\+Name\mbox{[}$\,$\mbox{]},  }\item[{float}]{salary,  }\item[{int}]{sector }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a99923fbe923e550712fda842200fae9f}\label{_employee_8h_a99923fbe923e550712fda842200fae9f}} 
+\index{Employee.h@{Employee.h}!Delete@{Delete}}
+\index{Delete@{Delete}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily void Delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a07d547b247dd87ad67b956b6c94c9368}\label{_employee_8h_a07d547b247dd87ad67b956b6c94c9368}} 
+\index{Employee.h@{Employee.h}!FindEmployeeById@{FindEmployeeById}}
+\index{FindEmployeeById@{FindEmployeeById}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{FindEmployeeById()}{FindEmployeeById()}}
+{\footnotesize\ttfamily int Find\+Employee\+By\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a62e1c314ed4f8cebf27191dcd454533e}\label{_employee_8h_a62e1c314ed4f8cebf27191dcd454533e}} 
+\index{Employee.h@{Employee.h}!GetAverageSalary@{GetAverageSalary}}
+\index{GetAverageSalary@{GetAverageSalary}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{GetAverageSalary()}{GetAverageSalary()}}
+{\footnotesize\ttfamily float Get\+Average\+Salary (\begin{DoxyParamCaption}\item[{int}]{count\+Employees,  }\item[{float}]{total\+Salary }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_ad5327ccffbb5f5577b75737f632e2a9a}\label{_employee_8h_ad5327ccffbb5f5577b75737f632e2a9a}} 
+\index{Employee.h@{Employee.h}!GetCountEmployee@{GetCountEmployee}}
+\index{GetCountEmployee@{GetCountEmployee}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{GetCountEmployee()}{GetCountEmployee()}}
+{\footnotesize\ttfamily int Get\+Count\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_ac8c74a77304c61c6049f53f8aed659d3}\label{_employee_8h_ac8c74a77304c61c6049f53f8aed659d3}} 
+\index{Employee.h@{Employee.h}!GetEmployeeAboveAverageSalary@{GetEmployeeAboveAverageSalary}}
+\index{GetEmployeeAboveAverageSalary@{GetEmployeeAboveAverageSalary}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{GetEmployeeAboveAverageSalary()}{GetEmployeeAboveAverageSalary()}}
+{\footnotesize\ttfamily float Get\+Employee\+Above\+Average\+Salary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size,  }\item[{float}]{average\+Salary }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a5f9214f64773dc667c714494d960921a}\label{_employee_8h_a5f9214f64773dc667c714494d960921a}} 
+\index{Employee.h@{Employee.h}!GetEmployeeById@{GetEmployeeById}}
+\index{GetEmployeeById@{GetEmployeeById}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{GetEmployeeById()}{GetEmployeeById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structe_employee}{e\+Employee}} Get\+Employee\+By\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_ac0eb4976ebb603826511827347b68331}\label{_employee_8h_ac0eb4976ebb603826511827347b68331}} 
+\index{Employee.h@{Employee.h}!GetFreeIndex@{GetFreeIndex}}
+\index{GetFreeIndex@{GetFreeIndex}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{GetFreeIndex()}{GetFreeIndex()}}
+{\footnotesize\ttfamily int Get\+Free\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a05ba397a6d18acd307e33129a01cc649}\label{_employee_8h_a05ba397a6d18acd307e33129a01cc649}} 
+\index{Employee.h@{Employee.h}!GetNewEmployeeData@{GetNewEmployeeData}}
+\index{GetNewEmployeeData@{GetNewEmployeeData}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{GetNewEmployeeData()}{GetNewEmployeeData()}}
+{\footnotesize\ttfamily void Get\+New\+Employee\+Data (\begin{DoxyParamCaption}\item[{char}]{name\mbox{[}$\,$\mbox{]},  }\item[{char}]{last\+Name\mbox{[}$\,$\mbox{]},  }\item[{float $\ast$}]{salary,  }\item[{int $\ast$}]{sector }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a7876605858b6768f1391ff91edc8e619}\label{_employee_8h_a7876605858b6768f1391ff91edc8e619}} 
+\index{Employee.h@{Employee.h}!GetTotalSalary@{GetTotalSalary}}
+\index{GetTotalSalary@{GetTotalSalary}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{GetTotalSalary()}{GetTotalSalary()}}
+{\footnotesize\ttfamily float Get\+Total\+Salary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a56bc8de9d8687b40d552f1235bcbd851}\label{_employee_8h_a56bc8de9d8687b40d552f1235bcbd851}} 
+\index{Employee.h@{Employee.h}!InitEmployees@{InitEmployees}}
+\index{InitEmployees@{InitEmployees}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{InitEmployees()}{InitEmployees()}}
+{\footnotesize\ttfamily int Init\+Employees (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a1aaad0dabc54ab30a0e7c117fd8c729d}\label{_employee_8h_a1aaad0dabc54ab30a0e7c117fd8c729d}} 
+\index{Employee.h@{Employee.h}!IsEmptyList@{IsEmptyList}}
+\index{IsEmptyList@{IsEmptyList}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{IsEmptyList()}{IsEmptyList()}}
+{\footnotesize\ttfamily int Is\+Empty\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a3c9047975606832d1c3f830c2fa02829}\label{_employee_8h_a3c9047975606832d1c3f830c2fa02829}} 
+\index{Employee.h@{Employee.h}!Modify@{Modify}}
+\index{Modify@{Modify}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{Modify()}{Modify()}}
+{\footnotesize\ttfamily void Modify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a0d3e527cf4ae2510e2e5dbea760dfe6f}\label{_employee_8h_a0d3e527cf4ae2510e2e5dbea760dfe6f}} 
+\index{Employee.h@{Employee.h}!NewEmployee@{NewEmployee}}
+\index{NewEmployee@{NewEmployee}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{NewEmployee()}{NewEmployee()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structe_employee}{e\+Employee}} New\+Employee (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char}]{name\mbox{[}$\,$\mbox{]},  }\item[{char}]{last\+Name\mbox{[}$\,$\mbox{]},  }\item[{float}]{salary,  }\item[{int}]{sector }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a489496534b12c94745c47ec3e2ec6fd5}\label{_employee_8h_a489496534b12c94745c47ec3e2ec6fd5}} 
+\index{Employee.h@{Employee.h}!PrintEmployee@{PrintEmployee}}
+\index{PrintEmployee@{PrintEmployee}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{PrintEmployee()}{PrintEmployee()}}
+{\footnotesize\ttfamily void Print\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{employee }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a93dbb6b3e90eb4869c5556bff256cc34}\label{_employee_8h_a93dbb6b3e90eb4869c5556bff256cc34}} 
+\index{Employee.h@{Employee.h}!PrintEmployees@{PrintEmployees}}
+\index{PrintEmployees@{PrintEmployees}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{PrintEmployees()}{PrintEmployees()}}
+{\footnotesize\ttfamily int Print\+Employees (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_afb71ecfaa0e5390158d4848cd6cfe7a7}\label{_employee_8h_afb71ecfaa0e5390158d4848cd6cfe7a7}} 
+\index{Employee.h@{Employee.h}!RemoveEmployee@{RemoveEmployee}}
+\index{RemoveEmployee@{RemoveEmployee}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{RemoveEmployee()}{RemoveEmployee()}}
+{\footnotesize\ttfamily int Remove\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a19ef9bf26be137167e1ac058e4405f79}\label{_employee_8h_a19ef9bf26be137167e1ac058e4405f79}} 
+\index{Employee.h@{Employee.h}!ShowMenu@{ShowMenu}}
+\index{ShowMenu@{ShowMenu}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{ShowMenu()}{ShowMenu()}}
+{\footnotesize\ttfamily int Show\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_aa2a2aa1b28385e91fd024a7e0d2e0314}\label{_employee_8h_aa2a2aa1b28385e91fd024a7e0d2e0314}} 
+\index{Employee.h@{Employee.h}!ShowModifyMenu@{ShowModifyMenu}}
+\index{ShowModifyMenu@{ShowModifyMenu}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{ShowModifyMenu()}{ShowModifyMenu()}}
+{\footnotesize\ttfamily int Show\+Modify\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_employee_8h_a777888b49814df4325b3d63301f0542d}\label{_employee_8h_a777888b49814df4325b3d63301f0542d}} 
+\index{Employee.h@{Employee.h}!SortEmployee@{SortEmployee}}
+\index{SortEmployee@{SortEmployee}!Employee.h@{Employee.h}}
+\doxysubsubsection{\texorpdfstring{SortEmployee()}{SortEmployee()}}
+{\footnotesize\ttfamily int Sort\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structe_employee}{e\+Employee}}}]{list\+Employee\mbox{[}$\,$\mbox{]},  }\item[{int}]{size,  }\item[{int}]{order }\end{DoxyParamCaption})}
+

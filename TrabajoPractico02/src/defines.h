@@ -6,7 +6,7 @@
 
 #define RETRIES 5
 
-#define QTY_EMPLOYEES 10
+#define QTY_EMPLOYEES 1000
 #define SIZE_NAME 51
 #define SIZE_LAST_NAME 51
 

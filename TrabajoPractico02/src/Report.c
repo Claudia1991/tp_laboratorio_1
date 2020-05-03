@@ -7,15 +7,15 @@ void ShowEmployeesOrderByLastNameAndSector(eEmployee listEmployees[], int size){
 	//SortEmployee(listEmployees, size,order)
 	//pido el orden de ordenamiento
 	int order;
+	system("CLS()");
 	printf("********** Listado ordenado por apellido**********\n");
 	GetIntNumber(&order, "Ingrese el orden(1 ascendente - 0 descendente):\n", "ERROR: ingrese una opcion correcta:\n", ORDER_DOWN, ORDER_UP, RETRIES);
 	if(order){
 		printf("Listado ordenado por apellido ascendente\n");
-		SortEmployee(listEmployees, size,order);
 	}else{
 		printf("Listado ordenado por apellido descendente\n");
-		SortEmployee(listEmployees, size,order);
 	}
+	SortEmployee(listEmployees, size,order);
 	PrintEmployees(listEmployees, size);
 }
 

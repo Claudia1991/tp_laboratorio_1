@@ -14,7 +14,7 @@ typedef struct {
 
 #endif
 /*
- * \brief To indicate that all position in the array are empty, this function put the flag (isEmpty) in TRUE in all position of the array.
+ * \brief To indicate that all position in the array are empty, this function put the flag (isEmpty) in TRUE(1) in all position of the array.
  * \param listEmployee Array of employees
  * \param size Array length
  * \return int Return (-1) if ERROR(NULL pointer or Invalid lenght) - (0) if OK
@@ -56,7 +56,7 @@ int RemoveEmployee(eEmployee listEmployee[], int size,int id);
  * \brief Sort the elements in the array of employees, the argument order indicates UP or DOWN.
  * \param listEmployee Array of employees
  * \param size Array length
- * \param order indicates UP or DOWN
+ * \param order indicates UP or DOWN ordering
  * \return int Return (-1) if ERROR(NULL pointer or Invalid lenght) - (0) if OK
  * */
 int SortEmployee(eEmployee listEmployee[], int size,int order);
@@ -122,7 +122,7 @@ eEmployee GetEmployeeById(eEmployee listEmployee[], int size,int id);
  * \brief Verify is a list of employee has content.
   * \param listEmployee Array of employees
  * \param size Array length
- * \return Return 1 if the list is empty or 0 if is not empyt.
+ * \return Return 1 if the list is empty or 0 if is not empty.
  * */
 int IsEmptyList(eEmployee listEmployee[], int size);
 
@@ -162,36 +162,37 @@ void Delete(eEmployee listEmployee[], int size);
 void GetNewEmployeeData(char name[],char lastName[],float *salary,int *sector);
 
 /*
- * \brief Do the delete operations.
+ * \brief Get the total salary of all the employee.
  * \param listEmployee Array of employees
  * \param size Array length
- * \return Nothing.
+ * \return Return the total salary of all the employee.
  * */
 float GetTotalSalary(eEmployee listEmployee[], int size);
 
 /*
- * \brief Do the delete operations.
+ * \brief Get the average salary of all the employees.
  * \param listEmployee Array of employees
  * \param size Array length
- * \return Nothing.
+ * \return Return the average salary of all the employees.
  * */
 float GetAverageSalary(int countEmployees, float totalSalary);
 
 /*
- * \brief Do the delete operations.
+ * \brief Get the number of employees that exceed the average salary.
  * \param listEmployee Array of employees
  * \param size Array length
- * \return Nothing.
+ * \return Return the number of employees that exceed the average salary.
  * */
 float GetEmployeeAboveAverageSalary(eEmployee listEmployee[], int size, float averageSalary);
 
 /*
- * \brief Do the delete operations.
+ * \brief Get the number of employees of the company.
  * \param listEmployee Array of employees
  * \param size Array length
- * \return Nothing.
+ * \return Return the number of employees of the company.
  * */
 int GetCountEmployee(eEmployee listEmployee[], int size);
+
 
 
 

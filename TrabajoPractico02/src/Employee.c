@@ -91,6 +91,24 @@ int SortEmployee(eEmployee listEmployee[], int size,int order){
 					buffer = listEmployee[i];
 					listEmployee[i] = listEmployee[i + 1];
 					listEmployee[i + 1] = buffer;
+				}else if (strncmp(listEmployee[i].lastName , listEmployee[i + 1].lastName,SIZE_LAST_NAME)==0 && order  && listEmployee[i].sector > listEmployee[i+1].sector && listEmployee[i].isEmpty == 0) {
+					//de mayor a menor y criteria =0 descendente
+					//descendente z - a
+					//los apellidos son igules, verificar el sector(ascendente)
+					//si esta 3 -1; necesito que sea 1 - 3
+					flagSwap = 1;
+					buffer = listEmployee[i];
+					listEmployee[i] = listEmployee[i + 1];
+					listEmployee[i + 1] = buffer;
+				}else if (strncmp(listEmployee[i].lastName , listEmployee[i + 1].lastName,SIZE_LAST_NAME)==0 && !order && listEmployee[i].sector < listEmployee[i+1].sector && listEmployee[i].isEmpty == 0) {
+					//de mayor a menor y criteria =0 descendente
+					//descendente z - a
+					//los apellidos son igules, verificar el sector
+					//si esta 1 - 3; necesito que sea 3 - 1
+					flagSwap = 1;
+					buffer = listEmployee[i];
+					listEmployee[i] = listEmployee[i + 1];
+					listEmployee[i + 1] = buffer;
 				}
 			}
 			size--;
@@ -385,7 +403,6 @@ int GetCountEmployee(eEmployee listEmployee[], int size){
 	}
 	return count;
 }
-
 
 
 

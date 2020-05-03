@@ -1,0 +1,68 @@
+\hypertarget{utn__validators_8h}{}\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/\+Trabajo\+Practico02/src/utn\+\_\+validators.h File Reference}
+\label{utn__validators_8h}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/TrabajoPractico02/src/utn\_validators.h@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/TrabajoPractico02/src/utn\_validators.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{utn__validators_8h_a7f2ba24cfd7f18ca28f9f30be689cdfc}{Is\+Only\+Letters}} (char string\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Verifica si el valor recibido contiene solo letras. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utn__validators_8h_a3fe8a89e181af5dab8aa6844991c9ebc}{Is\+Alphanumeric}} (char string\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Verifica si el valor recibido contiene solo letras y numeros. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utn__validators_8h_ab18a4f667a46263533dca43a00cab4ce}{Is\+Phone\+Number}} (char string\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Verifica si el valor recibido contiene solo numeros, + y -\/. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utn__validators_8h_a3fe8a89e181af5dab8aa6844991c9ebc}\label{utn__validators_8h_a3fe8a89e181af5dab8aa6844991c9ebc}} 
+\index{utn\_validators.h@{utn\_validators.h}!IsAlphanumeric@{IsAlphanumeric}}
+\index{IsAlphanumeric@{IsAlphanumeric}!utn\_validators.h@{utn\_validators.h}}
+\doxysubsubsection{\texorpdfstring{IsAlphanumeric()}{IsAlphanumeric()}}
+{\footnotesize\ttfamily int Is\+Alphanumeric (\begin{DoxyParamCaption}\item[{char}]{string\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Verifica si el valor recibido contiene solo letras y numeros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Array con la cadena a ser analizada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si contiene solo espacio o letras y numeros, y 0 si no lo es 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utn__validators_8h_a7f2ba24cfd7f18ca28f9f30be689cdfc}\label{utn__validators_8h_a7f2ba24cfd7f18ca28f9f30be689cdfc}} 
+\index{utn\_validators.h@{utn\_validators.h}!IsOnlyLetters@{IsOnlyLetters}}
+\index{IsOnlyLetters@{IsOnlyLetters}!utn\_validators.h@{utn\_validators.h}}
+\doxysubsubsection{\texorpdfstring{IsOnlyLetters()}{IsOnlyLetters()}}
+{\footnotesize\ttfamily int Is\+Only\+Letters (\begin{DoxyParamCaption}\item[{char}]{string\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Verifica si el valor recibido contiene solo letras. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Array con la cadena a ser analizada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si contiene solo \textquotesingle{} \textquotesingle{} y letras y 0 si no lo es 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utn__validators_8h_ab18a4f667a46263533dca43a00cab4ce}\label{utn__validators_8h_ab18a4f667a46263533dca43a00cab4ce}} 
+\index{utn\_validators.h@{utn\_validators.h}!IsPhoneNumber@{IsPhoneNumber}}
+\index{IsPhoneNumber@{IsPhoneNumber}!utn\_validators.h@{utn\_validators.h}}
+\doxysubsubsection{\texorpdfstring{IsPhoneNumber()}{IsPhoneNumber()}}
+{\footnotesize\ttfamily int Is\+Phone\+Number (\begin{DoxyParamCaption}\item[{char}]{string\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Verifica si el valor recibido contiene solo numeros, + y -\/. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Array con la cadena a ser analizada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si contiene solo numeros, espacios y un guion. 
+\end{DoxyReturn}

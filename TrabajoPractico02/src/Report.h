@@ -5,22 +5,22 @@
 #include "Employee.h"
 
 /*
- * \brief Show employees ordered by Last Name and Sector
- * \param listEmployee Array of employees
- * \param size Array length
- * \return int Return (-1) if ERROR(NULL pointer or Invalid lenght) - (0) if OK
+ * \brief Show employees ordered by Last Name and Sector.
+ * \param listEmployee Array of employees.
+ * \param size Array length.
+ * \return Nothing.
  * */
 void ShowEmployeesOrderByLastNameAndSector(eEmployee listEmployees[], int size);
 /*
- * \brief Show the report menu on screem
- * \param listEmployee Array of employees
- * \param size Array length
- * \return int Return (-1) if ERROR(NULL pointer or Invalid lenght) - (0) if OK
+ * \brief Show total and average salary , and employee's salary upper the average.
+ * \param listEmployee Array of employees.
+ * \param size Array length.
+ * \return Nothing.
  * */
 void ShowAverageSalary(eEmployee listEmployees[], int size);
 
 /*
- * \brief Verify is a list of employee has content.
+ * \brief Show the report menu on screem.
  * \param listEmployee Array of employees
  * \param size Array length
  * \return Nothing.
