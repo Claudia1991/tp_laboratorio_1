@@ -7,6 +7,7 @@ int main(){
 	setbuf(stdout, NULL);
 	int id = 1;
 	eEmployee listEmployees[QTY_EMPLOYEES];
+	InitEmployees(listEmployees, QTY_EMPLOYEES);
 	/*int id = 11;
 	eEmployee listEmployees[QTY_EMPLOYEES] = {
 			{1,"Juan","Perez", 200.00,1,0},
@@ -20,7 +21,6 @@ int main(){
 			{9,"Juliana","Baez", 350.00,1,0},
 			{10,"Ricky","Martin", 400.00,2,0}
 	};*/
-	InitEmployees(listEmployees, QTY_EMPLOYEES);
 	printf("************ INICIO EMPRESA ************\n");
 	do{
 		switch (ShowMenu()){
