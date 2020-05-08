@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TP02: C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-Laboratorio I/TrabajoPractico02/src/Employee.h Source File</title>
+<title>TpP02: C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-Laboratorio I/TrabajoPractico02/src/Employee.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">TP02
-   &#160;<span id="projectnumber">1.0.0.0</span>
+   <div id="projectname">TpP02
+   &#160;<span id="projectnumber">2.0.0.0</span>
    </div>
-   <div id="projectbrief">Manager de empleados</div>
+   <div id="projectbrief">Sistema de manejo de empleados</div>
   </td>
  </tr>
  </tbody>
@@ -266,12 +266,12 @@ $(function() {
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment"> * */</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keywordtype">int</span> <a class="code" href="_employee_8h.html#ad5327ccffbb5f5577b75737f632e2a9a">GetCountEmployee</a>(<a class="code" href="structe_employee.html">eEmployee</a> listEmployee[], <span class="keywordtype">int</span> size);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment"> * \brief Show the sector of the company.</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment"> * \param Nothing</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment"> * \return Nothing.</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment"> * */</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_employee_8h.html#a252b724ff2e7e6b1eb04225f04f6829b">ShowSector</a>();</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
@@ -291,35 +291,43 @@ $(function() {
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructe_employee_html_a0118676709591aeabc16e71e13cb4ff1"><div class="ttname"><a href="structe_employee.html#a0118676709591aeabc16e71e13cb4ff1">eEmployee::sector</a></div><div class="ttdeci">int sector</div><div class="ttdef"><b>Definition:</b> Employee.h:11</div></div>
 <div class="ttc" id="a_employee_8h_html_a965b6aa560043a8a57f94c0d89498f3e"><div class="ttname"><a href="_employee_8h.html#a965b6aa560043a8a57f94c0d89498f3e">AddEmployees</a></div><div class="ttdeci">int AddEmployees(eEmployee listEmployee[], int size, int id, char name[], char lastName[], float salary, int sector)</div><div class="ttdef"><b>Definition:</b> Employee.c:20</div></div>
-<div class="ttc" id="a_employee_8h_html_a3c9047975606832d1c3f830c2fa02829"><div class="ttname"><a href="_employee_8h.html#a3c9047975606832d1c3f830c2fa02829">Modify</a></div><div class="ttdeci">void Modify(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:234</div></div>
+<div class="ttc" id="a_employee_8h_html_a3c9047975606832d1c3f830c2fa02829"><div class="ttname"><a href="_employee_8h.html#a3c9047975606832d1c3f830c2fa02829">Modify</a></div><div class="ttdeci">void Modify(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:237</div></div>
 <div class="ttc" id="a_employee_8h_html_a07d547b247dd87ad67b956b6c94c9368"><div class="ttname"><a href="_employee_8h.html#a07d547b247dd87ad67b956b6c94c9368">FindEmployeeById</a></div><div class="ttdeci">int FindEmployeeById(eEmployee listEmployee[], int size, int id)</div><div class="ttdef"><b>Definition:</b> Employee.c:41</div></div>
-<div class="ttc" id="a_employee_8h_html_ad5327ccffbb5f5577b75737f632e2a9a"><div class="ttname"><a href="_employee_8h.html#ad5327ccffbb5f5577b75737f632e2a9a">GetCountEmployee</a></div><div class="ttdeci">int GetCountEmployee(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:391</div></div>
-<div class="ttc" id="a_employee_8h_html_ac8c74a77304c61c6049f53f8aed659d3"><div class="ttname"><a href="_employee_8h.html#ac8c74a77304c61c6049f53f8aed659d3">GetEmployeeAboveAverageSalary</a></div><div class="ttdeci">float GetEmployeeAboveAverageSalary(eEmployee listEmployee[], int size, float averageSalary)</div><div class="ttdef"><b>Definition:</b> Employee.c:376</div></div>
-<div class="ttc" id="a_employee_8h_html_aa2a2aa1b28385e91fd024a7e0d2e0314"><div class="ttname"><a href="_employee_8h.html#aa2a2aa1b28385e91fd024a7e0d2e0314">ShowModifyMenu</a></div><div class="ttdeci">int ShowModifyMenu()</div><div class="ttdef"><b>Definition:</b> Employee.c:153</div></div>
-<div class="ttc" id="a_employee_8h_html_a0d3e527cf4ae2510e2e5dbea760dfe6f"><div class="ttname"><a href="_employee_8h.html#a0d3e527cf4ae2510e2e5dbea760dfe6f">NewEmployee</a></div><div class="ttdeci">eEmployee NewEmployee(int id, char name[], char lastName[], float salary, int sector)</div><div class="ttdef"><b>Definition:</b> Employee.c:175</div></div>
+<div class="ttc" id="a_employee_8h_html_ad5327ccffbb5f5577b75737f632e2a9a"><div class="ttname"><a href="_employee_8h.html#ad5327ccffbb5f5577b75737f632e2a9a">GetCountEmployee</a></div><div class="ttdeci">int GetCountEmployee(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:396</div></div>
+<div class="ttc" id="a_employee_8h_html_a252b724ff2e7e6b1eb04225f04f6829b"><div class="ttname"><a href="_employee_8h.html#a252b724ff2e7e6b1eb04225f04f6829b">ShowSector</a></div><div class="ttdeci">void ShowSector()</div><div class="ttdef"><b>Definition:</b> Employee.c:412</div></div>
+<div class="ttc" id="a_employee_8h_html_ac8c74a77304c61c6049f53f8aed659d3"><div class="ttname"><a href="_employee_8h.html#ac8c74a77304c61c6049f53f8aed659d3">GetEmployeeAboveAverageSalary</a></div><div class="ttdeci">float GetEmployeeAboveAverageSalary(eEmployee listEmployee[], int size, float averageSalary)</div><div class="ttdef"><b>Definition:</b> Employee.c:381</div></div>
+<div class="ttc" id="a_employee_8h_html_aa2a2aa1b28385e91fd024a7e0d2e0314"><div class="ttname"><a href="_employee_8h.html#aa2a2aa1b28385e91fd024a7e0d2e0314">ShowModifyMenu</a></div><div class="ttdeci">int ShowModifyMenu()</div><div class="ttdef"><b>Definition:</b> Employee.c:156</div></div>
+<div class="ttc" id="a_employee_8h_html_a0d3e527cf4ae2510e2e5dbea760dfe6f"><div class="ttname"><a href="_employee_8h.html#a0d3e527cf4ae2510e2e5dbea760dfe6f">NewEmployee</a></div><div class="ttdeci">eEmployee NewEmployee(int id, char name[], char lastName[], float salary, int sector)</div><div class="ttdef"><b>Definition:</b> Employee.c:178</div></div>
 <div class="ttc" id="adefines_8h_html"><div class="ttname"><a href="defines_8h.html">defines.h</a></div></div>
-<div class="ttc" id="a_employee_8h_html_ac0eb4976ebb603826511827347b68331"><div class="ttname"><a href="_employee_8h.html#ac0eb4976ebb603826511827347b68331">GetFreeIndex</a></div><div class="ttdeci">int GetFreeIndex(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:164</div></div>
+<div class="ttc" id="a_employee_8h_html_ac0eb4976ebb603826511827347b68331"><div class="ttname"><a href="_employee_8h.html#ac0eb4976ebb603826511827347b68331">GetFreeIndex</a></div><div class="ttdeci">int GetFreeIndex(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:167</div></div>
 <div class="ttc" id="astructe_employee_html_a21eaccd8c567a76bbe4c115dc0bcbfde"><div class="ttname"><a href="structe_employee.html#a21eaccd8c567a76bbe4c115dc0bcbfde">eEmployee::isEmpty</a></div><div class="ttdeci">int isEmpty</div><div class="ttdef"><b>Definition:</b> Employee.h:12</div></div>
-<div class="ttc" id="a_employee_8h_html_a62e1c314ed4f8cebf27191dcd454533e"><div class="ttname"><a href="_employee_8h.html#a62e1c314ed4f8cebf27191dcd454533e">GetAverageSalary</a></div><div class="ttdeci">float GetAverageSalary(int countEmployees, float totalSalary)</div><div class="ttdef"><b>Definition:</b> Employee.c:371</div></div>
-<div class="ttc" id="a_employee_8h_html_a05ba397a6d18acd307e33129a01cc649"><div class="ttname"><a href="_employee_8h.html#a05ba397a6d18acd307e33129a01cc649">GetNewEmployeeData</a></div><div class="ttdeci">void GetNewEmployeeData(char name[], char lastName[], float *salary, int *sector)</div><div class="ttdef"><b>Definition:</b> Employee.c:344</div></div>
-<div class="ttc" id="a_employee_8h_html_a19ef9bf26be137167e1ac058e4405f79"><div class="ttname"><a href="_employee_8h.html#a19ef9bf26be137167e1ac058e4405f79">ShowMenu</a></div><div class="ttdeci">int ShowMenu()</div><div class="ttdef"><b>Definition:</b> Employee.c:141</div></div>
-<div class="ttc" id="a_employee_8h_html_a5f9214f64773dc667c714494d960921a"><div class="ttname"><a href="_employee_8h.html#a5f9214f64773dc667c714494d960921a">GetEmployeeById</a></div><div class="ttdeci">eEmployee GetEmployeeById(eEmployee listEmployee[], int size, int id)</div><div class="ttdef"><b>Definition:</b> Employee.c:186</div></div>
-<div class="ttc" id="a_employee_8h_html_a489496534b12c94745c47ec3e2ec6fd5"><div class="ttname"><a href="_employee_8h.html#a489496534b12c94745c47ec3e2ec6fd5">PrintEmployee</a></div><div class="ttdeci">void PrintEmployee(eEmployee employee)</div><div class="ttdef"><b>Definition:</b> Employee.c:136</div></div>
+<div class="ttc" id="a_employee_8h_html_a62e1c314ed4f8cebf27191dcd454533e"><div class="ttname"><a href="_employee_8h.html#a62e1c314ed4f8cebf27191dcd454533e">GetAverageSalary</a></div><div class="ttdeci">float GetAverageSalary(int countEmployees, float totalSalary)</div><div class="ttdef"><b>Definition:</b> Employee.c:376</div></div>
+<div class="ttc" id="a_employee_8h_html_a05ba397a6d18acd307e33129a01cc649"><div class="ttname"><a href="_employee_8h.html#a05ba397a6d18acd307e33129a01cc649">GetNewEmployeeData</a></div><div class="ttdeci">void GetNewEmployeeData(char name[], char lastName[], float *salary, int *sector)</div><div class="ttdef"><b>Definition:</b> Employee.c:348</div></div>
+<div class="ttc" id="a_employee_8h_html_a19ef9bf26be137167e1ac058e4405f79"><div class="ttname"><a href="_employee_8h.html#a19ef9bf26be137167e1ac058e4405f79">ShowMenu</a></div><div class="ttdeci">int ShowMenu()</div><div class="ttdef"><b>Definition:</b> Employee.c:144</div></div>
+<div class="ttc" id="a_employee_8h_html_a5f9214f64773dc667c714494d960921a"><div class="ttname"><a href="_employee_8h.html#a5f9214f64773dc667c714494d960921a">GetEmployeeById</a></div><div class="ttdeci">eEmployee GetEmployeeById(eEmployee listEmployee[], int size, int id)</div><div class="ttdef"><b>Definition:</b> Employee.c:189</div></div>
+<div class="ttc" id="a_employee_8h_html_a489496534b12c94745c47ec3e2ec6fd5"><div class="ttname"><a href="_employee_8h.html#a489496534b12c94745c47ec3e2ec6fd5">PrintEmployee</a></div><div class="ttdeci">void PrintEmployee(eEmployee employee)</div><div class="ttdef"><b>Definition:</b> Employee.c:139</div></div>
 <div class="ttc" id="astructe_employee_html_a7441ef0865bcb3db9b8064dd7375c1ea"><div class="ttname"><a href="structe_employee.html#a7441ef0865bcb3db9b8064dd7375c1ea">eEmployee::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition:</b> Employee.h:7</div></div>
 <div class="ttc" id="adefines_8h_html_a62cf43807d4a406745c3602395fc4b95"><div class="ttname"><a href="defines_8h.html#a62cf43807d4a406745c3602395fc4b95">SIZE_NAME</a></div><div class="ttdeci">#define SIZE_NAME</div><div class="ttdef"><b>Definition:</b> defines.h:10</div></div>
 <div class="ttc" id="adefines_8h_html_afc3067d31137894a1a046707d03bab02"><div class="ttname"><a href="defines_8h.html#afc3067d31137894a1a046707d03bab02">SIZE_LAST_NAME</a></div><div class="ttdeci">#define SIZE_LAST_NAME</div><div class="ttdef"><b>Definition:</b> defines.h:11</div></div>
-<div class="ttc" id="a_employee_8h_html_ad8e46c73b2c1e1450db3b1fcb29363f5"><div class="ttname"><a href="_employee_8h.html#ad8e46c73b2c1e1450db3b1fcb29363f5">Add</a></div><div class="ttdeci">void Add(eEmployee listEmployee[], int size, int *id)</div><div class="ttdef"><b>Definition:</b> Employee.c:209</div></div>
+<div class="ttc" id="a_employee_8h_html_ad8e46c73b2c1e1450db3b1fcb29363f5"><div class="ttname"><a href="_employee_8h.html#ad8e46c73b2c1e1450db3b1fcb29363f5">Add</a></div><div class="ttdeci">void Add(eEmployee listEmployee[], int size, int *id)</div><div class="ttdef"><b>Definition:</b> Employee.c:212</div></div>
 <div class="ttc" id="a_employee_8h_html_a777888b49814df4325b3d63301f0542d"><div class="ttname"><a href="_employee_8h.html#a777888b49814df4325b3d63301f0542d">SortEmployee</a></div><div class="ttdeci">int SortEmployee(eEmployee listEmployee[], int size, int order)</div><div class="ttdef"><b>Definition:</b> Employee.c:69</div></div>
 <div class="ttc" id="a_employee_8h_html_afb71ecfaa0e5390158d4848cd6cfe7a7"><div class="ttname"><a href="_employee_8h.html#afb71ecfaa0e5390158d4848cd6cfe7a7">RemoveEmployee</a></div><div class="ttdeci">int RemoveEmployee(eEmployee listEmployee[], int size, int id)</div><div class="ttdef"><b>Definition:</b> Employee.c:55</div></div>
-<div class="ttc" id="a_employee_8h_html_a99923fbe923e550712fda842200fae9f"><div class="ttname"><a href="_employee_8h.html#a99923fbe923e550712fda842200fae9f">Delete</a></div><div class="ttdeci">void Delete(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:301</div></div>
+<div class="ttc" id="a_employee_8h_html_a99923fbe923e550712fda842200fae9f"><div class="ttname"><a href="_employee_8h.html#a99923fbe923e550712fda842200fae9f">Delete</a></div><div class="ttdeci">void Delete(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:305</div></div>
 <div class="ttc" id="a_employee_8h_html_a56bc8de9d8687b40d552f1235bcbd851"><div class="ttname"><a href="_employee_8h.html#a56bc8de9d8687b40d552f1235bcbd851">InitEmployees</a></div><div class="ttdeci">int InitEmployees(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:8</div></div>
-<div class="ttc" id="a_employee_8h_html_a7876605858b6768f1391ff91edc8e619"><div class="ttname"><a href="_employee_8h.html#a7876605858b6768f1391ff91edc8e619">GetTotalSalary</a></div><div class="ttdeci">float GetTotalSalary(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:354</div></div>
+<div class="ttc" id="a_employee_8h_html_a7876605858b6768f1391ff91edc8e619"><div class="ttname"><a href="_employee_8h.html#a7876605858b6768f1391ff91edc8e619">GetTotalSalary</a></div><div class="ttdeci">float GetTotalSalary(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:359</div></div>
 <div class="ttc" id="astructe_employee_html"><div class="ttname"><a href="structe_employee.html">eEmployee</a></div><div class="ttdef"><b>Definition:</b> Employee.h:6</div></div>
-<div class="ttc" id="a_employee_8h_html_a1aaad0dabc54ab30a0e7c117fd8c729d"><div class="ttname"><a href="_employee_8h.html#a1aaad0dabc54ab30a0e7c117fd8c729d">IsEmptyList</a></div><div class="ttdeci">int IsEmptyList(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:197</div></div>
-<div class="ttc" id="a_employee_8h_html_a93dbb6b3e90eb4869c5556bff256cc34"><div class="ttname"><a href="_employee_8h.html#a93dbb6b3e90eb4869c5556bff256cc34">PrintEmployees</a></div><div class="ttdeci">int PrintEmployees(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:122</div></div>
+<div class="ttc" id="a_employee_8h_html_a1aaad0dabc54ab30a0e7c117fd8c729d"><div class="ttname"><a href="_employee_8h.html#a1aaad0dabc54ab30a0e7c117fd8c729d">IsEmptyList</a></div><div class="ttdeci">int IsEmptyList(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:200</div></div>
+<div class="ttc" id="a_employee_8h_html_a93dbb6b3e90eb4869c5556bff256cc34"><div class="ttname"><a href="_employee_8h.html#a93dbb6b3e90eb4869c5556bff256cc34">PrintEmployees</a></div><div class="ttdeci">int PrintEmployees(eEmployee listEmployee[], int size)</div><div class="ttdef"><b>Definition:</b> Employee.c:125</div></div>
 <div class="ttc" id="astructe_employee_html_a41f34d97e904971a15e902cc59c68caa"><div class="ttname"><a href="structe_employee.html#a41f34d97e904971a15e902cc59c68caa">eEmployee::salary</a></div><div class="ttdeci">float salary</div><div class="ttdef"><b>Definition:</b> Employee.h:10</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

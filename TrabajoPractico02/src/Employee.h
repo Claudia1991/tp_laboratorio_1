@@ -193,6 +193,13 @@ float GetEmployeeAboveAverageSalary(eEmployee listEmployee[], int size, float av
  * */
 int GetCountEmployee(eEmployee listEmployee[], int size);
 
+/*
+ * \brief Show the sector of the company.
+ * \param Nothing
+ * \return Nothing.
+ * */
+void ShowSector();
+
 
 
 
