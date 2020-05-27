@@ -1,0 +1,8 @@
+#ifndef DEFINES_UTN_H_
+#define DEFINES_UTN_H_
+
+#define SIZE_BUFFER_INT 64
+#define SIZE_BUFFER_FLOAT 64
+#define SIZE_BUFFER_CHAR 100
+
+#endif /* DEFINES_UTN_H_ */
