@@ -1,6 +1,8 @@
 #ifndef DEFINES_H_
 #define DEFINES_H_
 
+#define SIZE_CHAR_ARRAY 128
+
 #define RETRIES 3
 #define OK 0
 #define ERROR -1

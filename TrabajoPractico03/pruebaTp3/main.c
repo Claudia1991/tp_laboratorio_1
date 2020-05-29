@@ -7,39 +7,42 @@
 #include "Menu.h"
 
 int main() {
-
+	setbuf(stdout, NULL);
 	LinkedList *listaEmpleados = ll_newLinkedList();
+	printf("---------- INICIO ----------\n");
 	do {
 		switch (ShowMainMenu()) {
 		case LOAD_TEXT:
 			controller_loadFromText(SOURCE_DATA, listaEmpleados);
 			break;
 		case LOAD_BINARY:
-			controller_loadFromText(SOURCE_DATA, listaEmpleados);
+			controller_loadFromBinary(SOURCE_DATA, listaEmpleados);
 			break;
 		case ADD_EMPLOYEE:
-			controller_loadFromText(SOURCE_DATA, listaEmpleados);
+			controller_addEmployee( listaEmpleados);
 			break;
 		case MODIFY_EMPLOYEE:
-			controller_loadFromText(SOURCE_DATA, listaEmpleados);
+			controller_editEmployee( listaEmpleados);
 			break;
 		case DELETE_EMPLOYEE:
-			controller_loadFromText(SOURCE_DATA, listaEmpleados);
+			controller_removeEmployee( listaEmpleados);
 			break;
 		case SHOW_EMPLOYEE:
-			controller_loadFromText(SOURCE_DATA, listaEmpleados);
+			controller_ListEmployee( listaEmpleados);
 			break;
 		case SORT_EMPLOYEE:
-			controller_loadFromText(SOURCE_DATA, listaEmpleados);
+			controller_sortEmployee( listaEmpleados);
 			break;
 		case SAVE_TEXT:
-			controller_loadFromText(SOURCE_DATA, listaEmpleados);
+			controller_saveAsText(SOURCE_DATA, listaEmpleados);
 			break;
 		case SAVE_BINARY:
-			controller_loadFromText(SOURCE_DATA, listaEmpleados);
+			controller_saveAsBinary(SOURCE_DATA, listaEmpleados);
 			break;
 		case EXIT:
-			controller_loadFromText(SOURCE_DATA, listaEmpleados);
+			ll_deleteLinkedList(listaEmpleados);
+			printf("---------- FIN ----------\n");
+			exit(0);
 			break;
 		}
 	} while (1);
