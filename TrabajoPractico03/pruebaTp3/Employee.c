@@ -3,14 +3,14 @@
 Employee* employee_new() {
 	return (Employee*) malloc(sizeof(Employee));
 }
-Employee* employee_newParametros(char *idStr, char *nombreStr,
-		char *horasTrabajadasStr, char *sueldoStr) {
+Employee* employee_newParametros(char *idStr, char *nombreStr,char *horasTrabajadasStr, char *sueldoStr) {
 	Employee *this = employee_new();
-	if (!employee_setHorasTrabajadas(this, atoi(horasTrabajadasStr))
-			&& !employee_setId(this,
-					atoi(idStr) && !employee_setNombre(this, nombreStr)
-							&& !employee_setSueldo(this, atoi(sueldoStr)))) {
-		return this;
+	if(idStr != NULL && nombreStr!= NULL && horasTrabajadasStr != NULL && sueldoStr != NULL){
+		if(IsNumeric(idStr) && IsOnlyLetters(nombreStr) && IsNumeric(horasTrabajadasStr) && IsNumeric(sueldoStr)){
+			if(!employee_setId(this, atoi(idStr)) && !employee_setNombre(this, nombreStr) && !employee_setHorasTrabajadas(this, atoi(horasTrabajadasStr)) && !employee_setSueldo(this, atoi(sueldoStr))){
+				return this;
+			}
+		}
 	}
 	employee_delete(this);
 	return NULL;
@@ -21,7 +21,7 @@ void employee_delete(Employee *this) {
 
 int employee_setId(Employee *this, int id) {
 	int status = ERROR;
-	static int maxId = -1;
+	static int maxId = 0;
 	if (this != NULL) {
 		status = OK;
 		if (id < 0) {

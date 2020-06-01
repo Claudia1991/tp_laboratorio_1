@@ -5,12 +5,12 @@
 #include "defines_utn.h"
 #include "utn_validators.h"
 
-static int IsNumeric(char *string);
+static int IsOnlyNumeric(char *string);
 static int IsFloat(char *string);
 static int GetInt(int *pResult);
 static int GetFloat(float *pResult);
 
-static int IsNumeric(char *string) {
+static int IsOnlyNumeric(char *string) {
 	int ret = -1;
 	int i = 0;
 	if (string != NULL) {
@@ -63,7 +63,7 @@ static int GetInt(int *pResult) {
 	fflush(stdin);
 	fgets(buffer, sizeof(buffer), stdin);
 	buffer[strlen(buffer) - 1] = '\0';
-	if (IsNumeric(buffer)) {
+	if (IsOnlyNumeric(buffer)) {
 		*pResult = atoi(buffer);
 		ret = 1;
 	}
@@ -208,7 +208,7 @@ int GetString(char* pResult, char* message,char* errorMessage,int retries) {
 			fflush(stdin);
 			fgets(buffer, sizeof(buffer), stdin);
 			buffer[strlen(buffer) - 1] = '\0';
-			if (IsOnlyLetters(buffer)) {
+			if (IsOnlyLetters(buffer) || IsNumeric(buffer)) {
 				strcpy(pResult, buffer);
 				retorno = 0;
 				break;

@@ -1,6 +1,7 @@
 #ifndef UTN_VALIDATORS_H_
 #define UTN_VALIDATORS_H_
 
+
 //VALIDATIONS
 /**
  * \brief Verifica si el valor recibido contiene solo letras
@@ -26,6 +27,13 @@ int IsAlphanumeric(char string[]);
  */
 int IsPhoneNumber(char string[]);
 
+/**
+ * \brief Verifica si el valor recibido contiene solo numeros positivos
+ * \param string Array con la cadena a ser analizada
+ * \return 1 si contiene solo numeros positivos
+ *
+ */
+int IsNumeric(char *string);
 
 
 #endif /* UTN_VALIDATORS_H_ */

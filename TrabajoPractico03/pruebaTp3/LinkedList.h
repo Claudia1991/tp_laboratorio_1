@@ -15,7 +15,6 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
 #ifndef __LINKEDLIST
 #define __LINKEDLIST
 struct Node
@@ -30,9 +29,6 @@ struct LinkedList
     int size;
 }typedef LinkedList;
 #endif
-
-
-
 //Publicas
 LinkedList* ll_newLinkedList(void);
 int ll_len(LinkedList* this);
