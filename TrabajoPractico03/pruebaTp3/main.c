@@ -9,7 +9,7 @@
 int main() {
 	setbuf(stdout, NULL);
 	LinkedList *listaEmpleados = ll_newLinkedList();
-	printf("---------- INICIO ----------\n");
+	printf("---------- INICIO EMPRESA----------\n");
 	do {
 		switch (ShowMainMenu()) {
 		case LOAD_TEXT:
@@ -40,8 +40,9 @@ int main() {
 			controller_saveAsBinary(SOURCE_DATA, listaEmpleados);
 			break;
 		case EXIT:
+			ll_clear(listaEmpleados);
 			ll_deleteLinkedList(listaEmpleados);
-			printf("---------- FIN ----------\n");
+			printf("---------- FIN EMPRESA ----------\n");
 			exit(0);
 			break;
 		}

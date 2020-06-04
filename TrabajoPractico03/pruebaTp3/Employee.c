@@ -38,7 +38,7 @@ int employee_setId(Employee *this, int id) {
 }
 int employee_getId(Employee *this, int *id) {
 	int status = ERROR;
-	if (this != NULL && *id != NULL) {
+	if (this != NULL && id != NULL) {
 		status = OK;
 		*id = this->id;
 	}
@@ -47,7 +47,7 @@ int employee_getId(Employee *this, int *id) {
 
 int employee_setNombre(Employee *this, char *nombre) {
 	int status = ERROR;
-	if (this != NULL && *nombre != NULL) {
+	if (this != NULL && nombre != NULL) {
 		status = OK;
 		strcpy(this->nombre, nombre);
 	}
@@ -55,7 +55,7 @@ int employee_setNombre(Employee *this, char *nombre) {
 }
 int employee_getNombre(Employee *this, char *nombre) {
 	int status = ERROR;
-	if (this != NULL && *nombre != NULL) {
+	if (this != NULL && nombre != NULL) {
 		status = OK;
 		strcpy(nombre, this->nombre);
 	}
@@ -66,13 +66,13 @@ int employee_setHorasTrabajadas(Employee *this, int horasTrabajadas) {
 	int status = ERROR;
 	if (this != NULL && horasTrabajadas > 0) {
 		status = OK;
-		this->sueldo = horasTrabajadas;
+		this->horasTrabajadas = horasTrabajadas;
 	}
 	return status;
 }
 int employee_getHorasTrabajadas(Employee *this, int *horasTrabajadas) {
 	int status = ERROR;
-	if (this != NULL && *horasTrabajadas != NULL) {
+	if (this != NULL && horasTrabajadas != NULL) {
 		status = OK;
 		*horasTrabajadas = this->horasTrabajadas;
 	}
@@ -89,10 +89,28 @@ int employee_setSueldo(Employee *this, int sueldo) {
 }
 int employee_getSueldo(Employee *this, int *sueldo) {
 	int status = ERROR;
-	if (this != NULL && *sueldo != NULL) {
+	if (this != NULL && sueldo != NULL) {
 		status = OK;
 		*sueldo = this->sueldo;
 	}
 	return status;
+}
+
+void employee_show(Employee* this){
+	printf("ID: %d - NOMBRE: %s - SUELDO: %d - HORAS TRABAJADAS: %d\n",	this->id, this->nombre,this->sueldo, this->horasTrabajadas);
+}
+
+void employee_GetDataForNewEmployee(char *nombre, char *horasTrabajadas,char *sueldo, int *statusNombre, int *statusHorasTrabajadas,int *statusSueldo) {
+	printf(" :::[INICIO]::: OBTENER DATOS NUEVO EMPLEADO \n");
+	*statusNombre = GetString(nombre,
+			"Ingrese el nombre para el nuevo empleado: ",
+			":::[ERROR]::: ingrese nuevamente el nombre\n", RETRIES);
+	*statusHorasTrabajadas = GetString(horasTrabajadas,
+			"Ingrese las horas trabajadas para el nuevo empleado: ",
+			":::[ERROR]::: ingrese nuevamente el nombre\n", RETRIES);
+	*statusSueldo = GetString(sueldo,
+			"Ingrese el sueldo para el nuevo empleado: ",
+			":::[ERROR]::: ingrese nuevamente el nombre\n", RETRIES);
+	printf(" :::[FIN]::: OBTENER DATOS NUEVO EMPLEADO \n");
 }
 

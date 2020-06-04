@@ -2,9 +2,11 @@
 #define employee_H_INCLUDED
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "utn_inputs.h"
 #include "utn_validators.h"
 #include "defines.h"
-
 
 typedef struct
 {
@@ -29,5 +31,8 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas);
 
 int employee_setSueldo(Employee* this,int sueldo);
 int employee_getSueldo(Employee* this,int* sueldo);
+
+void employee_show(Employee* this);
+void employee_GetDataForNewEmployee(char *nombre, char *horasTrabajadas,char *sueldo, int *statusNombre, int *statusHorasTrabajadas,int *statusSueldo);
 
 #endif // employee_H_INCLUDED

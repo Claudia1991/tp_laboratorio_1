@@ -48,9 +48,11 @@ int IsPhoneNumber(char string[]) {
 int IsNumeric(char *string) {
 	int ret = -1;
 	int i = 0;
+	//printf("");
 	if (string != NULL) {
 		while (string[i] != '\0') {
 			if (i == 0 && (string[i] == '-' || string[i] == '+')) {
+				i++;
 				continue;
 			}
 			if (string[i] < '0' || string[i] > '9') {
