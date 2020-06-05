@@ -34,6 +34,14 @@
 #define HEADER "id,nombre,horasTrabajadas,sueldo\n"
 #define DEFAULT_ID "-1"
 #define SOURCE_DATA "data.csv"
+#define SOURCE_DATA_BIN "data.bin"
 #define DATA_FORMAT "%[^,],%[^,],%[^,],%[^\n]\n"
+
+#define ORDER_DESC 0
+#define ORDER_ASC 1
+
+#define ORDER_BY_NAME 1
+#define ORDER_BY_WORKED_HOURS 2
+#define ORDER_BY_SALARY 3
 
 #endif /* DEFINES_H_ */
