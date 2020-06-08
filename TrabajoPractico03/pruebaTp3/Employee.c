@@ -16,7 +16,9 @@ Employee* employee_newParametros(char *idStr, char *nombreStr,char *horasTrabaja
 	return NULL;
 }
 void employee_delete(Employee *this) {
-	free(this);
+	if(this != NULL){
+		free(this);
+	}
 }
 
 int employee_setId(Employee *this, int id) {

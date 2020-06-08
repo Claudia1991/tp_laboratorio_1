@@ -31,6 +31,7 @@
 #define MIN_SALARY 1000
 #define MAX_SALARY 1000000
 
+#define HAS_HEADER 1
 #define HEADER "id,nombre,horasTrabajadas,sueldo\n"
 #define DEFAULT_ID "-1"
 #define SOURCE_DATA "data.csv"

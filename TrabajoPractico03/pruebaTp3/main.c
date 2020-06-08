@@ -16,7 +16,7 @@ int main() {
 			controller_loadFromText(SOURCE_DATA, listaEmpleados);
 			break;
 		case LOAD_BINARY:
-			controller_loadFromBinary(SOURCE_DATA, listaEmpleados);
+			controller_loadFromBinary(SOURCE_DATA_BIN, listaEmpleados);
 			break;
 		case ADD_EMPLOYEE:
 			controller_addEmployee( listaEmpleados);
@@ -37,7 +37,7 @@ int main() {
 			controller_saveAsText(SOURCE_DATA, listaEmpleados);
 			break;
 		case SAVE_BINARY:
-			controller_saveAsBinary(SOURCE_DATA, listaEmpleados);
+			controller_saveAsBinary(SOURCE_DATA_BIN, listaEmpleados);
 			break;
 		case EXIT:
 			ll_clear(listaEmpleados);

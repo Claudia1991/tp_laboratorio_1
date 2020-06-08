@@ -35,8 +35,9 @@ int controller_loadFromBinary(char *path, LinkedList *pArrayListEmployee) {
 	printf(" :::[INICIO]::: LEER DE ARCHIVO DE BINARIO \n");
 	int status = ERROR;
 	if (path != NULL && pArrayListEmployee != NULL) {
+		//Primero leo el archivo en texto y lo guardo en binario y leo binario
 		FILE *pFile;
-		pFile = fopen(path, "rb");
+		pFile = fopen(path, "wb");
 		parser_EmployeeFromBinary(pFile, pArrayListEmployee);
 		printf(" :::[EXITO]::: Se leyeron los datos correctamente. \n");
 		status = OK;
@@ -277,6 +278,29 @@ int controller_saveAsBinary(char *path, LinkedList *pArrayListEmployee) {
 	printf(" :::[INICIO]::: GUARDAR COMO BINARIO \n");
 	int status = ERROR;
 	if (path != NULL && pArrayListEmployee != NULL) {
+		FILE *pFile;
+		pFile = fopen(path, "wb");
+		if (pFile != NULL) {
+			int sizeArray = ll_len(pArrayListEmployee);
+			int i = 0;
+			Employee *currentEmployee;
+			Employee currentEmployeeToSave;
+			Node *nodo = pArrayListEmployee->pFirstNode;
+
+			while (i < sizeArray && nodo != NULL) {
+				currentEmployee = (Employee*) nodo->pElement;
+				employee_getId(currentEmployee, &currentEmployeeToSave.id);
+				employee_getNombre(currentEmployee, currentEmployeeToSave.nombre);
+				employee_getHorasTrabajadas(currentEmployee, &currentEmployeeToSave.horasTrabajadas);
+				employee_getSueldo(currentEmployee, &currentEmployeeToSave.sueldo);
+				printf("[TEST] EMPLEADO A AGREGAR - ID %d - NOMBRE %s - HORAS %d - SUELDO %d",currentEmployeeToSave.id, currentEmployeeToSave.nombre, currentEmployeeToSave.horasTrabajadas, currentEmployeeToSave.sueldo);
+				fseek(pFile, 0L, SEEK_END);
+				fwrite(&currentEmployeeToSave, sizeof(currentEmployeeToSave), 1, pFile);
+				i++;
+				nodo = nodo->pNextNode;
+			}
+			fclose(pFile);
+		}
 		printf(":::[EXITO]::: Proceso finalizado.\n");
 		status = OK;
 	} else {
@@ -310,21 +334,21 @@ static int OrderListEmployees(LinkedList *pArrayListEmployee, int dataToOrder,
 	if (pArrayListEmployee != NULL && dataToOrder > 0 && order > -1) {
 		status = OK;
 		if (order) {
-			printf(":::[VISUALIZACION]::: Ordenamiento ascendente\n");
+			printf(":::[INFO]::: Ordenamiento ascendente\n");
 		} else {
-			printf(":::[VISUALIZACION]::: Ordenamiento descendente\n");
+			printf(":::[INFO]::: Ordenamiento descendente\n");
 		}
 		switch (dataToOrder) {
 		case ORDER_BY_NAME:
-			printf(":::[VISUALIZACION]::: Ordenamiento por nombre\n");
+			printf(":::[INFO]::: Ordenamiento por nombre\n");
 			OrderListEmployeesByName(pArrayListEmployee, order);
 			break;
 		case ORDER_BY_WORKED_HOURS:
-			printf(":::[VISUALIZACION]::: Ordenamiento por horas trabajadas\n");
+			printf(":::[INFO]::: Ordenamiento por horas trabajadas\n");
 			OrderListEmployeesByWordedHours(pArrayListEmployee, order);
 			break;
 		case ORDER_BY_SALARY:
-			printf(":::[VISUALIZACION]::: Ordenamiento por salario\n");
+			printf(":::[INFO]::: Ordenamiento por salario\n");
 			OrderListEmployeesBySalary(pArrayListEmployee, order);
 			break;
 		}
@@ -353,8 +377,8 @@ static int OrderListEmployeesByName(LinkedList *pArrayListEmployee, int order) {
 					employeeAux = nodoSiguiente->pElement;
 					nodoSiguiente->pElement = nodoActual->pElement;
 					nodoActual->pElement = employeeAux;
-				} else if (strcmp(employeeActual->nombre, employeeSiguiente->nombre)
-						< 0 && !order) {
+				} else if (strcmp(employeeActual->nombre,
+						employeeSiguiente->nombre) < 0 && !order) {
 					employeeAux = nodoSiguiente->pElement;
 					nodoSiguiente->pElement = nodoActual->pElement;
 					nodoActual->pElement = employeeAux;
@@ -370,60 +394,64 @@ static int OrderListEmployeesByName(LinkedList *pArrayListEmployee, int order) {
 static int OrderListEmployeesByWordedHours(LinkedList *pArrayListEmployee,
 		int order) {
 	int status = ERROR;
-		if (pArrayListEmployee != NULL && order > -1) {
-			status = OK;
-			Employee *employeeAux, *employeeActual, *employeeSiguiente;
-			Node *nodoActual, *nodoSiguiente;
-			nodoActual = pArrayListEmployee->pFirstNode;
-			while (nodoActual->pNextNode != NULL) {
-				nodoSiguiente = nodoActual->pNextNode;
-				while (nodoSiguiente != NULL) {
-					employeeActual = (Employee*) nodoActual->pElement;
-					employeeSiguiente = (Employee*) nodoSiguiente->pElement;
-					if (employeeActual->horasTrabajadas > employeeSiguiente->horasTrabajadas && order) {
-						employeeAux = nodoSiguiente->pElement;
-						nodoSiguiente->pElement = nodoActual->pElement;
-						nodoActual->pElement = employeeAux;
-					} else if (employeeActual->horasTrabajadas < employeeSiguiente->horasTrabajadas && !order) {
-						employeeAux = nodoSiguiente->pElement;
-						nodoSiguiente->pElement = nodoActual->pElement;
-						nodoActual->pElement = employeeAux;
-					}
-					nodoSiguiente = nodoSiguiente->pNextNode;
+	if (pArrayListEmployee != NULL && order > -1) {
+		status = OK;
+		Employee *employeeAux, *employeeActual, *employeeSiguiente;
+		Node *nodoActual, *nodoSiguiente;
+		nodoActual = pArrayListEmployee->pFirstNode;
+		while (nodoActual->pNextNode != NULL) {
+			nodoSiguiente = nodoActual->pNextNode;
+			while (nodoSiguiente != NULL) {
+				employeeActual = (Employee*) nodoActual->pElement;
+				employeeSiguiente = (Employee*) nodoSiguiente->pElement;
+				if (employeeActual->horasTrabajadas
+						> employeeSiguiente->horasTrabajadas && order) {
+					employeeAux = nodoSiguiente->pElement;
+					nodoSiguiente->pElement = nodoActual->pElement;
+					nodoActual->pElement = employeeAux;
+				} else if (employeeActual->horasTrabajadas
+						< employeeSiguiente->horasTrabajadas && !order) {
+					employeeAux = nodoSiguiente->pElement;
+					nodoSiguiente->pElement = nodoActual->pElement;
+					nodoActual->pElement = employeeAux;
 				}
-				nodoActual = nodoActual->pNextNode;
-				nodoSiguiente = nodoActual->pNextNode;
+				nodoSiguiente = nodoSiguiente->pNextNode;
 			}
+			nodoActual = nodoActual->pNextNode;
+			nodoSiguiente = nodoActual->pNextNode;
 		}
-		return status;
+	}
+	return status;
 }
 static int OrderListEmployeesBySalary(LinkedList *pArrayListEmployee, int order) {
 	int status = ERROR;
-		if (pArrayListEmployee != NULL && order > -1) {
-			status = OK;
-			Employee *employeeAux, *employeeActual, *employeeSiguiente;
-			Node *nodoActual, *nodoSiguiente;
-			nodoActual = pArrayListEmployee->pFirstNode;
-			while (nodoActual->pNextNode != NULL) {
-				nodoSiguiente = nodoActual->pNextNode;
-				while (nodoSiguiente != NULL) {
-					employeeActual = (Employee*) nodoActual->pElement;
-					employeeSiguiente = (Employee*) nodoSiguiente->pElement;
-					if (employeeActual->sueldo > employeeSiguiente->sueldo && order) {
-						employeeAux = nodoSiguiente->pElement;
-						nodoSiguiente->pElement = nodoActual->pElement;
-						nodoActual->pElement = employeeAux;
-					} else if (employeeActual->sueldo > employeeSiguiente->sueldo && !order) {
-						employeeAux = nodoSiguiente->pElement;
-						nodoSiguiente->pElement = nodoActual->pElement;
-						nodoActual->pElement = employeeAux;
-					}
-					nodoSiguiente = nodoSiguiente->pNextNode;
+	if (pArrayListEmployee != NULL && order > -1) {
+		status = OK;
+		Employee *employeeAux, *employeeActual, *employeeSiguiente;
+		Node *nodoActual, *nodoSiguiente;
+		nodoActual = pArrayListEmployee->pFirstNode;
+		while (nodoActual->pNextNode != NULL) {
+			nodoSiguiente = nodoActual->pNextNode;
+			while (nodoSiguiente != NULL) {
+				employeeActual = (Employee*) nodoActual->pElement;
+				employeeSiguiente = (Employee*) nodoSiguiente->pElement;
+				if (employeeActual->sueldo > employeeSiguiente->sueldo
+						&& order) {
+					employeeAux = nodoSiguiente->pElement;
+					nodoSiguiente->pElement = nodoActual->pElement;
+					nodoActual->pElement = employeeAux;
+				} else if (employeeActual->sueldo > employeeSiguiente->sueldo
+						&& !order) {
+					employeeAux = nodoSiguiente->pElement;
+					nodoSiguiente->pElement = nodoActual->pElement;
+					nodoActual->pElement = employeeAux;
 				}
-				nodoActual = nodoActual->pNextNode;
-				nodoSiguiente = nodoActual->pNextNode;
+				nodoSiguiente = nodoSiguiente->pNextNode;
 			}
+			nodoActual = nodoActual->pNextNode;
+			nodoSiguiente = nodoActual->pNextNode;
 		}
-		return status;
+	}
+	return status;
 }
 
