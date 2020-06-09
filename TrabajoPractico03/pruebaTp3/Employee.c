@@ -3,11 +3,18 @@
 Employee* employee_new() {
 	return (Employee*) malloc(sizeof(Employee));
 }
-Employee* employee_newParametros(char *idStr, char *nombreStr,char *horasTrabajadasStr, char *sueldoStr) {
+Employee* employee_newParametros(char *idStr, char *nombreStr,
+		char *horasTrabajadasStr, char *sueldoStr) {
 	Employee *this = employee_new();
-	if(idStr != NULL && nombreStr!= NULL && horasTrabajadasStr != NULL && sueldoStr != NULL){
-		if(IsNumeric(idStr) && IsOnlyLetters(nombreStr) && IsNumeric(horasTrabajadasStr) && IsNumeric(sueldoStr)){
-			if(!employee_setId(this, atoi(idStr)) && !employee_setNombre(this, nombreStr) && !employee_setHorasTrabajadas(this, atoi(horasTrabajadasStr)) && !employee_setSueldo(this, atoi(sueldoStr))){
+	if (idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL
+			&& sueldoStr != NULL) {
+		if (IsNumeric(idStr) && IsOnlyLetters(nombreStr)
+				&& IsNumeric(horasTrabajadasStr) && IsNumeric(sueldoStr)) {
+			if (!employee_setId(this, atoi(idStr))
+					&& !employee_setNombre(this, nombreStr)
+					&& !employee_setHorasTrabajadas(this,
+							atoi(horasTrabajadasStr))
+					&& !employee_setSueldo(this, atoi(sueldoStr))) {
 				return this;
 			}
 		}
@@ -16,7 +23,7 @@ Employee* employee_newParametros(char *idStr, char *nombreStr,char *horasTrabaja
 	return NULL;
 }
 void employee_delete(Employee *this) {
-	if(this != NULL){
+	if (this != NULL) {
 		free(this);
 	}
 }
@@ -98,11 +105,14 @@ int employee_getSueldo(Employee *this, int *sueldo) {
 	return status;
 }
 
-void employee_show(Employee* this){
-	printf("ID: %d - NOMBRE: %s - SUELDO: %d - HORAS TRABAJADAS: %d\n",	this->id, this->nombre,this->sueldo, this->horasTrabajadas);
+void employee_show(Employee *this) {
+	printf("ID: %d - NOMBRE: %s - SUELDO: %d - HORAS TRABAJADAS: %d\n",
+			this->id, this->nombre, this->sueldo, this->horasTrabajadas);
 }
 
-void employee_GetDataForNewEmployee(char *nombre, char *horasTrabajadas,char *sueldo, int *statusNombre, int *statusHorasTrabajadas,int *statusSueldo) {
+void employee_GetDataForNewEmployee(char *nombre, char *horasTrabajadas,
+		char *sueldo, int *statusNombre, int *statusHorasTrabajadas,
+		int *statusSueldo) {
 	printf(" :::[INICIO]::: OBTENER DATOS NUEVO EMPLEADO \n");
 	*statusNombre = GetString(nombre,
 			"Ingrese el nombre para el nuevo empleado: ",
@@ -114,5 +124,60 @@ void employee_GetDataForNewEmployee(char *nombre, char *horasTrabajadas,char *su
 			"Ingrese el sueldo para el nuevo empleado: ",
 			":::[ERROR]::: ingrese nuevamente el nombre\n", RETRIES);
 	printf(" :::[FIN]::: OBTENER DATOS NUEVO EMPLEADO \n");
+}
+
+int employee_OrderListEmployeesByName(void *itemOne, void *itemTwo) {
+	int status = 0;
+	if (itemOne != NULL && itemTwo != NULL) {
+		Employee *auxEmployeeOne;
+		Employee *auxEmployeeTwo;
+		char nameOne[SIZE_CHAR_ARRAY], nameTwo[SIZE_CHAR_ARRAY];
+		auxEmployeeOne = (Employee*) itemOne;
+		auxEmployeeTwo = (Employee*) itemTwo;
+		if (employee_getNombre(auxEmployeeOne, nameOne) == OK && employee_getNombre(auxEmployeeTwo, nameTwo) == OK) {
+			if (strcmp(nameOne, nameTwo) > 0) {
+				status = 1;
+			} else {
+				status = -1;
+			}
+		}
+	}
+	return status;
+}
+int employee_OrderListEmployeesByWordedHours(void *itemOne, void *itemTwo) {
+	int status = 0;
+	if (itemOne != NULL && itemTwo != NULL) {
+		Employee *auxEmployeeOne;
+		Employee *auxEmployeeTwo;
+		int hoursOne, hoursTwo;
+		auxEmployeeOne = (Employee*) itemOne;
+		auxEmployeeTwo = (Employee*) itemTwo;
+		if (employee_getHorasTrabajadas(auxEmployeeOne, &hoursOne) == OK && employee_getHorasTrabajadas(auxEmployeeTwo, &hoursTwo) == OK) {
+			if (hoursOne > hoursTwo) {
+				status = 1;
+			} else {
+				status = -1;
+			}
+		}
+	}
+	return status;
+}
+int employee_OrderListEmployeesBySalary(void *itemOne, void *itemTwo) {
+	int status = 0;
+	if (itemOne != NULL && itemTwo != NULL) {
+		Employee *auxEmployeeOne;
+		Employee *auxEmployeeTwo;
+		int salaryOne, salaryTwo;
+		auxEmployeeOne = (Employee*) itemOne;
+		auxEmployeeTwo = (Employee*) itemTwo;
+		if (employee_getSueldo(auxEmployeeOne, &salaryOne) == OK && employee_getSueldo(auxEmployeeTwo, &salaryTwo) == OK) {
+			if (salaryOne > salaryTwo) {
+				status = 1;
+			} else {
+				status = -1;
+			}
+		}
+	}
+	return status;
 }
 
