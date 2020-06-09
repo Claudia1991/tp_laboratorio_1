@@ -1,0 +1,365 @@
+\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/prueba\+Tp3/\+Employee.c File Reference}
+\label{_employee_8c}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/pruebaTp3/Employee.c@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/pruebaTp3/Employee.c}}
+{\ttfamily \#include \char`\"{}Employee.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Employee} $\ast$ \textbf{ employee\+\_\+new} ()
+\begin{DoxyCompactList}\small\item\em Crea espacio en memoria para un nuevo empleado sin datos. \end{DoxyCompactList}\item 
+\textbf{ Employee} $\ast$ \textbf{ employee\+\_\+new\+Parametros} (char $\ast$id\+Str, char $\ast$nombre\+Str, char $\ast$horas\+Trabajadas\+Str, char $\ast$sueldo\+Str)
+\item 
+void \textbf{ employee\+\_\+delete} (\textbf{ Employee} $\ast$this)
+\begin{DoxyCompactList}\small\item\em Elimina el empleado y libera memoria. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+set\+Id} (\textbf{ Employee} $\ast$this, int id)
+\begin{DoxyCompactList}\small\item\em Actualiza el id del empleado. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+get\+Id} (\textbf{ Employee} $\ast$this, int $\ast$id)
+\begin{DoxyCompactList}\small\item\em Obtiene el id del empleado. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+set\+Nombre} (\textbf{ Employee} $\ast$this, char $\ast$nombre)
+\begin{DoxyCompactList}\small\item\em Actualiza el nombre del empleado. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+get\+Nombre} (\textbf{ Employee} $\ast$this, char $\ast$nombre)
+\begin{DoxyCompactList}\small\item\em Obtiene nombre del empleado. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+set\+Horas\+Trabajadas} (\textbf{ Employee} $\ast$this, int horas\+Trabajadas)
+\begin{DoxyCompactList}\small\item\em Actualiza las horas trabajadas del empleado. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+get\+Horas\+Trabajadas} (\textbf{ Employee} $\ast$this, int $\ast$horas\+Trabajadas)
+\begin{DoxyCompactList}\small\item\em Obtiene las horas trabajadas del empleado. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+set\+Sueldo} (\textbf{ Employee} $\ast$this, int sueldo)
+\begin{DoxyCompactList}\small\item\em Actualiza el sueldo del empleado. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+get\+Sueldo} (\textbf{ Employee} $\ast$this, int $\ast$sueldo)
+\begin{DoxyCompactList}\small\item\em Obtiene el sueldo del empleado. \end{DoxyCompactList}\item 
+void \textbf{ employee\+\_\+show} (\textbf{ Employee} $\ast$this)
+\begin{DoxyCompactList}\small\item\em Muestra al empleado. \end{DoxyCompactList}\item 
+void \textbf{ employee\+\_\+\+Get\+Data\+For\+New\+Employee} (char $\ast$nombre, char $\ast$horas\+Trabajadas, char $\ast$sueldo, int $\ast$status\+Nombre, int $\ast$status\+Horas\+Trabajadas, int $\ast$status\+Sueldo)
+\begin{DoxyCompactList}\small\item\em Pide los datos para el nuevo empleado. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+\+Order\+List\+Employees\+By\+Name} (void $\ast$item\+One, void $\ast$item\+Two)
+\begin{DoxyCompactList}\small\item\em Compara dos empleados por sus nombres. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+\+Order\+List\+Employees\+By\+Worded\+Hours} (void $\ast$item\+One, void $\ast$item\+Two)
+\begin{DoxyCompactList}\small\item\em Compara dos empleados por sus horas trabajadas. \end{DoxyCompactList}\item 
+int \textbf{ employee\+\_\+\+Order\+List\+Employees\+By\+Salary} (void $\ast$item\+One, void $\ast$item\+Two)
+\begin{DoxyCompactList}\small\item\em Compara dos empleados por sus salarios. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{_employee_8c_a2592c7191b1bb5496e19695a67a730e1}} 
+\index{Employee.c@{Employee.c}!employee\_delete@{employee\_delete}}
+\index{employee\_delete@{employee\_delete}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_delete()}
+{\footnotesize\ttfamily void employee\+\_\+delete (\begin{DoxyParamCaption}\item[{\textbf{ Employee} $\ast$}]{this }\end{DoxyParamCaption})}
+
+
+
+Elimina el empleado y libera memoria. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee$\ast$} & this Puntero al empleado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void Nothing 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_ae857622446081597b5dbfdc4afd5c0e6}} 
+\index{Employee.c@{Employee.c}!employee\_GetDataForNewEmployee@{employee\_GetDataForNewEmployee}}
+\index{employee\_GetDataForNewEmployee@{employee\_GetDataForNewEmployee}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_GetDataForNewEmployee()}
+{\footnotesize\ttfamily void employee\+\_\+\+Get\+Data\+For\+New\+Employee (\begin{DoxyParamCaption}\item[{char $\ast$}]{nombre,  }\item[{char $\ast$}]{horas\+Trabajadas,  }\item[{char $\ast$}]{sueldo,  }\item[{int $\ast$}]{status\+Nombre,  }\item[{int $\ast$}]{status\+Horas\+Trabajadas,  }\item[{int $\ast$}]{status\+Sueldo }\end{DoxyParamCaption})}
+
+
+
+Pide los datos para el nuevo empleado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char$\ast$} & nombre Puntero donde se guarda el nombre del empleado. \\
+\hline
+{\em char$\ast$} & horas\+Trabajadas Puntero donde se guarda las horas trabajadas del empleado. \\
+\hline
+{\em char$\ast$} & sueldo Puntero donde se guarda el sueldo del empleado. \\
+\hline
+{\em int$\ast$} & status\+Nombre Resultado de la obtencion de nombre. \\
+\hline
+{\em int$\ast$} & status\+Horas\+Trabajadas Resultado de la obtencion de horas trabajadas. \\
+\hline
+{\em int$\ast$} & status\+Sueldo Resultado de la obtencion de sueldo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void Nothing 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_acf10200be0a5b5db95563cbbff3b170d}} 
+\index{Employee.c@{Employee.c}!employee\_getHorasTrabajadas@{employee\_getHorasTrabajadas}}
+\index{employee\_getHorasTrabajadas@{employee\_getHorasTrabajadas}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_getHorasTrabajadas()}
+{\footnotesize\ttfamily int employee\+\_\+get\+Horas\+Trabajadas (\begin{DoxyParamCaption}\item[{\textbf{ Employee} $\ast$}]{this,  }\item[{int $\ast$}]{horas\+Trabajadas }\end{DoxyParamCaption})}
+
+
+
+Obtiene las horas trabajadas del empleado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee$\ast$} & this Puntero al empleado. \\
+\hline
+{\em int$\ast$} & horas\+Trabajadas Puentero donde se guardara las horas trabajadas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si this es N\+U\+LL o horas\+Trabajadas es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_a9ca5611f97112028271496eb06c5ff33}} 
+\index{Employee.c@{Employee.c}!employee\_getId@{employee\_getId}}
+\index{employee\_getId@{employee\_getId}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_getId()}
+{\footnotesize\ttfamily int employee\+\_\+get\+Id (\begin{DoxyParamCaption}\item[{\textbf{ Employee} $\ast$}]{this,  }\item[{int $\ast$}]{id }\end{DoxyParamCaption})}
+
+
+
+Obtiene el id del empleado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee$\ast$} & this Puntero al empleado. \\
+\hline
+{\em int$\ast$} & id Puentero donde se guardara el id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si this es N\+U\+LL o id es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_ad27ec8c8283b87faaeb12593bede16e9}} 
+\index{Employee.c@{Employee.c}!employee\_getNombre@{employee\_getNombre}}
+\index{employee\_getNombre@{employee\_getNombre}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_getNombre()}
+{\footnotesize\ttfamily int employee\+\_\+get\+Nombre (\begin{DoxyParamCaption}\item[{\textbf{ Employee} $\ast$}]{this,  }\item[{char $\ast$}]{nombre }\end{DoxyParamCaption})}
+
+
+
+Obtiene nombre del empleado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee$\ast$} & this Puntero al empleado. \\
+\hline
+{\em cahr$\ast$} & nombre Puentero donde se guardara el nombre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si this es N\+U\+LL o nombre es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_abdbbd41cec04a40f290cb725b1bcb7f9}} 
+\index{Employee.c@{Employee.c}!employee\_getSueldo@{employee\_getSueldo}}
+\index{employee\_getSueldo@{employee\_getSueldo}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_getSueldo()}
+{\footnotesize\ttfamily int employee\+\_\+get\+Sueldo (\begin{DoxyParamCaption}\item[{\textbf{ Employee} $\ast$}]{this,  }\item[{int $\ast$}]{sueldo }\end{DoxyParamCaption})}
+
+
+
+Obtiene el sueldo del empleado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee$\ast$} & this Puntero al empleado. \\
+\hline
+{\em int$\ast$} & sueldo Puentero donde se guardara el sueldo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si this es N\+U\+LL o sueldo es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_a96521220674007f35f366d1d13fc63f3}} 
+\index{Employee.c@{Employee.c}!employee\_new@{employee\_new}}
+\index{employee\_new@{employee\_new}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_new()}
+{\footnotesize\ttfamily \textbf{ Employee}$\ast$ employee\+\_\+new (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Crea espacio en memoria para un nuevo empleado sin datos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & Nothing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Employee$\ast$ Devuelve un puntero a la direccion de memoria. 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_a3e583e30f8edd23863da2c6aec038749}} 
+\index{Employee.c@{Employee.c}!employee\_newParametros@{employee\_newParametros}}
+\index{employee\_newParametros@{employee\_newParametros}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_newParametros()}
+{\footnotesize\ttfamily \textbf{ Employee}$\ast$ employee\+\_\+new\+Parametros (\begin{DoxyParamCaption}\item[{char $\ast$}]{id\+Str,  }\item[{char $\ast$}]{nombre\+Str,  }\item[{char $\ast$}]{horas\+Trabajadas\+Str,  }\item[{char $\ast$}]{sueldo\+Str }\end{DoxyParamCaption})}
+
+\textbackslash{}brief\+Crea espacio en memoria para un nuevo empleado con datos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em char$\ast$} & id\+Str Id para el nuevo empleado. \\
+\hline
+{\em char$\ast$} & nombre\+Str Nombre para el nuevo empleado. \\
+\hline
+{\em char$\ast$} & horas\+Trabajadas\+Str Horas trabajadas para el nuevo empleado. \\
+\hline
+{\em char$\ast$} & sueldo\+Str Sueldo para el nuevo empleado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Employee$\ast$ Devuelve un puntero a la direccion de memoria o N\+U\+LL si no se pudo crear el empleado. 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_abe40f0aa203cece8bf651739379dc156}} 
+\index{Employee.c@{Employee.c}!employee\_OrderListEmployeesByName@{employee\_OrderListEmployeesByName}}
+\index{employee\_OrderListEmployeesByName@{employee\_OrderListEmployeesByName}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_OrderListEmployeesByName()}
+{\footnotesize\ttfamily int employee\+\_\+\+Order\+List\+Employees\+By\+Name (\begin{DoxyParamCaption}\item[{void $\ast$}]{item\+One,  }\item[{void $\ast$}]{item\+Two }\end{DoxyParamCaption})}
+
+
+
+Compara dos empleados por sus nombres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void$\ast$} & item\+One Puntero al primer empleado a comparar. \\
+\hline
+{\em void$\ast$} & item\+Two Puntero al segundo empleado a comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve 0 si item\+One es N\+U\+LL o item\+Two es N\+U\+LL, sino devuelve 1 si item\+One es mayor sino -\/1 si item\+One es menor 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_a7975e037ca9b69c83afbfefe74a08970}} 
+\index{Employee.c@{Employee.c}!employee\_OrderListEmployeesBySalary@{employee\_OrderListEmployeesBySalary}}
+\index{employee\_OrderListEmployeesBySalary@{employee\_OrderListEmployeesBySalary}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_OrderListEmployeesBySalary()}
+{\footnotesize\ttfamily int employee\+\_\+\+Order\+List\+Employees\+By\+Salary (\begin{DoxyParamCaption}\item[{void $\ast$}]{item\+One,  }\item[{void $\ast$}]{item\+Two }\end{DoxyParamCaption})}
+
+
+
+Compara dos empleados por sus salarios. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void$\ast$} & item\+One Puntero al primer empleado a comparar. \\
+\hline
+{\em void$\ast$} & item\+Two Puntero al segundo empleado a comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve 0 si item\+One es N\+U\+LL o item\+Two es N\+U\+LL, sino devuelve 1 si item\+One es mayor sino -\/1 si item\+One es menor 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_ab1ee9c63c60040b5492b81ae83bd9deb}} 
+\index{Employee.c@{Employee.c}!employee\_OrderListEmployeesByWordedHours@{employee\_OrderListEmployeesByWordedHours}}
+\index{employee\_OrderListEmployeesByWordedHours@{employee\_OrderListEmployeesByWordedHours}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_OrderListEmployeesByWordedHours()}
+{\footnotesize\ttfamily int employee\+\_\+\+Order\+List\+Employees\+By\+Worded\+Hours (\begin{DoxyParamCaption}\item[{void $\ast$}]{item\+One,  }\item[{void $\ast$}]{item\+Two }\end{DoxyParamCaption})}
+
+
+
+Compara dos empleados por sus horas trabajadas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void$\ast$} & item\+One Puntero al primer empleado a comparar. \\
+\hline
+{\em void$\ast$} & item\+Two Puntero al segundo empleado a comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve 0 si item\+One es N\+U\+LL o item\+Two es N\+U\+LL, sino devuelve 1 si item\+One es mayor sino -\/1 si item\+One es menor 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_ae47bf69a36ee3a8978bb9d7218fa2aba}} 
+\index{Employee.c@{Employee.c}!employee\_setHorasTrabajadas@{employee\_setHorasTrabajadas}}
+\index{employee\_setHorasTrabajadas@{employee\_setHorasTrabajadas}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_setHorasTrabajadas()}
+{\footnotesize\ttfamily int employee\+\_\+set\+Horas\+Trabajadas (\begin{DoxyParamCaption}\item[{\textbf{ Employee} $\ast$}]{this,  }\item[{int}]{horas\+Trabajadas }\end{DoxyParamCaption})}
+
+
+
+Actualiza las horas trabajadas del empleado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee$\ast$} & this Puntero al empleado. \\
+\hline
+{\em int} & horas\+Trabajadas Las nuevas horas trabajadas del empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si this es N\+U\+LL o horas\+Trabajadas $<$ 0, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_a3b044de78a0e269040614ae2f05b75f0}} 
+\index{Employee.c@{Employee.c}!employee\_setId@{employee\_setId}}
+\index{employee\_setId@{employee\_setId}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_setId()}
+{\footnotesize\ttfamily int employee\+\_\+set\+Id (\begin{DoxyParamCaption}\item[{\textbf{ Employee} $\ast$}]{this,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Actualiza el id del empleado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee$\ast$} & this Puntero al empleado. \\
+\hline
+{\em int} & id El nuevo id del empleado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si this es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_a1d5d0d205660de9692446f67b77ba78b}} 
+\index{Employee.c@{Employee.c}!employee\_setNombre@{employee\_setNombre}}
+\index{employee\_setNombre@{employee\_setNombre}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_setNombre()}
+{\footnotesize\ttfamily int employee\+\_\+set\+Nombre (\begin{DoxyParamCaption}\item[{\textbf{ Employee} $\ast$}]{this,  }\item[{char $\ast$}]{nombre }\end{DoxyParamCaption})}
+
+
+
+Actualiza el nombre del empleado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee$\ast$} & this Puntero al empleado. \\
+\hline
+{\em char$\ast$} & nombre El nuevo nombre del empleado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si this es N\+U\+LL o nombre es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_a78044c6bf232f69a463205e43393fdfe}} 
+\index{Employee.c@{Employee.c}!employee\_setSueldo@{employee\_setSueldo}}
+\index{employee\_setSueldo@{employee\_setSueldo}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_setSueldo()}
+{\footnotesize\ttfamily int employee\+\_\+set\+Sueldo (\begin{DoxyParamCaption}\item[{\textbf{ Employee} $\ast$}]{this,  }\item[{int}]{sueldo }\end{DoxyParamCaption})}
+
+
+
+Actualiza el sueldo del empleado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee$\ast$} & this Puntero al empleado. \\
+\hline
+{\em int} & sueldo El nuevo sueldo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si this es N\+U\+LL o sueldo $<$ 0, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_employee_8c_a85ec3c215fb52b17fc5c92ae8a597100}} 
+\index{Employee.c@{Employee.c}!employee\_show@{employee\_show}}
+\index{employee\_show@{employee\_show}!Employee.c@{Employee.c}}
+\doxysubsubsection{employee\_show()}
+{\footnotesize\ttfamily void employee\+\_\+show (\begin{DoxyParamCaption}\item[{\textbf{ Employee} $\ast$}]{this }\end{DoxyParamCaption})}
+
+
+
+Muestra al empleado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee$\ast$} & this Puntero al empleado a mostrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void Nothing 
+\end{DoxyReturn}

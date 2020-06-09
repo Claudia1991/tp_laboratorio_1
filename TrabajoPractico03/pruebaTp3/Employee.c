@@ -106,8 +106,11 @@ int employee_getSueldo(Employee *this, int *sueldo) {
 }
 
 void employee_show(Employee *this) {
-	printf("ID: %d - NOMBRE: %s - SUELDO: %d - HORAS TRABAJADAS: %d\n",
-			this->id, this->nombre, this->sueldo, this->horasTrabajadas);
+	int id, sueldo, horasTrabajadas;
+	char nombre[SIZE_CHAR_ARRAY];
+	if(!employee_getId(this, &id) && !employee_getNombre(this, nombre) && !employee_getHorasTrabajadas(this, &horasTrabajadas) && !employee_getSueldo(this, &sueldo)){
+		printf("ID: %d - NOMBRE: %s - SUELDO: %d - HORAS TRABAJADAS: %d\n",	id, nombre, sueldo, horasTrabajadas);
+	}
 }
 
 void employee_GetDataForNewEmployee(char *nombre, char *horasTrabajadas,
@@ -135,6 +138,7 @@ int employee_OrderListEmployeesByName(void *itemOne, void *itemTwo) {
 		auxEmployeeOne = (Employee*) itemOne;
 		auxEmployeeTwo = (Employee*) itemTwo;
 		if (employee_getNombre(auxEmployeeOne, nameOne) == OK && employee_getNombre(auxEmployeeTwo, nameTwo) == OK) {
+			printf("[INFO] Ordenando...\n");
 			if (strcmp(nameOne, nameTwo) > 0) {
 				status = 1;
 			} else {
@@ -153,6 +157,7 @@ int employee_OrderListEmployeesByWordedHours(void *itemOne, void *itemTwo) {
 		auxEmployeeOne = (Employee*) itemOne;
 		auxEmployeeTwo = (Employee*) itemTwo;
 		if (employee_getHorasTrabajadas(auxEmployeeOne, &hoursOne) == OK && employee_getHorasTrabajadas(auxEmployeeTwo, &hoursTwo) == OK) {
+			printf("[INFO] Ordenando...\n");
 			if (hoursOne > hoursTwo) {
 				status = 1;
 			} else {
@@ -171,6 +176,7 @@ int employee_OrderListEmployeesBySalary(void *itemOne, void *itemTwo) {
 		auxEmployeeOne = (Employee*) itemOne;
 		auxEmployeeTwo = (Employee*) itemTwo;
 		if (employee_getSueldo(auxEmployeeOne, &salaryOne) == OK && employee_getSueldo(auxEmployeeTwo, &salaryTwo) == OK) {
+			printf("[INFO] Ordenando...\n");
 			if (salaryOne > salaryTwo) {
 				status = 1;
 			} else {

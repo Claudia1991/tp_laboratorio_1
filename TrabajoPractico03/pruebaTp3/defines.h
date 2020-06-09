@@ -37,6 +37,7 @@
 #define SOURCE_DATA "data.csv"
 #define SOURCE_DATA_BIN "data.bin"
 #define DATA_FORMAT "%[^,],%[^,],%[^,],%[^\n]\n"
+#define DATA_FORMAT_SAVE "%d,%s,%d,%d\n"
 
 #define ORDER_DESC 0
 #define ORDER_ASC 1

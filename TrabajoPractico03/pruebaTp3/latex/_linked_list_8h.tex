@@ -1,0 +1,189 @@
+\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/prueba\+Tp3/\+Linked\+List.h File Reference}
+\label{_linked_list_8h}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/pruebaTp3/LinkedList.h@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/pruebaTp3/LinkedList.h}}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Node}
+\item 
+struct \textbf{ Linked\+List}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Linked\+List} $\ast$ \textbf{ ll\+\_\+new\+Linked\+List} (void)
+\item 
+int \textbf{ ll\+\_\+len} (\textbf{ Linked\+List} $\ast$this)
+\item 
+\textbf{ Node} $\ast$ \textbf{ test\+\_\+get\+Node} (\textbf{ Linked\+List} $\ast$this, int node\+Index)
+\item 
+int \textbf{ test\+\_\+add\+Node} (\textbf{ Linked\+List} $\ast$this, int node\+Index, void $\ast$p\+Element)
+\item 
+int \textbf{ ll\+\_\+add} (\textbf{ Linked\+List} $\ast$this, void $\ast$p\+Element)
+\item 
+void $\ast$ \textbf{ ll\+\_\+get} (\textbf{ Linked\+List} $\ast$this, int index)
+\item 
+int \textbf{ ll\+\_\+set} (\textbf{ Linked\+List} $\ast$this, int index, void $\ast$p\+Element)
+\item 
+int \textbf{ ll\+\_\+remove} (\textbf{ Linked\+List} $\ast$this, int index)
+\item 
+int \textbf{ ll\+\_\+clear} (\textbf{ Linked\+List} $\ast$this)
+\item 
+int \textbf{ ll\+\_\+delete\+Linked\+List} (\textbf{ Linked\+List} $\ast$this)
+\item 
+int \textbf{ ll\+\_\+index\+Of} (\textbf{ Linked\+List} $\ast$this, void $\ast$p\+Element)
+\item 
+int \textbf{ ll\+\_\+is\+Empty} (\textbf{ Linked\+List} $\ast$this)
+\item 
+int \textbf{ ll\+\_\+push} (\textbf{ Linked\+List} $\ast$this, int index, void $\ast$p\+Element)
+\item 
+void $\ast$ \textbf{ ll\+\_\+pop} (\textbf{ Linked\+List} $\ast$this, int index)
+\item 
+int \textbf{ ll\+\_\+contains} (\textbf{ Linked\+List} $\ast$this, void $\ast$p\+Element)
+\item 
+int \textbf{ ll\+\_\+contains\+All} (\textbf{ Linked\+List} $\ast$this, \textbf{ Linked\+List} $\ast$this2)
+\item 
+\textbf{ Linked\+List} $\ast$ \textbf{ ll\+\_\+sub\+List} (\textbf{ Linked\+List} $\ast$this, int from, int to)
+\item 
+\textbf{ Linked\+List} $\ast$ \textbf{ ll\+\_\+clone} (\textbf{ Linked\+List} $\ast$this)
+\item 
+int \textbf{ ll\+\_\+sort} (\textbf{ Linked\+List} $\ast$this, int($\ast$p\+Func)(void $\ast$, void $\ast$), int order)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Node} \textbf{ Node}
+\item 
+struct \textbf{ Linked\+List} \textbf{ Linked\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{_linked_list_8h_a23da0e19924f5a63990aed7b6e3be3e5}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_add@{ll\_add}}
+\index{ll\_add@{ll\_add}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_add()}
+{\footnotesize\ttfamily int ll\+\_\+add (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{void $\ast$}]{p\+Element }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a050a09240c6f2df29832967cc156a10d}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_clear@{ll\_clear}}
+\index{ll\_clear@{ll\_clear}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_clear()}
+{\footnotesize\ttfamily int ll\+\_\+clear (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_aade58b025efbf0494c4ae924e2ef98e9}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_clone@{ll\_clone}}
+\index{ll\_clone@{ll\_clone}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_clone()}
+{\footnotesize\ttfamily \textbf{ Linked\+List}$\ast$ ll\+\_\+clone (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a83cf47a4321e3c66362f9146346bb32b}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_contains@{ll\_contains}}
+\index{ll\_contains@{ll\_contains}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_contains()}
+{\footnotesize\ttfamily int ll\+\_\+contains (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{void $\ast$}]{p\+Element }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a19b965cb3e3317d555df2c09735f5e8b}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_containsAll@{ll\_containsAll}}
+\index{ll\_containsAll@{ll\_containsAll}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_containsAll()}
+{\footnotesize\ttfamily int ll\+\_\+contains\+All (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{\textbf{ Linked\+List} $\ast$}]{this2 }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a1e5301b2e48b875deedc13aa0d7eb591}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_deleteLinkedList@{ll\_deleteLinkedList}}
+\index{ll\_deleteLinkedList@{ll\_deleteLinkedList}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_deleteLinkedList()}
+{\footnotesize\ttfamily int ll\+\_\+delete\+Linked\+List (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a3e367b9f382000e3d2b4119b8c5f3ae5}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_get@{ll\_get}}
+\index{ll\_get@{ll\_get}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_get()}
+{\footnotesize\ttfamily void$\ast$ ll\+\_\+get (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a1f6865962a6aa6cde3b9f2ef75f17046}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_indexOf@{ll\_indexOf}}
+\index{ll\_indexOf@{ll\_indexOf}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_indexOf()}
+{\footnotesize\ttfamily int ll\+\_\+index\+Of (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{void $\ast$}]{p\+Element }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a6980bddd366f59ad6bd5fcd7ffc38641}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_isEmpty@{ll\_isEmpty}}
+\index{ll\_isEmpty@{ll\_isEmpty}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_isEmpty()}
+{\footnotesize\ttfamily int ll\+\_\+is\+Empty (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a43c271029de96a39da36cf21ea63267f}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_len@{ll\_len}}
+\index{ll\_len@{ll\_len}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_len()}
+{\footnotesize\ttfamily int ll\+\_\+len (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a895db0a432322071333ca72dd04668a4}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_newLinkedList@{ll\_newLinkedList}}
+\index{ll\_newLinkedList@{ll\_newLinkedList}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_newLinkedList()}
+{\footnotesize\ttfamily \textbf{ Linked\+List}$\ast$ ll\+\_\+new\+Linked\+List (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a31fca88b04108c95aa943e2144f8ed2f}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_pop@{ll\_pop}}
+\index{ll\_pop@{ll\_pop}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_pop()}
+{\footnotesize\ttfamily void$\ast$ ll\+\_\+pop (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a754a9e98d73d759ecf12937b4b5a8682}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_push@{ll\_push}}
+\index{ll\_push@{ll\_push}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_push()}
+{\footnotesize\ttfamily int ll\+\_\+push (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{int}]{index,  }\item[{void $\ast$}]{p\+Element }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_ae7098a3e05a284b36c558f1e0b498754}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_remove@{ll\_remove}}
+\index{ll\_remove@{ll\_remove}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_remove()}
+{\footnotesize\ttfamily int ll\+\_\+remove (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a624e1ec7c1c4dab691f9a318cff9a414}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_set@{ll\_set}}
+\index{ll\_set@{ll\_set}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_set()}
+{\footnotesize\ttfamily int ll\+\_\+set (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{int}]{index,  }\item[{void $\ast$}]{p\+Element }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a66d3f654e9ccb58908f91da34ac842f9}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_sort@{ll\_sort}}
+\index{ll\_sort@{ll\_sort}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_sort()}
+{\footnotesize\ttfamily int ll\+\_\+sort (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{int($\ast$)(void $\ast$, void $\ast$)}]{p\+Func,  }\item[{int}]{order }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a56a99e97605f623e6f46d1365c1990db}} 
+\index{LinkedList.h@{LinkedList.h}!ll\_subList@{ll\_subList}}
+\index{ll\_subList@{ll\_subList}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{ll\_subList()}
+{\footnotesize\ttfamily \textbf{ Linked\+List}$\ast$ ll\+\_\+sub\+List (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{int}]{from,  }\item[{int}]{to }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_a857b3affc6f2095b8f7be5e8b673e643}} 
+\index{LinkedList.h@{LinkedList.h}!test\_addNode@{test\_addNode}}
+\index{test\_addNode@{test\_addNode}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{test\_addNode()}
+{\footnotesize\ttfamily int test\+\_\+add\+Node (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{int}]{node\+Index,  }\item[{void $\ast$}]{p\+Element }\end{DoxyParamCaption})}
+
+\mbox{\label{_linked_list_8h_aed149da373f558c2c7a984613206d8f7}} 
+\index{LinkedList.h@{LinkedList.h}!test\_getNode@{test\_getNode}}
+\index{test\_getNode@{test\_getNode}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{test\_getNode()}
+{\footnotesize\ttfamily \textbf{ Node}$\ast$ test\+\_\+get\+Node (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{this,  }\item[{int}]{node\+Index }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\label{_linked_list_8h_a5396e9c35cfb79f0ed58b5d00c71a22c}} 
+\index{LinkedList.h@{LinkedList.h}!LinkedList@{LinkedList}}
+\index{LinkedList@{LinkedList}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{LinkedList}
+{\footnotesize\ttfamily struct \textbf{ Linked\+List} \textbf{ Linked\+List}}
+
+\mbox{\label{_linked_list_8h_a91e1adfad95b7d9a107dcb2a11ecc0cc}} 
+\index{LinkedList.h@{LinkedList.h}!Node@{Node}}
+\index{Node@{Node}!LinkedList.h@{LinkedList.h}}
+\doxysubsubsection{Node}
+{\footnotesize\ttfamily struct \textbf{ Node} \textbf{ Node}}
+

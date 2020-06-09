@@ -5,21 +5,15 @@
 #include "defines.h"
 #include "utn_inputs.h"
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
+/** \brief Muestra el menu principal de la aplicacion
+ * \param void Nothing
+ * \return int Devuelve la opcion ingresada por el usuario.
  */
 int ShowMainMenu();
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
+/** \brief Muestra el menu de modificacion.
+ * \param void Nothing
+ * \return int Devuelve la opcion ingresada por el usuario.
  */
 int ShowModifyMenu();
 

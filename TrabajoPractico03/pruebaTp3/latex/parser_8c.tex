@@ -1,0 +1,53 @@
+\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/prueba\+Tp3/parser.c File Reference}
+\label{parser_8c}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/pruebaTp3/parser.c@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/pruebaTp3/parser.c}}
+{\ttfamily \#include \char`\"{}parser.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ parser\+\_\+\+Employee\+From\+Text} (F\+I\+LE $\ast$p\+File, \textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Carga los datos de los empleados desde el archivo data.\+csv (modo texto) y los carga dentro de la lista de empleados. \end{DoxyCompactList}\item 
+int \textbf{ parser\+\_\+\+Employee\+From\+Binary} (F\+I\+LE $\ast$p\+File, \textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Carga los datos de los empleados desde el archivo data.\+bin (modo binario) y los carga dentro de la lista de empleados.. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{parser_8c_a670b165990ce2dabc56667f9a81ba174}} 
+\index{parser.c@{parser.c}!parser\_EmployeeFromBinary@{parser\_EmployeeFromBinary}}
+\index{parser\_EmployeeFromBinary@{parser\_EmployeeFromBinary}!parser.c@{parser.c}}
+\doxysubsubsection{parser\_EmployeeFromBinary()}
+{\footnotesize\ttfamily int parser\+\_\+\+Employee\+From\+Binary (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{p\+File,  }\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Carga los datos de los empleados desde el archivo data.\+bin (modo binario) y los carga dentro de la lista de empleados.. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+I\+L\+E$\ast$} & p\+File Puntero al archivo de texto. \\
+\hline
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si p\+File es N\+U\+LL o p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{parser_8c_a72cb2f777a5ba4e15e29a28987d82cc9}} 
+\index{parser.c@{parser.c}!parser\_EmployeeFromText@{parser\_EmployeeFromText}}
+\index{parser\_EmployeeFromText@{parser\_EmployeeFromText}!parser.c@{parser.c}}
+\doxysubsubsection{parser\_EmployeeFromText()}
+{\footnotesize\ttfamily int parser\+\_\+\+Employee\+From\+Text (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{p\+File,  }\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Carga los datos de los empleados desde el archivo data.\+csv (modo texto) y los carga dentro de la lista de empleados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+I\+L\+E$\ast$} & p\+File Puntero al archivo de texto. \\
+\hline
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si p\+File es N\+U\+LL o p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}

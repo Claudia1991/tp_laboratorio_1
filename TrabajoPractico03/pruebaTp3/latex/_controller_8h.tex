@@ -1,0 +1,196 @@
+\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/prueba\+Tp3/\+Controller.h File Reference}
+\label{_controller_8h}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/pruebaTp3/Controller.h@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/pruebaTp3/Controller.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ controller\+\_\+load\+From\+Text} (char $\ast$path, \textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Carga los datos de los empleados desde el archivo data.\+csv (modo texto) y los carga dentro de la lista de empleados. \end{DoxyCompactList}\item 
+int \textbf{ controller\+\_\+load\+From\+Binary} (char $\ast$path, \textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Carga los datos de los empleados desde el archivo data.\+bin (modo binario) y los carga dentro de la lista de empleados.. \end{DoxyCompactList}\item 
+int \textbf{ controller\+\_\+add\+Employee} (\textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Alta de empleados. Agrega un empleado a la lista dinamica de empleados. \end{DoxyCompactList}\item 
+int \textbf{ controller\+\_\+edit\+Employee} (\textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Modificar datos de empleado. Edita un empleado de la lista dinamica de empleados. \end{DoxyCompactList}\item 
+int \textbf{ controller\+\_\+remove\+Employee} (\textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Baja de empleado. Elimina un empleado de la lista dinamica de empleados. \end{DoxyCompactList}\item 
+int \textbf{ controller\+\_\+\+List\+Employee} (\textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Listar empleados. Muestra los empleados de la lista dinamica de empleados. \end{DoxyCompactList}\item 
+int \textbf{ controller\+\_\+sort\+Employee} (\textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Ordenar empleados. \end{DoxyCompactList}\item 
+int \textbf{ controller\+\_\+save\+As\+Text} (char $\ast$path, \textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Guarda los datos de los empleados en el archivo data.\+csv (modo texto). \end{DoxyCompactList}\item 
+int \textbf{ controller\+\_\+save\+As\+Binary} (char $\ast$path, \textbf{ Linked\+List} $\ast$p\+Array\+List\+Employee)
+\begin{DoxyCompactList}\small\item\em Guarda los datos de los empleados en el archivo data.\+csv (modo binario). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{_controller_8h_a70543b92be5bf65eb99400cf4fb2ff74}} 
+\index{Controller.h@{Controller.h}!controller\_addEmployee@{controller\_addEmployee}}
+\index{controller\_addEmployee@{controller\_addEmployee}!Controller.h@{Controller.h}}
+\doxysubsubsection{controller\_addEmployee()}
+{\footnotesize\ttfamily int controller\+\_\+add\+Employee (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Alta de empleados. Agrega un empleado a la lista dinamica de empleados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_controller_8h_ac9d60139130512648e4fe196531ac292}} 
+\index{Controller.h@{Controller.h}!controller\_editEmployee@{controller\_editEmployee}}
+\index{controller\_editEmployee@{controller\_editEmployee}!Controller.h@{Controller.h}}
+\doxysubsubsection{controller\_editEmployee()}
+{\footnotesize\ttfamily int controller\+\_\+edit\+Employee (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Modificar datos de empleado. Edita un empleado de la lista dinamica de empleados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_controller_8h_a22fea2c870bcf6fae4595dc1b4a5b994}} 
+\index{Controller.h@{Controller.h}!controller\_ListEmployee@{controller\_ListEmployee}}
+\index{controller\_ListEmployee@{controller\_ListEmployee}!Controller.h@{Controller.h}}
+\doxysubsubsection{controller\_ListEmployee()}
+{\footnotesize\ttfamily int controller\+\_\+\+List\+Employee (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Listar empleados. Muestra los empleados de la lista dinamica de empleados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_controller_8h_a7887ff36f8f9a566e748a6987548d715}} 
+\index{Controller.h@{Controller.h}!controller\_loadFromBinary@{controller\_loadFromBinary}}
+\index{controller\_loadFromBinary@{controller\_loadFromBinary}!Controller.h@{Controller.h}}
+\doxysubsubsection{controller\_loadFromBinary()}
+{\footnotesize\ttfamily int controller\+\_\+load\+From\+Binary (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Carga los datos de los empleados desde el archivo data.\+bin (modo binario) y los carga dentro de la lista de empleados.. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+I\+L\+E$\ast$} & p\+File Puntero al archivo de texto. \\
+\hline
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si p\+File es N\+U\+LL o p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_controller_8h_a5af1320c195cca34c5b4ef9b3bff1def}} 
+\index{Controller.h@{Controller.h}!controller\_loadFromText@{controller\_loadFromText}}
+\index{controller\_loadFromText@{controller\_loadFromText}!Controller.h@{Controller.h}}
+\doxysubsubsection{controller\_loadFromText()}
+{\footnotesize\ttfamily int controller\+\_\+load\+From\+Text (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Carga los datos de los empleados desde el archivo data.\+csv (modo texto) y los carga dentro de la lista de empleados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+I\+L\+E$\ast$} & p\+File Puntero al archivo de texto. \\
+\hline
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si p\+File es N\+U\+LL o p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_controller_8h_a05d45e816542e1384ff75904f6895e3b}} 
+\index{Controller.h@{Controller.h}!controller\_removeEmployee@{controller\_removeEmployee}}
+\index{controller\_removeEmployee@{controller\_removeEmployee}!Controller.h@{Controller.h}}
+\doxysubsubsection{controller\_removeEmployee()}
+{\footnotesize\ttfamily int controller\+\_\+remove\+Employee (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Baja de empleado. Elimina un empleado de la lista dinamica de empleados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_controller_8h_ac81492a53dc3e8e273269e283937c904}} 
+\index{Controller.h@{Controller.h}!controller\_saveAsBinary@{controller\_saveAsBinary}}
+\index{controller\_saveAsBinary@{controller\_saveAsBinary}!Controller.h@{Controller.h}}
+\doxysubsubsection{controller\_saveAsBinary()}
+{\footnotesize\ttfamily int controller\+\_\+save\+As\+Binary (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Guarda los datos de los empleados en el archivo data.\+csv (modo binario). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+I\+L\+E$\ast$} & p\+File Puntero al archivo de texto. \\
+\hline
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si p\+File es N\+U\+LL o p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_controller_8h_ab575b4ae62dcd2193ee81360d96f88e2}} 
+\index{Controller.h@{Controller.h}!controller\_saveAsText@{controller\_saveAsText}}
+\index{controller\_saveAsText@{controller\_saveAsText}!Controller.h@{Controller.h}}
+\doxysubsubsection{controller\_saveAsText()}
+{\footnotesize\ttfamily int controller\+\_\+save\+As\+Text (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Guarda los datos de los empleados en el archivo data.\+csv (modo texto). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\+I\+L\+E$\ast$} & p\+File Puntero al archivo de texto. \\
+\hline
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) si p\+File es N\+U\+LL o p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}
+\mbox{\label{_controller_8h_ad737b52dfeb380da5b360c1c19a788f8}} 
+\index{Controller.h@{Controller.h}!controller\_sortEmployee@{controller\_sortEmployee}}
+\index{controller\_sortEmployee@{controller\_sortEmployee}!Controller.h@{Controller.h}}
+\doxysubsubsection{controller\_sortEmployee()}
+{\footnotesize\ttfamily int controller\+\_\+sort\+Employee (\begin{DoxyParamCaption}\item[{\textbf{ Linked\+List} $\ast$}]{p\+Array\+List\+Employee }\end{DoxyParamCaption})}
+
+
+
+Ordenar empleados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Linked\+List$\ast$} & p\+Array\+List\+Employee Lista dinamica de empleados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Devuelve E\+R\+R\+OR(-\/1) p\+Array\+List\+Employee es N\+U\+LL, sino devuelve OK (0) 
+\end{DoxyReturn}

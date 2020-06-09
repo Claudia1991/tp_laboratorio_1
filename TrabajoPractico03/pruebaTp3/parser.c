@@ -1,11 +1,5 @@
 #include "parser.h"
-/** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+
 int parser_EmployeeFromText(FILE *pFile, LinkedList *pArrayListEmployee) {
 	int status = ERROR;
 	int result = 0;
@@ -32,13 +26,6 @@ int parser_EmployeeFromText(FILE *pFile, LinkedList *pArrayListEmployee) {
 	return status;
 }
 
-/** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int parser_EmployeeFromBinary(FILE *pFile, LinkedList *pArrayListEmployee) {
 	//Primero leo el archivo en texto y lo guardo en binario y leo binario
 	int hasHeader = HAS_HEADER;
@@ -57,7 +44,6 @@ int parser_EmployeeFromBinary(FILE *pFile, LinkedList *pArrayListEmployee) {
 				hasHeader = 0;
 				result = fscanf(pFileText, DATA_FORMAT, auxId, auxNombre,
 						auxHorasTrabajadas, auxSueldo);
-				//fputs(HEADER, pFile);
 				continue;
 			} else {
 				result = fscanf(pFileText, DATA_FORMAT, auxId, auxNombre,
@@ -74,7 +60,6 @@ int parser_EmployeeFromBinary(FILE *pFile, LinkedList *pArrayListEmployee) {
 		}
 		fclose(pFileText);
 		fclose(pFile);
-		//rewind(pFile);
 		pFile = fopen(SOURCE_DATA_BIN, "rb");
 		while (!feof(pFile)) {
 			result = fread(&currentEmployee, sizeof(currentEmployee), 1, pFile);

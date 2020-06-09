@@ -17,9 +17,14 @@ int controller_loadFromText(char *path, LinkedList *pArrayListEmployee) {
 	if (path != NULL && pArrayListEmployee != NULL) {
 		FILE *pFile;
 		pFile = fopen(path, "r");
-		parser_EmployeeFromText(pFile, pArrayListEmployee);
-		printf(" :::[EXITO]::: Se leyeron los datos correctamente. \n");
-		status = OK;
+		if (pFile != NULL) {
+			printf(" :::[INFO]::: Archivo: %s abierto en modo lectura. \n", path);
+			parser_EmployeeFromText(pFile, pArrayListEmployee);
+			printf(" :::[EXITO]::: Se leyeron los datos correctamente. \n");
+			status = OK;
+		}else{
+			printf(" :::[ERROR]::: Al abrir el archivo de texto. \n");
+		}
 	} else {
 		printf(" :::[ERROR]::: No se pueden leer los datos del archivo. \n");
 	}
@@ -34,9 +39,14 @@ int controller_loadFromBinary(char *path, LinkedList *pArrayListEmployee) {
 		//Primero leo el archivo en texto y lo guardo en binario y leo binario
 		FILE *pFile;
 		pFile = fopen(path, "wb");
-		parser_EmployeeFromBinary(pFile, pArrayListEmployee);
-		printf(" :::[EXITO]::: Se leyeron los datos correctamente. \n");
-		status = OK;
+		if(pFile != NULL){
+			printf(":::[INFO]::: Archivo: %s abierto en modo escritura. \n", path);
+			parser_EmployeeFromBinary(pFile, pArrayListEmployee);
+					printf(" :::[EXITO]::: Se leyeron los datos correctamente. \n");
+					status = OK;
+		}else{
+			printf(" :::[ERROR]::: Al abrir el archivo binario. \n");
+		}
 	} else {
 		printf(" :::[ERROR]::: No se pueden leer los datos del archivo. \n");
 	}
@@ -56,7 +66,7 @@ int controller_addEmployee(LinkedList *pArrayListEmployee) {
 				&resultNombre, &resultHorasTrabajadas, &resultSueldo);
 		if (!resultNombre && !resultHorasTrabajadas && !resultSueldo) {
 			printf(
-					":::[EXITO]::: Se ingreso correctamente los datos para el nuevo empleado!!.\n");
+					":::[EXITO]::: Se ingreso correctamente los datos para cargar el nuevo empleado!!.\n");
 			Employee *newEmployee = employee_newParametros(DEFAULT_ID, nombre,
 					horasTrabajadas, sueldo);
 			ll_add(pArrayListEmployee, (void*) newEmployee);
@@ -171,7 +181,6 @@ int controller_removeEmployee(LinkedList *pArrayListEmployee) {
 				":::[ERROR]::: ingrese un indice correcto\n", 1, sizeArray,
 				RETRIES);
 		if (!resultGetIndex && index != ERROR) {
-			status = OK;
 			Employee *currentEmployee = (Employee*) ll_get(pArrayListEmployee,
 					index - 1);
 			employee_show(currentEmployee);
@@ -180,6 +189,7 @@ int controller_removeEmployee(LinkedList *pArrayListEmployee) {
 					":::[ERROR]::: ingrese correctamente la opcion\n", 'n', 's',
 					RETRIES);
 			if (respuestaUsuario == 's') {
+				status = OK;
 				employee_delete(currentEmployee);
 				ll_remove(pArrayListEmployee, index - 1);
 				printf(":::[EXITO]::: Se borro correctamente el empleado.\n");
@@ -253,15 +263,15 @@ int controller_saveAsText(char *path, LinkedList *pArrayListEmployee) {
 			Employee *currentEmployee;
 			Node *nodo = pArrayListEmployee->pFirstNode;
 
-			do {
+			while (i < sizeArray && nodo != NULL) {
 				currentEmployee = (Employee*) nodo->pElement;
-				fprintf(pFile, "%d,%s,%d,%d\n", currentEmployee->id,
+				fprintf(pFile, DATA_FORMAT_SAVE, currentEmployee->id,
 						currentEmployee->nombre,
 						currentEmployee->horasTrabajadas,
 						currentEmployee->sueldo);
 				i++;
 				nodo = nodo->pNextNode;
-			} while (i < sizeArray && nodo != NULL);
+			}
 			printf(":::[EXITO]::: Proceso finalizado.\n");
 			status = OK;
 		} else {
@@ -298,11 +308,6 @@ int controller_saveAsBinary(char *path, LinkedList *pArrayListEmployee) {
 						&currentEmployeeToSave.horasTrabajadas);
 				employee_getSueldo(currentEmployee,
 						&currentEmployeeToSave.sueldo);
-				printf(
-						"[TEST] EMPLEADO A AGREGAR - ID %d - NOMBRE %s - HORAS %d - SUELDO %d",
-						currentEmployeeToSave.id, currentEmployeeToSave.nombre,
-						currentEmployeeToSave.horasTrabajadas,
-						currentEmployeeToSave.sueldo);
 				fseek(pFile, 0L, SEEK_END);
 				fwrite(&currentEmployeeToSave, sizeof(currentEmployeeToSave), 1,
 						pFile);
@@ -329,7 +334,7 @@ static void ListEmployees(LinkedList *pArrayListEmployee) {
 	Node *nodo = pArrayListEmployee->pFirstNode;
 	do {
 		currentEmployee = (Employee*) nodo->pElement;
-		printf("INDICE:[%d] -", (i + 1));
+		printf("INDICE:[%d] - ", (i + 1));
 		employee_show(currentEmployee);
 		i++;
 		nodo = nodo->pNextNode;
@@ -340,7 +345,6 @@ static void ListEmployees(LinkedList *pArrayListEmployee) {
 static int OrderListEmployees(LinkedList *pArrayListEmployee, int dataToOrder,
 		int order) {
 	int status = ERROR;
-	int (*funcionCriterio)(void*, void*);
 	printf(":::[INICIO]::: ORDENAMIENTO LISTA DE EMPLEADOS\n");
 	if (pArrayListEmployee != NULL && dataToOrder > 0 && order > -1) {
 		status = OK;
@@ -352,18 +356,18 @@ static int OrderListEmployees(LinkedList *pArrayListEmployee, int dataToOrder,
 		switch (dataToOrder) {
 		case ORDER_BY_NAME:
 			printf(":::[INFO]::: Ordenamiento por nombre\n");
-			funcionCriterio = employee_OrderListEmployeesByName;
-			ll_sort(pArrayListEmployee, funcionCriterio, order);
+			ll_sort(pArrayListEmployee, employee_OrderListEmployeesByName,
+					order);
 			break;
 		case ORDER_BY_WORKED_HOURS:
 			printf(":::[INFO]::: Ordenamiento por horas trabajadas\n");
-			funcionCriterio = employee_OrderListEmployeesByWordedHours;
-			ll_sort(pArrayListEmployee, funcionCriterio, order);
+			ll_sort(pArrayListEmployee,
+					employee_OrderListEmployeesByWordedHours, order);
 			break;
 		case ORDER_BY_SALARY:
 			printf(":::[INFO]::: Ordenamiento por salario\n");
-			funcionCriterio = employee_OrderListEmployeesBySalary;
-			ll_sort(pArrayListEmployee, funcionCriterio, order);
+			ll_sort(pArrayListEmployee, employee_OrderListEmployeesBySalary,
+					order);
 			break;
 		}
 		printf(":::[EXITO]::: Ordenamiento finalizado\n");
