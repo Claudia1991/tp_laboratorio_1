@@ -23,6 +23,6 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee);
  * \return int Devuelve ERROR(-1) si pFile es NULL o pArrayListEmployee es NULL, sino devuelve OK (0)
  *
  */
-int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee);
+int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee, int existFile);
 
 #endif /* PARSER_H_ */

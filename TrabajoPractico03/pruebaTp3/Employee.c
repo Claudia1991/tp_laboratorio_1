@@ -3,29 +3,20 @@
 Employee* employee_new() {
 	return (Employee*) malloc(sizeof(Employee));
 }
-Employee* employee_newParametros(char *idStr, char *nombreStr,
-		char *horasTrabajadasStr, char *sueldoStr) {
+Employee* employee_newParametros(char *idStr, char *nombreStr,	char *horasTrabajadasStr, char *sueldoStr) {
 	Employee *this = employee_new();
-	if (idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL
-			&& sueldoStr != NULL) {
-		if (IsNumeric(idStr) && IsOnlyLetters(nombreStr)
-				&& IsNumeric(horasTrabajadasStr) && IsNumeric(sueldoStr)) {
-			if (!employee_setId(this, atoi(idStr))
-					&& !employee_setNombre(this, nombreStr)
-					&& !employee_setHorasTrabajadas(this,
-							atoi(horasTrabajadasStr))
-					&& !employee_setSueldo(this, atoi(sueldoStr))) {
-				return this;
+	if(this != NULL){
+		if (idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL
+					&& sueldoStr != NULL) {
+				if (IsNumeric(idStr) && IsOnlyLetters(nombreStr) && IsNumeric(horasTrabajadasStr) && IsNumeric(sueldoStr)) {
+					if (!employee_setId(this, atoi(idStr))	&& !employee_setNombre(this, nombreStr)	&& !employee_setHorasTrabajadas(this,atoi(horasTrabajadasStr))	&& !employee_setSueldo(this, atoi(sueldoStr))) {
+						return this;
+					}
+				}
 			}
-		}
 	}
 	employee_delete(this);
 	return NULL;
-}
-void employee_delete(Employee *this) {
-	if (this != NULL) {
-		free(this);
-	}
 }
 
 int employee_setId(Employee *this, int id) {
@@ -45,6 +36,14 @@ int employee_setId(Employee *this, int id) {
 	}
 	return status;
 }
+
+void employee_delete(Employee *this) {
+	if (this != NULL) {
+		free(this);
+	}
+}
+
+
 int employee_getId(Employee *this, int *id) {
 	int status = ERROR;
 	if (this != NULL && id != NULL) {
@@ -106,26 +105,20 @@ int employee_getSueldo(Employee *this, int *sueldo) {
 }
 
 void employee_show(Employee *this) {
-	int id, sueldo, horasTrabajadas;
-	char nombre[SIZE_CHAR_ARRAY];
-	if(!employee_getId(this, &id) && !employee_getNombre(this, nombre) && !employee_getHorasTrabajadas(this, &horasTrabajadas) && !employee_getSueldo(this, &sueldo)){
-		printf("ID: %d - NOMBRE: %s - SUELDO: %d - HORAS TRABAJADAS: %d\n",	id, nombre, sueldo, horasTrabajadas);
+	if(this != NULL){
+		int id, sueldo, horasTrabajadas;
+		char nombre[SIZE_CHAR_ARRAY];
+		if(!employee_getId(this, &id) && !employee_getNombre(this, nombre) && !employee_getHorasTrabajadas(this, &horasTrabajadas) && !employee_getSueldo(this, &sueldo)){
+			printf("ID: %d - NOMBRE: %s - SUELDO: %d - HORAS TRABAJADAS: %d\n",	id, nombre, sueldo, horasTrabajadas);
+		}
 	}
 }
 
-void employee_GetDataForNewEmployee(char *nombre, char *horasTrabajadas,
-		char *sueldo, int *statusNombre, int *statusHorasTrabajadas,
-		int *statusSueldo) {
+void employee_GetDataForNewEmployee(char *nombre, char *horasTrabajadas,	char *sueldo, int *statusNombre, int *statusHorasTrabajadas,	int *statusSueldo) {
 	printf(" :::[INICIO]::: OBTENER DATOS NUEVO EMPLEADO \n");
-	*statusNombre = GetString(nombre,
-			"Ingrese el nombre para el nuevo empleado: ",
-			":::[ERROR]::: ingrese nuevamente el nombre\n", RETRIES);
-	*statusHorasTrabajadas = GetString(horasTrabajadas,
-			"Ingrese las horas trabajadas para el nuevo empleado: ",
-			":::[ERROR]::: ingrese nuevamente el nombre\n", RETRIES);
-	*statusSueldo = GetString(sueldo,
-			"Ingrese el sueldo para el nuevo empleado: ",
-			":::[ERROR]::: ingrese nuevamente el nombre\n", RETRIES);
+	*statusNombre = GetString(nombre,"Ingrese el nombre para el nuevo empleado: ",	":::[ERROR]::: ingrese nuevamente el nombre\n", RETRIES);
+	*statusHorasTrabajadas = GetString(horasTrabajadas,	"Ingrese las horas trabajadas para el nuevo empleado: ",	":::[ERROR]::: ingrese nuevamente el nombre\n", RETRIES);
+	*statusSueldo = GetString(sueldo,"Ingrese el sueldo para el nuevo empleado: ",	":::[ERROR]::: ingrese nuevamente el nombre\n", RETRIES);
 	printf(" :::[FIN]::: OBTENER DATOS NUEVO EMPLEADO \n");
 }
 

@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "TP - 03", "index.html", [
+  [ "Trabajo Practico - Numero 3", "index.html", [
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
