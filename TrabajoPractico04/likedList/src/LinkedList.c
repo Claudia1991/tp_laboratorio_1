@@ -91,60 +91,37 @@ Node* test_getNode(LinkedList *this, int nodeIndex) {
 static int addNode(LinkedList *this, int nodeIndex, void *pElement) {
 	int returnAux = -1;
 	Node *newNode = (Node*) malloc(sizeof(Node));
-	if (this != NULL && newNode != NULL) {
-		if (ll_len(this) == 0 && this->pFirstNode == NULL) {
+	if (this != NULL && newNode != NULL && nodeIndex >=0 && nodeIndex <=ll_len(this)) {
+		if (this->pFirstNode == NULL) {
 			//la lista esta vacia
 			newNode->pElement = pElement;
 			newNode->pNextNode = NULL;
-			this->size++;
+			this->size = 1;
 			this->pFirstNode = newNode;
 			returnAux = 0;
 		} else {
 			if (nodeIndex == 0) {
-				//nodeindex == 0 - es la nueva cabeza
+				//es la nueva cabeza
 				this->size++;
 				newNode->pElement = pElement;
 				newNode->pNextNode = this->pFirstNode;
 				returnAux = 0;
-			} else if (nodeIndex == ll_len(this)) {
+			} else {
 				//nodeindex == ll_len - es la nueva cola
-				int i = 0;
-				int size = ll_len(this);
-				Node *currentNode;
-				currentNode = this->pFirstNode;
-				while (i < size) {
-					currentNode = currentNode->pNextNode;
-					if (currentNode == NULL) {
-						newNode->pElement = pElement;
-						newNode->pNextNode = NULL;
-						currentNode->pNextNode = newNode;
-						this->size++;
-						returnAux = 0;
-						break;
-					} else {
-						i++;
-					}
-				}
-			} else if (nodeIndex > 0 && nodeIndex < ll_len(this)) {
 				//nodeindex == x - se lo inserta en el indice especificado, corriendo los demas
 				int i = 0;
-				int size = ll_len(this);
-				Node *currentNode;
-				currentNode = this->pFirstNode;
-				while (i < size && currentNode != NULL) {
-					if (i == nodeIndex) {
-						Node *previewNode = getNode(this, i-1);
-						newNode->pElement = pElement;
-						newNode->pNextNode = currentNode;
-						previewNode->pNextNode = newNode;
-						this->size++;
-						returnAux = 0;
-						break;
-					} else {
-						i++;
-					}
-					currentNode = currentNode->pNextNode;
+				Node *previusNode;
+				previusNode = this->pFirstNode;
+				while (i < nodeIndex) {
+					//muevo el punterus node hasta el final
+					previusNode = previusNode->pNextNode;
+					i++;
 				}
+				newNode->pElement = pElement;
+				newNode->pNextNode = previusNode->pNextNode;
+				previusNode->pNextNode = newNode;
+				this->size++;
+				returnAux = 0;
 			}
 		}
 	}
