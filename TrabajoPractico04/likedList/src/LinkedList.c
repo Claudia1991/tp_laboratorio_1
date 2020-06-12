@@ -47,22 +47,14 @@ int ll_len(LinkedList *this) {
  */
 static Node* getNode(LinkedList *this, int nodeIndex) {
 	Node *pNode = NULL;
-	if (this != NULL) {
-		if (nodeIndex > -1 && nodeIndex < ll_len(this)) {
-			int i = 0;
-			int size = ll_len(this);
-			Node *currentNode;
-			currentNode = this->pFirstNode;
-			while (i < size && currentNode != NULL) {
-				if (i == nodeIndex) {
-					pNode = currentNode;
-					break;
-				} else {
-					i++;
-				}
-				currentNode = currentNode->pNextNode;
-			}
+	if (this != NULL && nodeIndex >= 0 && nodeIndex < ll_len(this)) {
+		int i = 0;
+		Node *currentNode = this->pFirstNode;
+		while (i < nodeIndex) {
+			i++;
+			currentNode = currentNode->pNextNode;
 		}
+		pNode = currentNode;
 	}
 	return pNode;
 }
@@ -91,8 +83,8 @@ Node* test_getNode(LinkedList *this, int nodeIndex) {
 static int addNode(LinkedList *this, int nodeIndex, void *pElement) {
 	int returnAux = -1;
 	Node *newNode = (Node*) malloc(sizeof(Node));
-	if (this != NULL && newNode != NULL && nodeIndex >=0 && nodeIndex <=ll_len(this)) {
-		if (this->pFirstNode == NULL) {
+	if (this != NULL && newNode != NULL && nodeIndex >= 0	&& nodeIndex <= ll_len(this)) {
+		if (ll_len(this) == 0 || this->pFirstNode) {
 			//la lista esta vacia
 			newNode->pElement = pElement;
 			newNode->pNextNode = NULL;
@@ -106,12 +98,22 @@ static int addNode(LinkedList *this, int nodeIndex, void *pElement) {
 				newNode->pElement = pElement;
 				newNode->pNextNode = this->pFirstNode;
 				returnAux = 0;
-			} else {
+			} else if (nodeIndex == ll_len(this)) {
 				//nodeindex == ll_len - es la nueva cola
+				Node *previusNode = this->pFirstNode;
+				while (previusNode->pNextNode) {
+					//muevo el punterus node hasta el final
+					previusNode = previusNode->pNextNode;
+				}
+				newNode->pElement = pElement;
+				newNode->pNextNode = NULL;
+				previusNode->pNextNode = newNode;
+				this->size++;
+				returnAux = 0;
+			} else {
 				//nodeindex == x - se lo inserta en el indice especificado, corriendo los demas
 				int i = 0;
-				Node *previusNode;
-				previusNode = this->pFirstNode;
+				Node *previusNode = this->pFirstNode;
 				while (i < nodeIndex) {
 					//muevo el punterus node hasta el final
 					previusNode = previusNode->pNextNode;
