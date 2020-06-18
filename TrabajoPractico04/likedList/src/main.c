@@ -26,25 +26,25 @@
 
 int main(void)
 {
-	//startTesting(1);  // ll_newLinkedList
-	//startTesting(2);  // ll_len
-	//startTesting(3);  // getNode - test_getNode
-	//startTesting(4);  // addNode - test_addNode
-	//startTesting(5);  // ll_add
-	//startTesting(6);  // ll_get
-	//startTesting(7);  // ll_set
-	//startTesting(8);  // ll_remove
-	startTesting(9);  // ll_clear
-	//startTesting(10); // ll_deleteLinkedList
-	//startTesting(11); // ll_indexOf
-	//startTesting(12); // ll_isEmpty
-	//startTesting(13); // ll_push
-	//startTesting(14); // ll_pop
-	//startTesting(15); // ll_contains
-	//startTesting(16); // ll_containsAll
-	//startTesting(17); // ll_subList
-	//startTesting(18); // ll_clone
-	//startTesting(19); // ll_sort
+	startTesting(1);  // ll_newLinkedList 			-100%
+	startTesting(2);  // ll_len						-100%
+	startTesting(3);  // getNode - test_getNode		-100%
+	startTesting(4);  // addNode - test_addNode		-100%
+	startTesting(5);  // ll_add						-100%
+	startTesting(6);  // ll_get						-100%
+	startTesting(7);  // ll_set						-100%
+	startTesting(8);  // ll_remove					-100%
+	startTesting(9);  // ll_clear					-100%
+	startTesting(10); // ll_deleteLinkedList		-100%
+	startTesting(11); // ll_indexOf					-100%
+	startTesting(12); // ll_isEmpty					-100%
+	startTesting(13); // ll_push					-100%
+	startTesting(14); // ll_pop						-100%
+	startTesting(15); // ll_contains				-100%
+	startTesting(16); // ll_containsAll				-100%
+	startTesting(17); // ll_subList					-100%
+	startTesting(18); // ll_clone					-100%
+	startTesting(19); // ll_sort					-100%
 
     return 0;
 }
