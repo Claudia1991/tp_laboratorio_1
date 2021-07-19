@@ -1,0 +1,118 @@
+\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/\+P\+P\+\_\+\+Claudia\+Jara/src/\+Client.c File Reference}
+\label{_client_8c}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/PP\_ClaudiaJara/src/Client.c@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/PP\_ClaudiaJara/src/Client.c}}
+{\ttfamily \#include \char`\"{}Client.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Menus.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utn\+\_\+inputs.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ Init\+Client\+Array} (\textbf{ e\+Client} array\+Client[$\,$], int size)
+\item 
+int \textbf{ Is\+Empty\+Client\+Array} (\textbf{ e\+Client} array\+Client[$\,$], int size)
+\item 
+int \textbf{ Get\+Free\+Index\+Client\+Array} (\textbf{ e\+Client} array\+Client[$\,$], int size)
+\item 
+\textbf{ e\+Client} \textbf{ Get\+Client\+By\+Id} (\textbf{ e\+Client} array\+Client[$\,$], int size, int id)
+\item 
+void \textbf{ Add\+Client} (\textbf{ e\+Client} array\+Client[$\,$], int size, int $\ast$id)
+\item 
+\textbf{ e\+Client} \textbf{ New\+Client} (int id, char $\ast$name, char $\ast$last\+Name, int cuil)
+\item 
+int \textbf{ Find\+Client\+By\+Id} (\textbf{ e\+Client} array\+Client[$\,$], int size, int id)
+\item 
+void \textbf{ Get\+Data\+New\+Client} (char $\ast$name, char $\ast$last\+Name, int $\ast$cuil)
+\item 
+void \textbf{ Modify\+Client} (\textbf{ e\+Client} array\+Client[$\,$], int size)
+\item 
+int \textbf{ Delete\+Client} (\textbf{ e\+Client} array\+Client[$\,$], int size)
+\item 
+void \textbf{ Show\+Client} (\textbf{ e\+Client} client)
+\item 
+int \textbf{ Show\+Clients} (\textbf{ e\+Client} array\+Client[$\,$], int size)
+\item 
+int \textbf{ Get\+Cuil\+By\+Id\+Clint} (\textbf{ e\+Client} array\+Client[$\,$], int size, int id, int $\ast$cuil)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{_client_8c_a7df0a6c1166b2e74da205677d2a889df}} 
+\index{Client.c@{Client.c}!AddClient@{AddClient}}
+\index{AddClient@{AddClient}!Client.c@{Client.c}}
+\doxysubsubsection{AddClient()}
+{\footnotesize\ttfamily void Add\+Client (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{array\+Client[$\,$],  }\item[{int}]{size,  }\item[{int $\ast$}]{id }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_a5c01705ad2ebda4a224edea9fb372f1f}} 
+\index{Client.c@{Client.c}!DeleteClient@{DeleteClient}}
+\index{DeleteClient@{DeleteClient}!Client.c@{Client.c}}
+\doxysubsubsection{DeleteClient()}
+{\footnotesize\ttfamily int Delete\+Client (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{array\+Client[$\,$],  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_a5d6f822902cdb54ba51dca36249be09b}} 
+\index{Client.c@{Client.c}!FindClientById@{FindClientById}}
+\index{FindClientById@{FindClientById}!Client.c@{Client.c}}
+\doxysubsubsection{FindClientById()}
+{\footnotesize\ttfamily int Find\+Client\+By\+Id (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{array\+Client[$\,$],  }\item[{int}]{size,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_a6e59fe8d363f39281e15dbe08fd50536}} 
+\index{Client.c@{Client.c}!GetClientById@{GetClientById}}
+\index{GetClientById@{GetClientById}!Client.c@{Client.c}}
+\doxysubsubsection{GetClientById()}
+{\footnotesize\ttfamily \textbf{ e\+Client} Get\+Client\+By\+Id (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{array\+Client[$\,$],  }\item[{int}]{size,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_aecc8ee166bfb303625dcf85b696abef2}} 
+\index{Client.c@{Client.c}!GetCuilByIdClint@{GetCuilByIdClint}}
+\index{GetCuilByIdClint@{GetCuilByIdClint}!Client.c@{Client.c}}
+\doxysubsubsection{GetCuilByIdClint()}
+{\footnotesize\ttfamily int Get\+Cuil\+By\+Id\+Clint (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{array\+Client[$\,$],  }\item[{int}]{size,  }\item[{int}]{id,  }\item[{int $\ast$}]{cuil }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_a9cbc200d050518c0db39eccf94eb97d5}} 
+\index{Client.c@{Client.c}!GetDataNewClient@{GetDataNewClient}}
+\index{GetDataNewClient@{GetDataNewClient}!Client.c@{Client.c}}
+\doxysubsubsection{GetDataNewClient()}
+{\footnotesize\ttfamily void Get\+Data\+New\+Client (\begin{DoxyParamCaption}\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{last\+Name,  }\item[{int $\ast$}]{cuil }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_ad5f9f3b5c06838b85435e20deab57722}} 
+\index{Client.c@{Client.c}!GetFreeIndexClientArray@{GetFreeIndexClientArray}}
+\index{GetFreeIndexClientArray@{GetFreeIndexClientArray}!Client.c@{Client.c}}
+\doxysubsubsection{GetFreeIndexClientArray()}
+{\footnotesize\ttfamily int Get\+Free\+Index\+Client\+Array (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{array\+Client[$\,$],  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_acdee10e89381e0c360cbb9b7ade58d91}} 
+\index{Client.c@{Client.c}!InitClientArray@{InitClientArray}}
+\index{InitClientArray@{InitClientArray}!Client.c@{Client.c}}
+\doxysubsubsection{InitClientArray()}
+{\footnotesize\ttfamily int Init\+Client\+Array (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{array\+Client[$\,$],  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_a3405679952cfd1eb6f98b7c76a1c9e25}} 
+\index{Client.c@{Client.c}!IsEmptyClientArray@{IsEmptyClientArray}}
+\index{IsEmptyClientArray@{IsEmptyClientArray}!Client.c@{Client.c}}
+\doxysubsubsection{IsEmptyClientArray()}
+{\footnotesize\ttfamily int Is\+Empty\+Client\+Array (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{array\+Client[$\,$],  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_ae69a5e7a560404b56102ce3a26467462}} 
+\index{Client.c@{Client.c}!ModifyClient@{ModifyClient}}
+\index{ModifyClient@{ModifyClient}!Client.c@{Client.c}}
+\doxysubsubsection{ModifyClient()}
+{\footnotesize\ttfamily void Modify\+Client (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{array\+Client[$\,$],  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_abf51e06b35c8d1899b63f55ddceb5910}} 
+\index{Client.c@{Client.c}!NewClient@{NewClient}}
+\index{NewClient@{NewClient}!Client.c@{Client.c}}
+\doxysubsubsection{NewClient()}
+{\footnotesize\ttfamily \textbf{ e\+Client} New\+Client (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{last\+Name,  }\item[{int}]{cuil }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_a74ff56e3f2548db2a8f4a1ef48b7eb73}} 
+\index{Client.c@{Client.c}!ShowClient@{ShowClient}}
+\index{ShowClient@{ShowClient}!Client.c@{Client.c}}
+\doxysubsubsection{ShowClient()}
+{\footnotesize\ttfamily void Show\+Client (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{client }\end{DoxyParamCaption})}
+
+\mbox{\label{_client_8c_aab68c89ea6b6a60b3623612486adf3ed}} 
+\index{Client.c@{Client.c}!ShowClients@{ShowClients}}
+\index{ShowClients@{ShowClients}!Client.c@{Client.c}}
+\doxysubsubsection{ShowClients()}
+{\footnotesize\ttfamily int Show\+Clients (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{array\+Client[$\,$],  }\item[{int}]{size }\end{DoxyParamCaption})}
+

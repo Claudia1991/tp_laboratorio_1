@@ -1,0 +1,194 @@
+\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/\+P\+P\+\_\+\+Claudia\+Jara/src/utn\+\_\+inputs.h File Reference}
+\label{utn__inputs_8h}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/PP\_ClaudiaJara/src/utn\_inputs.h@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/PP\_ClaudiaJara/src/utn\_inputs.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ Get\+Int\+Number} (int $\ast$p\+Result, char $\ast$message, char $\ast$error\+Message, int minimun, int maximun, int retries)
+\begin{DoxyCompactList}\small\item\em Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. \end{DoxyCompactList}\item 
+int \textbf{ Get\+Float\+Number} (float $\ast$p\+Result, char $\ast$message, char $\ast$error\+Message, float minimun, float maximun, int retries)
+\begin{DoxyCompactList}\small\item\em Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. \end{DoxyCompactList}\item 
+int \textbf{ Get\+Int\+Number\+No\+Min\+Max} (int $\ast$p\+Result, char $\ast$message, char $\ast$error\+Message, int retries)
+\begin{DoxyCompactList}\small\item\em Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. \end{DoxyCompactList}\item 
+int \textbf{ Get\+Float\+Number\+No\+Min\+Max} (float $\ast$p\+Result, char $\ast$message, char $\ast$error\+Message, int retries)
+\begin{DoxyCompactList}\small\item\em Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. \end{DoxyCompactList}\item 
+char \textbf{ Get\+Random\+Number} (int from, int to, int init)
+\begin{DoxyCompactList}\small\item\em Genera un numero aleatorio. \end{DoxyCompactList}\item 
+int \textbf{ Get\+Caracter} (char $\ast$p\+Result, char $\ast$message, char $\ast$error\+Message, char minimun, char maximun, int retries)
+\begin{DoxyCompactList}\small\item\em Pide al usuario un caracter, con un minimo y maximo segun la cantidad de reintentos. \end{DoxyCompactList}\item 
+int \textbf{ Get\+String} (char $\ast$p\+Result, char $\ast$message, char $\ast$error\+Message, int retries)
+\begin{DoxyCompactList}\small\item\em Pide al usuario un caracter, con un minimo y maximo segun la cantidad de reintentos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{utn__inputs_8h_a7d768fefcee12fa329939ab3e6d3a15d}} 
+\index{utn\_inputs.h@{utn\_inputs.h}!GetCaracter@{GetCaracter}}
+\index{GetCaracter@{GetCaracter}!utn\_inputs.h@{utn\_inputs.h}}
+\doxysubsubsection{GetCaracter()}
+{\footnotesize\ttfamily int Get\+Caracter (\begin{DoxyParamCaption}\item[{char $\ast$}]{p\+Result,  }\item[{char $\ast$}]{message,  }\item[{char $\ast$}]{error\+Message,  }\item[{char}]{minimun,  }\item[{char}]{maximun,  }\item[{int}]{retries }\end{DoxyParamCaption})}
+
+
+
+Pide al usuario un caracter, con un minimo y maximo segun la cantidad de reintentos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Es el puntero donde se guardar el caracter ingresado. \\
+\hline
+{\em message} & Es el mensaje que se muestra al usuario pidiendole que ingrese un dato. \\
+\hline
+{\em error\+Message} & Es el mensaje que se muestra en caso de un error. \\
+\hline
+{\em minimun} & Es el minimo valor aceptado. \\
+\hline
+{\em maximun} & Es el maximo valor aceptado. \\
+\hline
+{\em retries} & Es la cantidad de veces que el usuario se puede equivocar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si Ok o -\/1 para indicar un error 
+\end{DoxyReturn}
+\mbox{\label{utn__inputs_8h_aadf691b5a24d21353f4d25d623e373cb}} 
+\index{utn\_inputs.h@{utn\_inputs.h}!GetFloatNumber@{GetFloatNumber}}
+\index{GetFloatNumber@{GetFloatNumber}!utn\_inputs.h@{utn\_inputs.h}}
+\doxysubsubsection{GetFloatNumber()}
+{\footnotesize\ttfamily int Get\+Float\+Number (\begin{DoxyParamCaption}\item[{float $\ast$}]{p\+Result,  }\item[{char $\ast$}]{message,  }\item[{char $\ast$}]{error\+Message,  }\item[{float}]{minimun,  }\item[{float}]{maximun,  }\item[{int}]{retries }\end{DoxyParamCaption})}
+
+
+
+Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Es el puntero donde se guardar el numero ingresado. \\
+\hline
+{\em message} & Es el mensaje que se muestra al usuario pidiendole que ingrese un dato. \\
+\hline
+{\em error\+Message} & Es el mensaje que se muestra en caso de un error. \\
+\hline
+{\em minimun} & Es el minimo valor aceptado. \\
+\hline
+{\em maximun} & Es el maximo valor aceptado. \\
+\hline
+{\em retries} & Es la cantidad de veces que el usuario se puede equivocar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si Ok o -\/1 para indicar un error 
+\end{DoxyReturn}
+\mbox{\label{utn__inputs_8h_a64928bebc6cf227fdd6224407c62610d}} 
+\index{utn\_inputs.h@{utn\_inputs.h}!GetFloatNumberNoMinMax@{GetFloatNumberNoMinMax}}
+\index{GetFloatNumberNoMinMax@{GetFloatNumberNoMinMax}!utn\_inputs.h@{utn\_inputs.h}}
+\doxysubsubsection{GetFloatNumberNoMinMax()}
+{\footnotesize\ttfamily int Get\+Float\+Number\+No\+Min\+Max (\begin{DoxyParamCaption}\item[{float $\ast$}]{p\+Result,  }\item[{char $\ast$}]{message,  }\item[{char $\ast$}]{error\+Message,  }\item[{int}]{retries }\end{DoxyParamCaption})}
+
+
+
+Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Es el puntero donde se guardar el numero ingresado. \\
+\hline
+{\em message} & Es el mensaje que se muestra al usuario pidiendole que ingrese un dato. \\
+\hline
+{\em error\+Message} & Es el mensaje que se muestra en caso de un error. \\
+\hline
+{\em retries} & Es la cantidad de veces que el usuario se puede equivocar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si Ok o -\/1 para indicar un error 
+\end{DoxyReturn}
+\mbox{\label{utn__inputs_8h_abfaee7acf496aeda5a233d8372e1ed8e}} 
+\index{utn\_inputs.h@{utn\_inputs.h}!GetIntNumber@{GetIntNumber}}
+\index{GetIntNumber@{GetIntNumber}!utn\_inputs.h@{utn\_inputs.h}}
+\doxysubsubsection{GetIntNumber()}
+{\footnotesize\ttfamily int Get\+Int\+Number (\begin{DoxyParamCaption}\item[{int $\ast$}]{p\+Result,  }\item[{char $\ast$}]{message,  }\item[{char $\ast$}]{error\+Message,  }\item[{int}]{minimun,  }\item[{int}]{maximun,  }\item[{int}]{retries }\end{DoxyParamCaption})}
+
+
+
+Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Es el puntero donde se guardar el numero ingresado. \\
+\hline
+{\em message} & Es el mensaje que se muestra al usuario pidiendole que ingrese un dato. \\
+\hline
+{\em error\+Message} & Es el mensaje que se muestra en caso de un error. \\
+\hline
+{\em minimun} & Es el minimo valor aceptado. \\
+\hline
+{\em maximun} & Es el maximo valor aceptado. \\
+\hline
+{\em retries} & Es la cantidad de veces que el usuario se puede equivocar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si Ok o -\/1 para indicar un error 
+\end{DoxyReturn}
+\mbox{\label{utn__inputs_8h_a3f9d8fba19cdaf63139c62045fbbee99}} 
+\index{utn\_inputs.h@{utn\_inputs.h}!GetIntNumberNoMinMax@{GetIntNumberNoMinMax}}
+\index{GetIntNumberNoMinMax@{GetIntNumberNoMinMax}!utn\_inputs.h@{utn\_inputs.h}}
+\doxysubsubsection{GetIntNumberNoMinMax()}
+{\footnotesize\ttfamily int Get\+Int\+Number\+No\+Min\+Max (\begin{DoxyParamCaption}\item[{int $\ast$}]{p\+Result,  }\item[{char $\ast$}]{message,  }\item[{char $\ast$}]{error\+Message,  }\item[{int}]{retries }\end{DoxyParamCaption})}
+
+
+
+Pide al usuario un numero, con un minimo y maximo segun la cantidad de reintentos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Es el puntero donde se guardar el numero ingresado. \\
+\hline
+{\em message} & Es el mensaje que se muestra al usuario pidiendole que ingrese un dato. \\
+\hline
+{\em error\+Message} & Es el mensaje que se muestra en caso de un error. \\
+\hline
+{\em retries} & Es la cantidad de veces que el usuario se puede equivocar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si Ok o -\/1 para indicar un error 
+\end{DoxyReturn}
+\mbox{\label{utn__inputs_8h_a6afbecc0fc2bfe8294fedd2f5e70335a}} 
+\index{utn\_inputs.h@{utn\_inputs.h}!GetRandomNumber@{GetRandomNumber}}
+\index{GetRandomNumber@{GetRandomNumber}!utn\_inputs.h@{utn\_inputs.h}}
+\doxysubsubsection{GetRandomNumber()}
+{\footnotesize\ttfamily char Get\+Random\+Number (\begin{DoxyParamCaption}\item[{int}]{from,  }\item[{int}]{to,  }\item[{int}]{init }\end{DoxyParamCaption})}
+
+
+
+Genera un numero aleatorio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Numero aleatorio munimo \\
+\hline
+{\em to} & Numero aleatorio muximo \\
+\hline
+{\em init} & Indica si se trata del primer numero solicitado 1 indica que si \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna el numero aleatorio generado 
+\end{DoxyReturn}
+\mbox{\label{utn__inputs_8h_ac8db3d9fd44ea19b2d2b9d7f2e39e15f}} 
+\index{utn\_inputs.h@{utn\_inputs.h}!GetString@{GetString}}
+\index{GetString@{GetString}!utn\_inputs.h@{utn\_inputs.h}}
+\doxysubsubsection{GetString()}
+{\footnotesize\ttfamily int Get\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{p\+Result,  }\item[{char $\ast$}]{message,  }\item[{char $\ast$}]{error\+Message,  }\item[{int}]{retries }\end{DoxyParamCaption})}
+
+
+
+Pide al usuario un caracter, con un minimo y maximo segun la cantidad de reintentos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Es el puntero donde se guardar el caracter ingresado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si Ok o -\/1 para indicar un error 
+\end{DoxyReturn}

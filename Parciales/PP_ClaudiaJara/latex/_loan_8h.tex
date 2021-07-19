@@ -1,0 +1,148 @@
+\doxysection{C\+:/\+Users/\+Claudia/\+Documents/\+Documentos/\+U\+T\+N/1\+C/\+Programacion-\/\+Laboratorio I/\+P\+P\+\_\+\+Claudia\+Jara/src/\+Loan.h File Reference}
+\label{_loan_8h}\index{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/PP\_ClaudiaJara/src/Loan.h@{C:/Users/Claudia/Documents/Documentos/UTN/1C/Programacion-\/Laboratorio I/PP\_ClaudiaJara/src/Loan.h}}
+{\ttfamily \#include \char`\"{}defines.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Client.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utn\+\_\+inputs.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Menus.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ e\+Loan}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Add\+Loan} (\textbf{ e\+Loan} loan\+Array[$\,$], int size, \textbf{ e\+Client} client\+Array[$\,$], int size\+Client, int $\ast$id)
+\item 
+\textbf{ e\+Loan} \textbf{ New\+Loan} (int id, int id\+Client, float amount, int fees)
+\item 
+void \textbf{ Get\+Data\+New\+Loan} (int $\ast$id\+Client, float $\ast$amount, int $\ast$fees)
+\item 
+void \textbf{ Pay\+Loan} (\textbf{ e\+Loan} loan\+Array[$\,$], int size, \textbf{ e\+Client} client\+Array[$\,$], int size\+Client)
+\item 
+void \textbf{ Change\+State} (\textbf{ e\+Loan} loan\+Array[$\,$], int index, int state)
+\item 
+void \textbf{ Resume\+Loan} (\textbf{ e\+Loan} loan\+Array[$\,$], int size, \textbf{ e\+Client} client\+Array[$\,$], int size\+Client)
+\item 
+void \textbf{ Show\+Loan\+Array} (\textbf{ e\+Loan} loan\+Array[$\,$], int size)
+\item 
+void \textbf{ Show\+Loan} (\textbf{ e\+Loan} loan)
+\item 
+int \textbf{ Is\+Empty\+Loan\+Array} (\textbf{ e\+Loan} loan\+Array[$\,$], int size)
+\item 
+int \textbf{ Get\+Free\+Index\+Loan} (\textbf{ e\+Loan} loan\+Array[$\,$], int size)
+\item 
+int \textbf{ Delete\+Loan\+By\+Client} (\textbf{ e\+Loan} loan\+Array[$\,$], int size, int id\+Client)
+\item 
+int \textbf{ Init\+Loan\+Array} (\textbf{ e\+Loan} loan\+Array[$\,$], int size)
+\item 
+int \textbf{ Get\+Loan\+By\+Id} (\textbf{ e\+Loan} loan\+Array[$\,$], int size, int id)
+\item 
+int \textbf{ Get\+Actives\+Loans\+By\+Id\+Client} (\textbf{ e\+Loan} loan\+Array[$\,$], int size, int id\+Client, int status\+Loan)
+\item 
+int \textbf{ Get\+Client\+Id\+Wiht\+More\+Loans\+By\+State} (\textbf{ e\+Client} client\+Array[$\,$], int size\+Client, \textbf{ e\+Loan} loan\+Array[$\,$], int size, int state)
+\item 
+int \textbf{ Quantity\+Loans\+Upper} (\textbf{ e\+Loan} loan\+Array[$\,$], int size, int use\+Default\+Min, float amount)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{_loan_8h_a8ac72a31c9aa0bebfdb13c065b024083}} 
+\index{Loan.h@{Loan.h}!AddLoan@{AddLoan}}
+\index{AddLoan@{AddLoan}!Loan.h@{Loan.h}}
+\doxysubsubsection{AddLoan()}
+{\footnotesize\ttfamily void Add\+Loan (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size,  }\item[{\textbf{ e\+Client}}]{client\+Array[$\,$],  }\item[{int}]{size\+Client,  }\item[{int $\ast$}]{id }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_ad3c293b94b328c14dd4cab2965e59499}} 
+\index{Loan.h@{Loan.h}!ChangeState@{ChangeState}}
+\index{ChangeState@{ChangeState}!Loan.h@{Loan.h}}
+\doxysubsubsection{ChangeState()}
+{\footnotesize\ttfamily void Change\+State (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{index,  }\item[{int}]{state }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_ae35f31c52796d627afa9b4c1662fbafd}} 
+\index{Loan.h@{Loan.h}!DeleteLoanByClient@{DeleteLoanByClient}}
+\index{DeleteLoanByClient@{DeleteLoanByClient}!Loan.h@{Loan.h}}
+\doxysubsubsection{DeleteLoanByClient()}
+{\footnotesize\ttfamily int Delete\+Loan\+By\+Client (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size,  }\item[{int}]{id\+Client }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_ab96a14b671b3de31399e21fc615cac36}} 
+\index{Loan.h@{Loan.h}!GetActivesLoansByIdClient@{GetActivesLoansByIdClient}}
+\index{GetActivesLoansByIdClient@{GetActivesLoansByIdClient}!Loan.h@{Loan.h}}
+\doxysubsubsection{GetActivesLoansByIdClient()}
+{\footnotesize\ttfamily int Get\+Actives\+Loans\+By\+Id\+Client (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size,  }\item[{int}]{id\+Client,  }\item[{int}]{status\+Loan }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_aa4926fc07d38382da6e96f5390cc7601}} 
+\index{Loan.h@{Loan.h}!GetClientIdWihtMoreLoansByState@{GetClientIdWihtMoreLoansByState}}
+\index{GetClientIdWihtMoreLoansByState@{GetClientIdWihtMoreLoansByState}!Loan.h@{Loan.h}}
+\doxysubsubsection{GetClientIdWihtMoreLoansByState()}
+{\footnotesize\ttfamily int Get\+Client\+Id\+Wiht\+More\+Loans\+By\+State (\begin{DoxyParamCaption}\item[{\textbf{ e\+Client}}]{client\+Array[$\,$],  }\item[{int}]{size\+Client,  }\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size,  }\item[{int}]{state }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_a31de73c2437f9c8c4ed76725e5939a0d}} 
+\index{Loan.h@{Loan.h}!GetDataNewLoan@{GetDataNewLoan}}
+\index{GetDataNewLoan@{GetDataNewLoan}!Loan.h@{Loan.h}}
+\doxysubsubsection{GetDataNewLoan()}
+{\footnotesize\ttfamily void Get\+Data\+New\+Loan (\begin{DoxyParamCaption}\item[{int $\ast$}]{id\+Client,  }\item[{float $\ast$}]{amount,  }\item[{int $\ast$}]{fees }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_a823bff081eecf21d8985f7fbf0b02345}} 
+\index{Loan.h@{Loan.h}!GetFreeIndexLoan@{GetFreeIndexLoan}}
+\index{GetFreeIndexLoan@{GetFreeIndexLoan}!Loan.h@{Loan.h}}
+\doxysubsubsection{GetFreeIndexLoan()}
+{\footnotesize\ttfamily int Get\+Free\+Index\+Loan (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_aa86001e6000b3117375f35738142d6a7}} 
+\index{Loan.h@{Loan.h}!GetLoanById@{GetLoanById}}
+\index{GetLoanById@{GetLoanById}!Loan.h@{Loan.h}}
+\doxysubsubsection{GetLoanById()}
+{\footnotesize\ttfamily int Get\+Loan\+By\+Id (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_ab5ff38a5c8888541520888ddb333343b}} 
+\index{Loan.h@{Loan.h}!InitLoanArray@{InitLoanArray}}
+\index{InitLoanArray@{InitLoanArray}!Loan.h@{Loan.h}}
+\doxysubsubsection{InitLoanArray()}
+{\footnotesize\ttfamily int Init\+Loan\+Array (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_a5f486551a4cfcbdef0d8126df85bbce3}} 
+\index{Loan.h@{Loan.h}!IsEmptyLoanArray@{IsEmptyLoanArray}}
+\index{IsEmptyLoanArray@{IsEmptyLoanArray}!Loan.h@{Loan.h}}
+\doxysubsubsection{IsEmptyLoanArray()}
+{\footnotesize\ttfamily int Is\+Empty\+Loan\+Array (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_a328dee205a7d96689d5703d2da7fe3f2}} 
+\index{Loan.h@{Loan.h}!NewLoan@{NewLoan}}
+\index{NewLoan@{NewLoan}!Loan.h@{Loan.h}}
+\doxysubsubsection{NewLoan()}
+{\footnotesize\ttfamily \textbf{ e\+Loan} New\+Loan (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{id\+Client,  }\item[{float}]{amount,  }\item[{int}]{fees }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_a3e0d57065be0450d13757c2646c117cc}} 
+\index{Loan.h@{Loan.h}!PayLoan@{PayLoan}}
+\index{PayLoan@{PayLoan}!Loan.h@{Loan.h}}
+\doxysubsubsection{PayLoan()}
+{\footnotesize\ttfamily void Pay\+Loan (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size,  }\item[{\textbf{ e\+Client}}]{client\+Array[$\,$],  }\item[{int}]{size\+Client }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_aa7d73e3bc06054ed02ca9441643be33d}} 
+\index{Loan.h@{Loan.h}!QuantityLoansUpper@{QuantityLoansUpper}}
+\index{QuantityLoansUpper@{QuantityLoansUpper}!Loan.h@{Loan.h}}
+\doxysubsubsection{QuantityLoansUpper()}
+{\footnotesize\ttfamily int Quantity\+Loans\+Upper (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size,  }\item[{int}]{use\+Default\+Min,  }\item[{float}]{amount }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_ac5a3d923398a750c86e99ac57044b109}} 
+\index{Loan.h@{Loan.h}!ResumeLoan@{ResumeLoan}}
+\index{ResumeLoan@{ResumeLoan}!Loan.h@{Loan.h}}
+\doxysubsubsection{ResumeLoan()}
+{\footnotesize\ttfamily void Resume\+Loan (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size,  }\item[{\textbf{ e\+Client}}]{client\+Array[$\,$],  }\item[{int}]{size\+Client }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_a5617a35a9bad5bdb973d0e8b2ed28754}} 
+\index{Loan.h@{Loan.h}!ShowLoan@{ShowLoan}}
+\index{ShowLoan@{ShowLoan}!Loan.h@{Loan.h}}
+\doxysubsubsection{ShowLoan()}
+{\footnotesize\ttfamily void Show\+Loan (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan }\end{DoxyParamCaption})}
+
+\mbox{\label{_loan_8h_a3f6132aa837b18f7a89243f301932bbb}} 
+\index{Loan.h@{Loan.h}!ShowLoanArray@{ShowLoanArray}}
+\index{ShowLoanArray@{ShowLoanArray}!Loan.h@{Loan.h}}
+\doxysubsubsection{ShowLoanArray()}
+{\footnotesize\ttfamily void Show\+Loan\+Array (\begin{DoxyParamCaption}\item[{\textbf{ e\+Loan}}]{loan\+Array[$\,$],  }\item[{int}]{size }\end{DoxyParamCaption})}
+
